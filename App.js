@@ -7,7 +7,7 @@
  */
 
 import React, {useEffect} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, StatusBar, SafeAreaView} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
@@ -19,9 +19,12 @@ const App = () => {
     SplashScreen.hide();
   }, []);
   return (
-    <View style={styles.Home}>
-      <Text style={styles.text}>HomeScreen</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.Home}>
+        <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
+        <Text style={styles.text}>HomeScreen</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -31,6 +34,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
+  },
+  container: {
+    flex: 1,
   },
   text: {
     color: 'black',
