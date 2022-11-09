@@ -1,11 +1,11 @@
-//import liraries
+//import libraries
 import React from 'react';
-import {View, Text, StyleSheet, SafeAreaView, StatusBar} from 'react-native';
-import Box from '../components/setLocationComponent/Box';
-import VectorImages from '../components/VectorImages/vectorImges';
+import {View, StyleSheet, SafeAreaView, StatusBar} from 'react-native';
+import ShadowBox from '../components/setLocationComponent/shadowBox';
+import VectorImages from '../components/VectorImages/vectorImages';
 import {Color} from '../constants/style/style';
 import PrimaryButton from '../constants/ui/button/primaryButton';
-import HeaderTitle from '../constants/ui/title/headerTitile';
+import HeaderTitle from '../constants/ui/title/headerTitle';
 import Title from '../constants/ui/title/title';
 
 // create a component
@@ -14,21 +14,21 @@ const SetLocationScreen = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
       <View style={styles.container}>
-        <VectorImages source={require('../../assets/Images/vector4x.png')} />
-        <Box>
+        <VectorImages source={require('../assets/images/vector4x.png')} />
+        <ShadowBox>
           <HeaderTitle
             title={'Set Location to Proceed'}
-            style={{marginTop: 49}}
+            style={styles.hederStyle}
           />
           <Title title={'Lorem ipsum dolor sit amet, consectetur adipiscing'} />
           <PrimaryButton buttonTitle={'Set Location'} />
-        </Box>
+        </ShadowBox>
       </View>
     </SafeAreaView>
   );
 };
 
-// define your styless
+// define your styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -36,6 +36,9 @@ const styles = StyleSheet.create({
   },
   vectorImage: {
     marginTop: 50,
+  },
+  hederStyle: {
+    marginTop: 49,
   },
 });
 

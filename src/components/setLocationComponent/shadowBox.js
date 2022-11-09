@@ -1,6 +1,6 @@
-//import liraries
+//import libraries
 import React from 'react';
-import {View, Text, StyleSheet, Dimensions} from 'react-native';
+import {View, StyleSheet, Dimensions} from 'react-native';
 import {Color} from '../../constants/style/style';
 
 // create a component
@@ -15,7 +15,7 @@ const theta = degToRad(30);
 const horizontalAxisLength =
   (screenRadius / Math.SQRT2) *
   Math.sqrt(1 + Math.sqrt(1 + 4 / Math.tan(theta) ** 2));
-const Box = ({children}) => {
+const ShadowBox = ({children}) => {
   return <View style={styles.ovalSection}>{children}</View>;
 };
 
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default Box;
+export default ShadowBox;

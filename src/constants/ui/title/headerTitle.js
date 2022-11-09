@@ -1,4 +1,4 @@
-//import liraries
+//import libraries
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Color} from '../../style/style';
@@ -19,11 +19,9 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '600',
     textAlign: 'center',
-    // lineHeight: 132.5,
+    fontFamily: 'Poppins-Medium',
   },
   container: {
-    // justifyContent: 'center',
-    // alignItems: 'center',
     width: 217,
     height: 74,
   },
