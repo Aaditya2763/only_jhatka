@@ -7,8 +7,9 @@
  */
 
 import React, {useEffect} from 'react';
-import {StyleSheet, Text, View, StatusBar, SafeAreaView} from 'react-native';
+import {StyleSheet} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import SetLocationScreen from './src/screens/setLocationScreen';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -19,12 +20,13 @@ const App = () => {
     SplashScreen.hide();
   }, []);
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.Home}>
-        <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
-        <Text style={styles.text}>HomeScreen</Text>
-      </View>
-    </SafeAreaView>
+    // <SafeAreaView style={styles.container}>
+    //   <View style={styles.Home}>
+    //     <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
+    //     <Text style={styles.text}>HomeScreen</Text>
+    //   </View>
+    // </SafeAreaView>
+    <SetLocationScreen />
   );
 };
 
