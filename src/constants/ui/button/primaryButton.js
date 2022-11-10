@@ -1,5 +1,5 @@
-//import liraries
-import React, {Component} from 'react';
+//import libraries
+import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import {Color} from '../../style/style';
 
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     marginBottom: 98,
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 5,
+    elevation: 50,
     shadowOpacity: 0.5,
     shadowOffset: {width: 5, height: 5},
     shadowColor: Color.primaryColor,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     color: Color.white,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: 'Poppins-SemiBold',
   },
   pressed: {
     opacity: 0.75,

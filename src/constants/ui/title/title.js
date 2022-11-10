@@ -1,5 +1,5 @@
-//import liraries
-import React, {Component} from 'react';
+//import libraries
+import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
 // create a component
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'black',
     opacity: 0.5,
+    fontFamily: 'Poppins-Medium',
   },
   container: {
     width: 255,
