@@ -14,8 +14,9 @@ const Stack = createNativeStackNavigator();
 enableScreens(true);
 
 const App = () => {
- 
-  const [ShowSplashScreen ,setShowSplashScreen]=useState(true)
+
+  const [ShowSplashScreen ,setShowSplashScreen]=useState(true);
+  
   useEffect(()=>{
    setTimeout(()=>{
 setShowSplashScreen(false);
