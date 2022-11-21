@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, StatusBar, StyleSheet} from 'react-native';
+import {View, Image, StatusBar, StyleSheet, PixelRatio} from 'react-native';
 import Logo from '../assets/images/splashImage.png';
 export default function SplashScreen() {
   return (
@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
   },
 
   Logo: {
-    height: 200,
-    width: 200,
+    height: PixelRatio.getPixelSizeForLayoutSize(200),
+    width: PixelRatio.getPixelSizeForLayoutSize(200),
     backgroundColor: 'white',
   },
 });

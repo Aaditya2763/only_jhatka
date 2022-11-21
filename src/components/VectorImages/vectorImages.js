@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     width: 324,
     marginTop: 102,
     marginHorizontal: 25,
+    aspectRatio: 1,
   },
 });
 
