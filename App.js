@@ -14,6 +14,7 @@ import {Color} from './src/constants/style/style';
 import IconButton from './src/constants/ui/button/iconButton';
 import BackButton from './src/assets/icons/backButton.png';
 import SearchButton from './src/assets/icons/SearchButton.png';
+
 //calling stack navigator
 const Stack = createNativeStackNavigator();
 enableScreens(true);
