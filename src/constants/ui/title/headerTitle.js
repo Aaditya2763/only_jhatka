@@ -17,13 +17,14 @@ const styles = StyleSheet.create({
   title: {
     color: Color.dark,
     fontSize: 28,
-    fontWeight: '600',
+    fontWeight: '700',
     textAlign: 'center',
     fontFamily: 'Poppins-Medium',
   },
   container: {
     width: 217,
     height: 74,
+    
   },
 });
 

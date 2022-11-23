@@ -20,14 +20,17 @@ const PrimaryButton = ({buttonTitle}) => {
 // define your styles
 const styles = StyleSheet.create({
   buttonStyle: {
+  
     backgroundColor: Color.primaryColor,
     borderRadius: 34.49,
     height: 52,
     width: 264,
-    marginHorizontal: 55,
+    marginHorizontal: 60,
     marginBottom: 98,
     justifyContent: 'center',
-    alignItems: 'center',
+   alignItems:'center',
+ 
+  alignItems:'center',
     elevation: 50,
     shadowOpacity: 0.5,
     shadowOffset: {width: 5, height: 5},

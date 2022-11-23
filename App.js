@@ -7,7 +7,10 @@ import { enableScreens } from 'react-native-screens';
 
 //importing Screens
 import SplashScreen from './src/screens/splashScreen';
-import SetLocationScreen from './src/screens/setLocationScreen';
+import WelcomeScreen from './src/screens/welcomeScreen';
+import OtpScreen from './src/screens/otpScreen';
+// import SetLocationScreen from './src/screens/setLocationScreen';
+
 
 //calling stack navigator
 const Stack = createNativeStackNavigator();
@@ -36,9 +39,14 @@ const App = () => {
         />
           : null
         }
-        <Stack.Screen
-          name="setLocationScreen"
-          component={SetLocationScreen}
+        {/* <Stack.Screen
+          name="OtpScreen"
+          component={OtpScreen}
+          options={{ headerShown: false }}
+        /> */}
+         <Stack.Screen
+          name="WelcomeScreen"
+          component={WelcomeScreen}
           options={{ headerShown: false }}
         />
 
