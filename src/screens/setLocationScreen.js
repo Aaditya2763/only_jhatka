@@ -7,9 +7,11 @@ import {Color} from '../constants/style/style';
 import PrimaryButton from '../constants/ui/button/primaryButton';
 import HeaderTitle from '../constants/ui/title/headerTitle';
 import Title from '../constants/ui/title/title';
+import {useNavigation} from '@react-navigation/native';
 
 // create a component
 const SetLocationScreen = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
@@ -21,7 +23,10 @@ const SetLocationScreen = () => {
             style={styles.hederStyle}
           />
           <Title title={'Lorem ipsum dolor sit amet, consectetur adipiscing'} />
-          <PrimaryButton buttonTitle={'Set Location'} />
+          <PrimaryButton
+            buttonTitle={'Set Location'}
+            onPress={() => navigation.navigate('setDeleveryLoactionScreen')}
+          />
         </ShadowBox>
       </View>
     </SafeAreaView>
