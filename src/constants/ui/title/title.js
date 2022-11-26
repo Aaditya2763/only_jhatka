@@ -3,10 +3,10 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
 // create a component
-const Title = ({title,}) => {
+const Title = ({title,style}) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+    <View style={[styles.container,style]}>
+      <Text style={[styles.title,style]}>{title}</Text>
     </View>
   );
 };
