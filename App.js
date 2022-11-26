@@ -9,6 +9,9 @@ import {enableScreens} from 'react-native-screens';
 import SplashScreen from './src/screens/splashScreen';
 import SetLocationScreen from './src/screens/setLocationScreen';
 import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
+import WelcomeScreen from './src/screens/welcomeScreen';
+import OtpScreen from './src/screens/otpScreen';
+import DashboardScreen from './src/screens/dashboardScreen';
 // import custom component
 import {Color} from './src/constants/style/style';
 import IconButton from './src/constants/ui/button/iconButton';
@@ -40,11 +43,14 @@ const App = () => {
             options={{headerShown: false}}
           />
         ) : null}
+
         <Stack.Screen
-          name="setLocationScreen"
-          component={SetLocationScreen}
+          name="dashboardScreen"
+          component={DashboardScreen}
           options={{headerShown: false}}
         />
+
+      
         <Stack.Screen
           name="setDeleveryLoactionScreen"
           component={SetDelveryLoactionScreen}
@@ -69,10 +75,14 @@ const App = () => {
               <IconButton
                 onPress={() => navigation.goBack()}
                 source={BackButton}
+
               />
+          
             ),
-          })}
-        />
+            
+           
+         })}
+        /> 
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -53,7 +53,7 @@ image:{
     borderRadius:10,
     borderWidth:2,
     fontWeight:'400',
-    fontFamily:'Poppins-Medium',
+    // fontFamily:'Poppins-Medium',
     borderColor:'white',
     shadowColor: 'rgba(0, 0, 0, 0.6)',
     backgroundColor: 'white',  
