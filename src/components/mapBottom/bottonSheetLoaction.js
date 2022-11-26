@@ -28,7 +28,7 @@ const BottomSheetLoaction = ({refRbButton}) => {
         },
       }}
       height={235}>
-      {/* code stat here  */}
+      {/* code start here  */}
       <View style={styles.container}>
         <Text style={styles.textStyle}>Set Delivery Location</Text>
 
