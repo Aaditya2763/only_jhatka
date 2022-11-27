@@ -8,6 +8,7 @@ import PrimaryButton from '../constants/ui/button/primaryButton';
 import HeaderTitle from '../constants/ui/title/headerTitle';
 import Title from '../constants/ui/title/title';
 import {useNavigation} from '@react-navigation/native';
+import {verticalScale} from '../../testComponent/metrices';
 
 // create a component
 const SetLocationScreen = () => {
@@ -22,10 +23,14 @@ const SetLocationScreen = () => {
             title={'Set Location to Proceed'}
             style={styles.hederStyle}
           />
-          <Title title={'Lorem ipsum dolor sit amet, consectetur adipiscing'} />
+          <Title
+            title={'Lorem ipsum dolor sit amet, consectetur adipiscing'}
+            style={styles.title}
+          />
           <PrimaryButton
             buttonTitle={'Set Location'}
             onPress={() => navigation.navigate('setDeleveryLoactionScreen')}
+            style={styles.ButtonStyle}
           />
         </ShadowBox>
       </View>
@@ -40,10 +45,16 @@ const styles = StyleSheet.create({
     backgroundColor: Color.white,
   },
   vectorImage: {
-    marginTop: 50,
+    marginTop: verticalScale(50),
   },
   hederStyle: {
-    marginTop: 49,
+    marginTop: verticalScale(10),
+  },
+  title: {
+    marginTop: verticalScale(9),
+  },
+  ButtonStyle: {
+    marginTop: verticalScale(18),
   },
 });
 
