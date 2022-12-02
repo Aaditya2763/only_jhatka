@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
     backgroundColor: Color.white,
     elevation: 5,
     shadowOffset: {height: 2, width: 3},
-    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowColor: Color.dark,
+    margin: 23,
   },
   internalView: {
     flexDirection: 'row',

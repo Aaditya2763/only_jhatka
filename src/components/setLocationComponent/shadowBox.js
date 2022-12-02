@@ -1,7 +1,7 @@
 //import libraries
 import React from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
-import { verticalScale } from '../../../testComponent/metrices';
+import {verticalScale} from '../../../testComponent/metrices';
 import {Color} from '../../constants/style/style';
 
 // create a component

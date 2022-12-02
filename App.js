@@ -1,14 +1,15 @@
 // import Liberry
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNaviagtion from './src/navigation/StackNavigation/stackNavigation';
 import BottomNaviagtion from './src/navigation/BottomNavigation/bottomNavigation';
-import SplashScreen from './src/screens/splashScreen';
+// import SplashScreen from './src/screens/splashScreen';
 
 // create a component
 
-const isLogin = false;
-const Loading = () => {};
+// if you want to switch Stack navigation change const isLogin = false;
+const isLogin = true;
+// const Loading = () => {};
 const App = () => {
   return (
     <NavigationContainer>
