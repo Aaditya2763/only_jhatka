@@ -1,6 +1,7 @@
 //import libraries
 import React from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
+import {verticalScale} from '../../../testComponent/metrices';
 import {Color} from '../../constants/style/style';
 
 // create a component
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: horizontalAxisLength + screenRadius,
     width: horizontalAxisLength * 3.5,
     minHeight: screenRadius * 3,
-    height: 354.5,
+    height: verticalScale(354.5),
     elevation: 20,
     shadowOffset: {height: 0, width: 10},
     shadowColor: Color.dark,

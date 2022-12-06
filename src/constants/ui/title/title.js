@@ -1,12 +1,16 @@
 //import libraries
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {
+  horizontalScale,
+  verticalScale,
+} from '../../../../testComponent/metrices';
 
 // create a component
-const Title = ({title,style}) => {
+const Title = ({title, style}) => {
   return (
-    <View style={[styles.container,style]}>
-      <Text style={[styles.title,style]}>{title}</Text>
+    <View style={[styles.container, style]}>
+      <Text style={[styles.title, style]}>{title}</Text>
     </View>
   );
 };
@@ -15,17 +19,15 @@ const Title = ({title,style}) => {
 const styles = StyleSheet.create({
   title: {
     fontSize: 18,
-    lineHeight: 27,
+    lineHeight: verticalScale(20),
     textAlign: 'center',
     color: 'black',
     opacity: 0.5,
     fontFamily: 'Poppins-Medium',
   },
   container: {
-    width: 255,
-    height: 54,
-    marginTop: 9,
-    marginBottom: 18,
+    width: horizontalScale(255),
+    height: verticalScale(54),
   },
 });
 
