@@ -9,16 +9,9 @@ import SearchBar from "../components/searchbar/searchbar";
 import { Color } from "../constants/style/style";
 import Carousel from "../components/Carousel/carousel";
 import HeaderTitle from "../constants/ui/title/headerTitle";
-
-import BottomNavBar from "../components/Bottom Navbar/BottonNavBar";
-
-const Data=[
-    'https://w7.pngwing.com/pngs/12/41/png-transparent-mettwurst-raw-meat-graphy-goat-meat-meat-food-beef-recipe-thumbnail.png',
-    'https://w7.pngwing.com/pngs/10/986/png-transparent-meat-organic-food-bacon-ribs-meat-food-beef-roast-beef-thumbnail.png',
-    'https://w7.pngwing.com/pngs/994/971/png-transparent-raw-meat-illustration-sausage-chicken-meat-poultry-beef-chicken-food-baking-recipe-thumbnail.png',
-    'https://w7.pngwing.com/pngs/10/986/png-transparent-meat-organic-food-bacon-ribs-meat-food-beef-roast-beef.png',
-];
-
+import { Header } from "react-native/Libraries/NewAppScreen";
+import ButtonCategories from "../components/categories/Buttoncategories";
+import BottomNavbar from "../components/Bottom Navbar/BottonNavBar"
 const DashboardScreen=()=>{
 //    console.log(JSON.stringify(data));
  
@@ -30,11 +23,13 @@ const DashboardScreen=()=>{
             <Location/>
             <SearchBar />  
             <HeaderTitle title={"Top Picks"} style={styles.Header}/>
-            <Carousel  data={Data}/>
-           
+            <Carousel style={styles.Carousel} />
+            <HeaderTitle title={"Categories"}  style={styles.categoriesHeader}/>
+           <ButtonCategories/>
+           <BottomNavbar/>
         </View>
          </View>
-        <BottomNavBar/>
+        
         
         </SafeAreaView>
         
@@ -46,14 +41,26 @@ const styles = StyleSheet.create({
         backgroundColor:Color.white,
     },
     Header:{
+        height:50,
         fontFamily:"Poppins-Medium",
         fontWeight:"500",
         fontSize:20,
         lineHeight:30,
         textAlign:"left",
-        paddingLeft:10,
-        marginTop:8,
+        paddingLeft:12,
+      },
+      categoriesHeader:{
+        marginTop:-18,
+        height:30,
+        fontFamily:"Poppins-Medium",
+        fontWeight:"500",
+        fontSize:20,
+        lineHeight:30,
+        textAlign:"left",
+        paddingLeft:12,
       }
+  
+ 
 })
 
 

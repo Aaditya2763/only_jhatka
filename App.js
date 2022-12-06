@@ -7,17 +7,18 @@ import {enableScreens} from 'react-native-screens';
 
 //importing Screens
 import SplashScreen from './src/screens/splashScreen';
-import SetLocationScreen from './src/screens/setLocationScreen';
+import SetLocationScreen from './src/screens/dashboardScreen';
 import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
+import Item from './src/screens/itempages/item';
 // import custom component
 import {Color} from './src/constants/style/style';
 import IconButton from './src/constants/ui/button/iconButton';
 import BackButton from './src/assets/icons/backButton.png';
 import SearchButton from './src/assets/icons/SearchButton.png';
+import DashboardScreen from './src/screens/dashboardScreen';
 //calling stack navigator
 const Stack = createNativeStackNavigator();
 enableScreens(true);
-
 const App = () => {
   const [ShowSplashScreen, setShowSplashScreen] = useState(true);
 
@@ -30,8 +31,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <SplashScreen/> */}
-        {/* <Home/> */}
+        
         {ShowSplashScreen ? (
           <Stack.Screen
             name="splashScreen"
@@ -39,12 +39,19 @@ const App = () => {
             options={{headerShown: false}}
           />
         ) : null}
+         {/* <Stack.Screen
+          name="dashboardScreen"
+         
+          component={DashboardScreen}
+          options={{headerShown: false}}
+        /> */}
         <Stack.Screen
-          name="setLocationScreen"
-          component={SetLocationScreen}
+        name="item"
+          component={Item}
           options={{headerShown: false}}
         />
-        <Stack.Screen
+        
+       {/* <Stack.Screen
           name="setDeleveryLoactionScreen"
           component={SetDelveryLoactionScreen}
           options={({navigation}) => ({
@@ -71,7 +78,7 @@ const App = () => {
               />
             ),
           })}
-        />
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

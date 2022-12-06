@@ -4,12 +4,12 @@ import {View, Text, StyleSheet, Pressable} from 'react-native';
 import {Color} from '../../style/style';
 
 // create a component
-const PrimaryButton = ({buttonTitle, onPress}) => {
+const PrimaryButton = ({buttonTitle, onPress,style}) => {
   return (
     <Pressable
       onPress={onPress}
       style={({pressed}) => pressed && styles.pressed}>
-      <View style={styles.buttonStyle}>
+      <View style={[styles.buttonStyle,style]}>
         <Text style={styles.buttonTitle}>{buttonTitle}</Text>
       </View>
     </Pressable>

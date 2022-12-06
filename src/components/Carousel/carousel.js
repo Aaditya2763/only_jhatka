@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, ScrollView, Image, Dimensions } from "react-native";
+import { View,Text, StyleSheet, ScrollView, Image, Dimensions, FlatList } from "react-native";
 import { Color } from "../../constants/style/style";
 'native-base';
 
@@ -15,29 +15,46 @@ const data = [
 ];
 
 
-const Carousel = () =>
-    data.map((images, index) => (
-        <View >
-            <ScrollView>
-                {/* <Image source={images.uri}
-                    key={index}
-                    style={styles.img} /> */}
-
-            </ScrollView>
-        </View>
-    ));
+const Carousel = () =>{
+    
+    return (
+        <FlatList
+          horizontal={true}
+          data={data}
+          renderItem={({item}) => (
+            <View style={styles.container}>
+              <Image
+              source={item.uri}
+              style={styles.img}
+              />
+             
+            </View>
+  
+    
+          )}
+    
+        />
+       
+           
+      );
+}
+   
+   
 
 const styles = StyleSheet.create({
+ container:{
+  height:230,
   
-  
-
-
+ },
     img: {
-        width: "85%",
-        height: 200,
+       width:320,
+        height: 170,
+        padding:5,
         resizeMode: "contain",
         borderRadius: 10,
-        margin: 10,
+    marginLeft:10,
+    marginRight:10,
+   
 
     }
 
