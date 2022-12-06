@@ -1,15 +1,19 @@
 //import libraries
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
+import {
+  horizontalScale,
+  verticalScale,
+} from '../../../../testComponent/metrices';
 import {Color} from '../../style/style';
 
 // create a component
-const PrimaryButton = ({buttonTitle, onPress}) => {
+const PrimaryButton = ({buttonTitle, onPress, style}) => {
   return (
     <Pressable
       onPress={onPress}
       style={({pressed}) => pressed && styles.pressed}>
-      <View style={styles.buttonStyle}>
+      <View style={[styles.buttonStyle, style]}>
         <Text style={styles.buttonTitle}>{buttonTitle}</Text>
       </View>
     </Pressable>
@@ -19,17 +23,13 @@ const PrimaryButton = ({buttonTitle, onPress}) => {
 // define your styles
 const styles = StyleSheet.create({
   buttonStyle: {
-  
     backgroundColor: Color.primaryColor,
     borderRadius: 34.49,
     height: 52,
     width: 264,
-    marginHorizontal: 60,
-    marginBottom: 98,
+    marginHorizontal: horizontalScale(60),
     justifyContent: 'center',
-   alignItems:'center',
- 
-  alignItems:'center',
+    alignItems: 'center',
     elevation: 50,
     shadowOpacity: 0.5,
     shadowOffset: {width: 5, height: 5},

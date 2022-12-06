@@ -2,12 +2,17 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Color} from '../../style/style';
+import {
+  horizontalScale,
+  verticalScale,
+  moderateScale,
+} from '../../../../testComponent/metrices';
 
 // create a component
 const HeaderTitle = ({title, style}) => {
   return (
     <View style={[styles.container, style]}>
-      <Text style={[styles.title,style]}>{title}</Text>
+      <Text style={[styles.title, style]}>{title}</Text>
     </View>
   );
 };
@@ -16,15 +21,14 @@ const HeaderTitle = ({title, style}) => {
 const styles = StyleSheet.create({
   title: {
     color: Color.dark,
-    fontSize: 28,
+    fontSize: moderateScale(28),
     fontWeight: '700',
     textAlign: 'center',
     fontFamily: 'Poppins-Medium',
   },
   container: {
-    width: 217,
-    height: 74,
-    
+    width: horizontalScale(217),
+    height: verticalScale(74),
   },
 });
 
