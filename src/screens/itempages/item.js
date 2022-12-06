@@ -6,7 +6,8 @@ import IconButton from "../../constants/ui/button/iconButton";
 import Title from "../../constants/ui/title/title";
 import PrimaryButton from "../../constants/ui/button/primaryButton";
 import CustomiseItemButton from "../../constants/ui/button/customiseItemButton";
-import VectorImages from "../../components/VectorImages/vectorImages"
+import VectorImages from "../../components/VectorImages/vectorImages";
+import ProductItem from "../../components/Product/productItem";
 //importing images
 import backButton from "../../assets/images/backButton.png"
 import ChickenLegs from "../../assets/images/itemImages/chickenLegs.png"
@@ -37,7 +38,7 @@ const Item = () => {
             <PrimaryButton buttonTitle={"Add to Cart"} style={styles.addtoCartButton}/>
             </View>
             <HeaderTitle title={"Recommended"} style={styles.recomendedHeading}/>
-            
+            <ProductItem/>
         </View>
         </SafeAreaView>
 
@@ -157,4 +158,4 @@ recomendedHeading:{
 }
 })
 
-export default Item
+export default Item;

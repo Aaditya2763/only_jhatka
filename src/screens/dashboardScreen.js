@@ -8,7 +8,7 @@ import SearchBar from '../components/searchbar/searchbar';
 import {Color} from '../constants/style/style';
 import Carousel from '../components/Carousel/carousel';
 import HeaderTitle from '../constants/ui/title/headerTitle';
-
+import ProductItem from '../components/Product/productItem';
 import BottomNavBar from '../components/Bottom Navbar/BottonNavBar';
 
 const Data = [
@@ -31,6 +31,7 @@ const DashboardScreen = () => {
           <HeaderTitle title={'Top Picks'} style={styles.Header} />
           <Carousel data={Data} />
         </View>
+        
       </View>
       <BottomNavBar />
     </SafeAreaView>
