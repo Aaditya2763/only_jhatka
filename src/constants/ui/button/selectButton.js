@@ -1,5 +1,5 @@
 //import liraries
-import React from 'react';
+import React, { cloneElement } from 'react';
 import {
   View,
   Text,
@@ -53,6 +53,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
+    borderWidth:0.1,
+   
+    borderRadius:10,
   },
   ImageStyle: {
     height: verticalScale(22),
