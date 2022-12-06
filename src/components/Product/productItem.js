@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     width: 150,
     borderRadius: 20,
     elevation: 5,
-    margin:15
+    margin: 15,
   },
   titleStyle: {
     color: Color.dark,
