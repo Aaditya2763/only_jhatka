@@ -41,7 +41,7 @@ const Item = () => {
             <ProductItem/>
         </View>
         <HeaderTitle title={'Recommended'} style={styles.recomendedHeading} />
-      </View>
+    
     </SafeAreaView>
   );
 };
@@ -151,6 +151,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Item;
+
 
 export default Item
