@@ -10,6 +10,7 @@ import Carousel from '../components/Carousel/carousel';
 import HeaderTitle from '../constants/ui/title/headerTitle';
 import ProductItem from '../components/Product/productItem';
 import BottomNavBar from '../components/Bottom Navbar/BottonNavBar';
+import SelectButton from '../constants/ui/button/selectButton';
 
 const Data = [
   'https://w7.pngwing.com/pngs/12/41/png-transparent-mettwurst-raw-meat-graphy-goat-meat-meat-food-beef-recipe-thumbnail.png',
@@ -27,13 +28,14 @@ const DashboardScreen = () => {
         <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
         <View>
           <Location />
-          <SearchBar />
+          <SearchBar style={styles.SearchBox} />
           <HeaderTitle title={'Top Picks'} style={styles.Header} />
-          <Carousel data={Data} />
+          <Carousel data={Data} style={styles.carousel} />
+        
         </View>
         
       </View>
-      <BottomNavBar />
+      
     </SafeAreaView>
   );
 };
@@ -42,15 +44,25 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Color.white,
   },
+  SearchBox:{
+    marginTop:-5,
+width:350,
+height:50,
+  },
   Header: {
     fontFamily: 'Poppins-Medium',
-    fontWeight: '500',
+    fontWeight: '700',
     fontSize: 20,
     lineHeight: 30,
+    width:200,
     textAlign: 'left',
     paddingLeft: 10,
-    marginTop: 8,
+    marginTop:0,
   },
+  carousel:{
+   marginTop:-30,
+   height:200,
+  }
 });
 
 export default DashboardScreen;

@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
 
-const OtpVerification = ({submitBtn}) => {
+const OtpVerification = ({submitBtn,style}) => {
   const [pin1, setPin1] = useState('');
   const [pin2, setPin2] = useState('');
   const [pin3, setPin3] = useState('');
@@ -18,7 +18,7 @@ const OtpVerification = ({submitBtn}) => {
   }, []);
 
   return (
-    <View style={styles.inputContainer}>
+    <View style={[styles.inputContainer,style]}>
       <TextInput
         keyboardType="numeric"
         maxLength={1}

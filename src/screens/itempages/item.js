@@ -7,12 +7,15 @@ import Title from "../../constants/ui/title/title";
 import PrimaryButton from "../../constants/ui/button/primaryButton";
 import CustomiseItemButton from "../../constants/ui/button/customiseItemButton";
 import VectorImages from "../../components/VectorImages/vectorImages";
-import ProductItem from "../../components/Product/productItem";
+import ProductWithNameImageOnly from '../../components/Product/productwWthNameImageOnly';
 //importing images
+import arrowDown from "../../assets/icons/Arrowdown.png";
 import backButton from '../../assets/images/backButton.png';
+import Chikcen from '../../assets/images/chicken.png';
 import ChickenLegs from '../../assets/images/itemImages/chickenLegs.png';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Color} from '../../constants/style/style';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Item = () => {
     return (
@@ -27,20 +30,25 @@ const Item = () => {
             <VectorImages source={ChickenLegs} style={styles.image}/>
             <View style={styles.itemDescription}>
             <HeaderTitle title={"Chicken Legs"} style={styles.itemName}/>
-            <Title title={"4.6"} style={styles.itemRating} />
+            
+            <Text style={styles.itemRating}>{"4.6"}⭐</Text>
             <HeaderTitle title={"Rs. 550"}  style={styles.itemPrice}/>
             
             </View>
             <Text style={styles.Description}>
                 {"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est+more...."}
             </Text>
-            <CustomiseItemButton title={"Customise as per your need"} style={styles.customiseButton}/>
+            <CustomiseItemButton title={"Customise as per your need"} style={styles.customiseButton} source={arrowDown}/>
             <PrimaryButton buttonTitle={"Add to Cart"} style={styles.addtoCartButton}/>
             </View>
             <HeaderTitle title={"Recommended"} style={styles.recomendedHeading}/>
-            <ProductItem/>
+          <ScrollView style={styles.product} horizontal >
+          <ProductWithNameImageOnly style={styles.rcmdProduct} image={Chikcen} title={"Chicken"} />
+          <ProductWithNameImageOnly style={styles.rcmdProduct}image={Chikcen} title={"Chicken"} />
+          <ProductWithNameImageOnly style={styles.rcmdProduct}image={Chikcen} title={"Chicken"} />
+          <ProductWithNameImageOnly style={styles.rcmdProduct}image={Chikcen} title={"Chicken"} />
+          </ScrollView>
         </View>
-        <HeaderTitle title={'Recommended'} style={styles.recomendedHeading} />
     
     </SafeAreaView>
   );
@@ -87,9 +95,11 @@ const styles = StyleSheet.create({
     aspectRatio: 1.1,
   },
   itemDescription: {
+    width:150,
     margin: -50,
+    marginLeft:20,
 
-    alignSelf: 'center',
+  
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -100,7 +110,7 @@ const styles = StyleSheet.create({
     lineHeight: 27,
     textAlign: 'left',
 
-    width: 200,
+    width: 230,
     height: 30,
   },
   itemRating: {
@@ -109,7 +119,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 18,
     width: 40,
-    marginLeft: -40,
+    marginLeft: -70,
     marginTop: 2,
     color: 'black',
     height: 30,
@@ -123,13 +133,14 @@ const styles = StyleSheet.create({
     width: 120,
     height: 30,
     textAlign: 'right',
+    
   },
   Description: {
     fontFamily: 'Poppins-Medium',
     fontWeight: '500',
 
     fontSize: 10,
-    paddingTop: 30,
+    paddingTop: 45,
     padding: 20,
     color: 'rgba(0, 0, 0, 0.5)',
   },
@@ -142,6 +153,7 @@ const styles = StyleSheet.create({
   },
   recomendedHeading: {
     fontFamily: 'Poppins-Medium',
+    height:20,
     fontWeight: '500',
     lineHeight: 27,
     fontSize: 18,
@@ -149,6 +161,15 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginTop: 5,
   },
+  product:{
+    flexDirection:"row",
+  },
+  rcmdProduct:{
+    width:100,
+    height:120,
+    marginRight:1,
+
+  }
 });
 
 
