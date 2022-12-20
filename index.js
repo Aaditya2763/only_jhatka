@@ -22,6 +22,7 @@ import NetBanking from './src/screens/payments/netBanking';
 import NotificationScreen from './src/screens/notification/NotificationScreen';
 import Profile from './src/screens/profile/profile';
 import EditProfile from './src/screens/profile/editProfile';
+import addAddress from './src/screens/addAddress/addAddress';
 
 
-AppRegistry.registerComponent(appName, () =>EditProfile);
+AppRegistry.registerComponent(appName, () =>addAddress);

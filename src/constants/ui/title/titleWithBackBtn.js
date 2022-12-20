@@ -1,16 +1,21 @@
 
 import React from "react";
-import { StyleSheet, Text, View, StatusBar, Image } from 'react-native';
+import { StyleSheet, Text, View, StatusBar,Pressable, Image } from 'react-native';
 //importing components
 
 
 //importing images
 
 
-const TitleWithBackBtn = ({title}) => {
+const TitleWithBackBtn = ({title,onPress}) => {
     return (
         <View style={styles.container}>
-            <Image source={require('../../../assets//images/backButton.png')} style={styles.img}/>
+            <Pressable
+                        onPress={onPress}
+                        style={({ pressed }) => pressed && styles.pressed}>
+                                   <Image source={require('../../../assets//images/backButton.png')} style={styles.img}/>
+
+                    </Pressable>
             <Text style={styles.title}>{title}</Text>
         </View>
     )
@@ -43,6 +48,9 @@ const styles = StyleSheet.create({
        fontSize:18,
        color:"black",
   
-     }
+     },
+     pressed: {
+        opacity: 0.75,
+    },
 })
 export default TitleWithBackBtn;
