@@ -2,9 +2,9 @@ import React from 'react';
 import {StyleSheet, View, Image, TextInput} from 'react-native';
 import {Color} from '../../constants/style/style';
 
-const WelcomeScreenPhoneNumInp = ({source, placeholder}) => {
+const WelcomeScreenPhoneNumInp = ({source, placeholder,style}) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,style]}>
       <Image source={source} style={styles.image} />
       <TextInput
         placeholder={placeholder}
@@ -36,16 +36,21 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingVertical: 0,
     paddingHorizontal: 0,
-
+alignSelf:'center',
     marginVertical: 10,
     elevation: 10,
   },
   input: {
     width: 200,
     paddingLeft: 10,
-    fontSize: 14,
-    fontWeight: '400',
+    fontSize: 16,
+    color:Color.dark,
+    opacity:0.4,
+    fontWeight: '500',
+  
+    alignItems:'center',
     fontFamily: 'Poppins-Medium',
+    alignSelf:'center',
   },
   image: {
     width: 20,

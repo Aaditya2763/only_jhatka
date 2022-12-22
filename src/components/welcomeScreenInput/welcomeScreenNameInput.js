@@ -1,11 +1,11 @@
 import React from 'react';
 import {StyleSheet, View, Image, TextInput} from 'react-native';
 
-const WelcomeScreenNameInput = ({source, title, placeholder}) => {
+const WelcomeScreenNameInput = ({source, title, placeholder,style}) => {
   return (
-    <View style={styles.container}>
-      <Image source={source} style={styles.image} />
-      <TextInput placeholder={placeholder} style={styles.input}>
+    <View style={[styles.container,style]}>
+      <Image source={source} style={[styles.image,]} />
+      <TextInput placeholder={placeholder} style={styles.input} required>
         {title}
       </TextInput>
     </View>
@@ -17,6 +17,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
+    alignItems:'center',
+    
     width: 300,
     height: 48,
     fontSize: 14,
@@ -37,8 +39,12 @@ const styles = StyleSheet.create({
   input: {
     width: 200,
     paddingLeft: 10,
-    fontSize: 14,
-    fontWeight: '400',
+    fontSize: 16,
+    fontWeight: '500',
+    opacity:1,
+
+    alignSelf:'center',
+   
     fontFamily: 'Poppins-Medium',
   },
   image: {
@@ -47,6 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     borderRadius: 10,
     borderWidth: 2,
+    resizeMode:"contain",
     fontWeight: '400',
     // fontFamily:'Poppins-Medium',
     borderColor: 'white',

@@ -27,7 +27,7 @@ const OtpScreen = () => {
           </Text>
         </View>
         <View style={styles.inputContainer}>
-          <OtpVerification />
+          <OtpVerification style={styles.otpBox} />
           <Text style={styles.resendButton}>Resend OTP</Text>
         </View>
         <PrimaryButton buttonTitle={'Verify OTP'} />
@@ -67,23 +67,28 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   image: {
+  
     marginTop: 10,
     width: 238,
     height: 310,
+    
   },
   headerStyle: {
-    marginTop: 30,
+    marginTop: 20,
     marginLeft: -30,
   },
   title: {
-    marginTop: -30,
+    marginTop: -15,
     fontSize: 14,
     fontWeight: '400',
-    marginLeft: 15,
+    marginLeft: 8,
     lineHeight: 21,
     textAlign: 'center',
     color: 'black',
     fontFamily: 'Poppins-Medium',
+  },
+  otpBox:{
+marginTop:-20,
   },
   resendButton: {
     fontSize: 14,
