@@ -8,26 +8,31 @@ import TitleWithBackBtn from "../../constants/ui/title/titleWithBackBtn";
 import CashOnDeliveryIcon from "../../assets/icons/UpiIcons/cashOnDeliveryIcon.png";
 import NetBankingIcon from "../../assets/icons/UpiIcons/netBankingIcon.png";
 import WalletIcon from "../../assets/icons/UpiIcons/walletIcon.png";
-import VoucherImage from "../../assets/images/voucherImage.png";
+
 import PaymentCard from "../../components/cards/paymentsCards";
-import WalletCard from "../../components/cards/walletCard";
-import VoucherCard from "../../components/cards/voucherCard";
-const Wallet=()=>{
+import JhatkaWallet from "../../components/cards/jhatkaWallet";
+import { ScrollView } from "react-native-gesture-handler";
+import PaymentOptionWithJhatkaWalletAndPrimaryBtn from "./paymentOptionWithjhatkaWallet";
+const PaymentOptionWithJhatkaWallet=()=>{
     return(
         <View style={styles.container}>
   <StatusBar barStyle={'dark-content'} backgroundColor={'white'} style={styles.bar}/>
-<TitleWithBackBtn title={"Use other Wallets"} />
+<TitleWithBackBtn title={"Payment Options"} />
+<ScrollView>
+<DeliveryFromTo />
+<PaymentOptionWithJhatkaWalletAndPrimaryBtn />
+<HeaderTitle title={"UPI"}  style={styles.title} />
+<UPICard title={"UPI"} desc={"Lorem Ipsom dolor amet"}/>
+<HeaderTitle title={"Credit & Debit cards"}  style={styles.title} />
+<UPICard title={"Add Card Details "} desc={"Lorem Ipsom dolor amet"}/>
+<HeaderTitle title={"Other Payments Options"}  style={styles.title} />
 <View style={styles.cardContainer}>
-<WalletCard title={"lorem Ipsom"} desc={"lorem Ipsom dolor amet"} source={WalletIcon}/>
-<WalletCard title={"lorem Ipsom"} desc={"lorem Ipsom dolor amet"} source={WalletIcon}/>
-<WalletCard title={"lorem Ipsom"} desc={"lorem Ipsom dolor amet"} source={WalletIcon}/>
-{/* <VoucherCard source={VoucherImage}
-title={"Total Wallet balance"}
-desc={"Lorem ipsum dolor amet, consectetur..."}
- price={"Rs. 1000"}
- /> */}
-</View>
+<PaymentCard source={CashOnDeliveryIcon} title={"Add Card Details "} desc={"Lorem Ipsom dolor amet"} style={styles.card}/>
+<PaymentCard source={NetBankingIcon} title={"Add Card Details "} desc={"Lorem Ipsom dolor amet"} style={styles.card}/>
+<PaymentCard source={WalletIcon} title={"Add Card Details "} desc={"Lorem Ipsom dolor amet"} style={styles.card}/>
 
+</View>
+</ScrollView>
         </View>
     )
 }
@@ -59,7 +64,7 @@ elevation: 10,
         width:320,
         height:220,
         alignSelf:"center",
-        marginTop:20,
+        
         backgroundColor: "white",
         elevation: 10,
         shadowColor: 'rgba(0, 0, 0, 0.6)',
@@ -88,4 +93,4 @@ borderRadius:10,
    }
 })
 
-export default Wallet;
+export default PaymentOptionWithJhatkaWallet;

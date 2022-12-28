@@ -1,33 +1,29 @@
 import React from "react";
 import { View,StatusBar,StyleSheet } from "react-native";
-import UPICard from "../../components/cards/Upicard";
-import DeliveryFromTo from "../../components/Delivery/DeliveryFromToBox";
-import HeaderTitle from "../../constants/ui/title/headerTitle";
-import Title from "../../constants/ui/title/title";
 import TitleWithBackBtn from "../../constants/ui/title/titleWithBackBtn";
-import CashOnDeliveryIcon from "../../assets/icons/UpiIcons/cashOnDeliveryIcon.png";
-import NetBankingIcon from "../../assets/icons/UpiIcons/netBankingIcon.png";
-import WalletIcon from "../../assets/icons/UpiIcons/walletIcon.png";
 import VoucherImage from "../../assets/images/voucherImage.png";
-import PaymentCard from "../../components/cards/paymentsCards";
-import WalletCard from "../../components/cards/walletCard";
 import VoucherCard from "../../components/cards/voucherCard";
-const Wallet=()=>{
+import WelcomeScreenNameInput from "../../components/welcomeScreenInput/welcomeScreenNameInput";
+import WelcomeScreenPhoneNumInp from "../../components/welcomeScreenInput/welcomeScreenPhoneNumInp";
+import PrimaryButton from "../../constants/ui/button/primaryButton";
+import UPICard from "../../components/cards/Upicard";
+import HeaderTitle from "../../constants/ui/title/headerTitle";
+const addMoney=()=>{
     return(
         <View style={styles.container}>
   <StatusBar barStyle={'dark-content'} backgroundColor={'white'} style={styles.bar}/>
-<TitleWithBackBtn title={"Use other Wallets"} />
-<View style={styles.cardContainer}>
-<WalletCard title={"lorem Ipsom"} desc={"lorem Ipsom dolor amet"} source={WalletIcon}/>
-<WalletCard title={"lorem Ipsom"} desc={"lorem Ipsom dolor amet"} source={WalletIcon}/>
-<WalletCard title={"lorem Ipsom"} desc={"lorem Ipsom dolor amet"} source={WalletIcon}/>
-{/* <VoucherCard source={VoucherImage}
+<TitleWithBackBtn title={"Add Voucher"} />
+
+<VoucherCard source={VoucherImage}
 title={"Total Wallet balance"}
 desc={"Lorem ipsum dolor amet, consectetur..."}
  price={"Rs. 1000"}
- /> */}
-</View>
-
+ />
+<WelcomeScreenNameInput placeholder={"Enter voucher code"} style={styles.nameInput} />
+<HeaderTitle title={"UPI"}  style={styles.title} />
+<UPICard title={"Add Upi Id"} desc={"Lorem ipsum doloe emet"}/>
+<HeaderTitle title={"Credit and Debit Cards"}  style={styles.title} />
+<UPICard title={"Add Upi Id"} desc={"Lorem ipsum doloe emet"}/>
         </View>
     )
 }
@@ -85,7 +81,15 @@ borderRadius:10,
     fontWeight:"500",
     fontSize:18,
     lineHeight:27,
+   },
+
+   nameInput:{
+alignSelf:"center",
+marginTop:25,
+   },
+   btn:{
+    marginTop:20,
    }
 })
 
-export default Wallet;
+export default addMoney;

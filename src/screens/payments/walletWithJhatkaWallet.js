@@ -1,33 +1,35 @@
 import React from "react";
 import { View,StatusBar,StyleSheet } from "react-native";
 import UPICard from "../../components/cards/Upicard";
-import DeliveryFromTo from "../../components/Delivery/DeliveryFromToBox";
-import HeaderTitle from "../../constants/ui/title/headerTitle";
-import Title from "../../constants/ui/title/title";
+
 import TitleWithBackBtn from "../../constants/ui/title/titleWithBackBtn";
-import CashOnDeliveryIcon from "../../assets/icons/UpiIcons/cashOnDeliveryIcon.png";
-import NetBankingIcon from "../../assets/icons/UpiIcons/netBankingIcon.png";
-import WalletIcon from "../../assets/icons/UpiIcons/walletIcon.png";
+
 import VoucherImage from "../../assets/images/voucherImage.png";
-import PaymentCard from "../../components/cards/paymentsCards";
-import WalletCard from "../../components/cards/walletCard";
+
 import VoucherCard from "../../components/cards/voucherCard";
-const Wallet=()=>{
+import { ScrollView } from "react-native-gesture-handler";
+import NotificationCard from "../../components/cards/notificationCard";
+import HeaderTitle from "../../constants/ui/title/headerTitle";
+
+const WalletWithJhatkaWallet=()=>{
     return(
         <View style={styles.container}>
   <StatusBar barStyle={'dark-content'} backgroundColor={'white'} style={styles.bar}/>
-<TitleWithBackBtn title={"Use other Wallets"} />
-<View style={styles.cardContainer}>
-<WalletCard title={"lorem Ipsom"} desc={"lorem Ipsom dolor amet"} source={WalletIcon}/>
-<WalletCard title={"lorem Ipsom"} desc={"lorem Ipsom dolor amet"} source={WalletIcon}/>
-<WalletCard title={"lorem Ipsom"} desc={"lorem Ipsom dolor amet"} source={WalletIcon}/>
-{/* <VoucherCard source={VoucherImage}
+<TitleWithBackBtn title={"Jhatka Wallets"} />
+<ScrollView>
+
+<VoucherCard source={VoucherImage}
 title={"Total Wallet balance"}
 desc={"Lorem ipsum dolor amet, consectetur..."}
  price={"Rs. 1000"}
- /> */}
-</View>
-
+ />
+ <UPICard title={"Add Upi Id"} desc={"Lorem ipsum doloe emet"}/>
+ <UPICard title={"Add Upi Id"} desc={"Lorem ipsum doloe emet"}/>
+ <HeaderTitle title={"Transection History"}  style={styles.title} />
+ <NotificationCard />
+ <NotificationCard />
+ <NotificationCard />
+ </ScrollView>
         </View>
     )
 }
@@ -88,4 +90,4 @@ borderRadius:10,
    }
 })
 
-export default Wallet;
+export default WalletWithJhatkaWallet;
