@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Image, TextInput} from 'react-native';
+// import {Icon} from 'react-native-vector-icons/FontAwesome';
 
 const WelcomeScreenNameInput = ({source, title, placeholder,style}) => {
   return (

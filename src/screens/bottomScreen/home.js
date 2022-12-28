@@ -1,13 +1,7 @@
 //import liraries
-import {
-  TabActions,
-  useIsFocused,
-  useNavigation,
-} from '@react-navigation/native';
 import React from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   FlatList,
   SafeAreaView,
@@ -23,9 +17,15 @@ import Title from '../../constants/ui/title/title';
 
 // create a component
 const Home = () => {
-  const isFocused = useIsFocused();
-  const naviagtion = useNavigation();
   return (
+
+    <SafeAreaView style={styles.SafeAreaView}>
+      <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
+      <View style={styles.container}>
+        <View style={styles.subConatiner}>
+          <Title title={'Categories'} />
+        </View>
+
     <SafeAreaView style={{flex: 1,backgroundColor:"white"}} >
       <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
       <View >
@@ -33,6 +33,7 @@ const Home = () => {
        
       <Title title={'Categories'}  style={styles.heading}/>
         
+
         <View>
           <FlatList
             data={Categories}
@@ -71,11 +72,18 @@ const Home = () => {
 
 // define your styles
 const styles = StyleSheet.create({
+  SafeAreaView: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     backgroundColor: Color.white,
     justifyContent: 'center',
   },
+
+  subConatiner: {
+    justifyContent: 'center',
+
   heading:{
     fontFamily: 'Poppins-Medium',
     fontWeight: '700',
@@ -86,10 +94,12 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     paddingLeft: 10,
     marginTop:-15,
+
   },
   text: {
     color: 'black',
   },
+
   CategoriesStyle: {
     marginTop:-20,
     height:80,
@@ -103,6 +113,7 @@ const styles = StyleSheet.create({
   productImage:{
    width:160, 
   }
+
 });
 
 //make this component available to the app
