@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    borderWidth: 0.1,
+    // borderWidth: 0.1,
 
     borderRadius: 10,
   },

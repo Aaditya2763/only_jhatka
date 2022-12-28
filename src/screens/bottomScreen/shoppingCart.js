@@ -1,13 +1,20 @@
 //import liraries
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {Color} from '../../constants/style/style';
+import React, {useRef} from 'react';
+import {View, Text, StyleSheet, Button} from 'react-native';
+import CutomizeProducts from '../../components/customizeProduct/addBottomCutomizeProduct';
+import RBSheet from 'react-native-raw-bottom-sheet';
 
 // create a component
 const ShoppingCart = () => {
+  const refRBSheet = useRef();
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>ShoppingCart</Text>
+      <Text style={styles.text}>shopping</Text>
+      <Button
+        title="OPEN BOTTOM SHEET"
+        onPress={() => this[RBSheet + refRBSheet].open()}
+      />
+      <CutomizeProducts openBottomSheet={refRBSheet} />
     </View>
   );
 };
@@ -18,7 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Color.white,
+    backgroundColor: 'darkGrey',
   },
   text: {
     color: 'black',
