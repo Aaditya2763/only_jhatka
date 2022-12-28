@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
   },
   hederStyle: {
     marginTop: verticalScale(10),
+    height:80,
   },
   title: {
     marginTop: verticalScale(9),

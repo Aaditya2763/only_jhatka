@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   StatusBar,
 } from 'react-native';
+import DashboardScreen from '../dashboardScreen';
 import {Color} from '../../constants/style/style';
 import {Categories} from '../../constants/models/categores/categories';
 import SelectButton from '../../constants/ui/button/selectButton';
@@ -17,16 +18,27 @@ import Title from '../../constants/ui/title/title';
 // create a component
 const Home = () => {
   return (
+
     <SafeAreaView style={styles.SafeAreaView}>
       <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
       <View style={styles.container}>
         <View style={styles.subConatiner}>
           <Title title={'Categories'} />
         </View>
+
+    <SafeAreaView style={{flex: 1,backgroundColor:"white"}} >
+      <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
+      <View >
+<DashboardScreen/>
+       
+      <Title title={'Categories'}  style={styles.heading}/>
+        
+
         <View>
           <FlatList
             data={Categories}
             horizontal={true}
+            style={styles. CategoriesStyle}
             renderItem={({item}) => (
               <SelectButton
                 CategorieTitle={item.title}
@@ -40,6 +52,7 @@ const Home = () => {
             data={ProductList}
             // numColumns={2}
             horizontal={true}
+            style={styles.product}
             renderItem={({item}) => (
               <ProductItem
                 image={item.image}
@@ -47,6 +60,7 @@ const Home = () => {
                 point={item.point}
                 title={item.title}
                 weight={item.weight}
+                style={styles.productImage}
               />
             )}
           />
@@ -66,12 +80,40 @@ const styles = StyleSheet.create({
     backgroundColor: Color.white,
     justifyContent: 'center',
   },
+
   subConatiner: {
     justifyContent: 'center',
+
+  heading:{
+    fontFamily: 'Poppins-Medium',
+    fontWeight: '700',
+    fontSize: 20,
+    lineHeight: 30,
+    width:200,
+    height:30,
+    textAlign: 'left',
+    paddingLeft: 10,
+    marginTop:-15,
+
   },
   text: {
     color: 'black',
   },
+
+  CategoriesStyle: {
+    marginTop:-20,
+    height:80,
+  },
+  product:{
+    marginTop:-20,
+  marginLeft:8,
+    height:220,
+
+  },
+  productImage:{
+   width:160, 
+  }
+
 });
 
 //make this component available to the app

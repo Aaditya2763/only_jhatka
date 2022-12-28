@@ -28,7 +28,7 @@ const SetDelveryLoactionScreen = () => {
   );
 };
 
-export default SetDelveryLoactionScreen;
+
 
 const styles = StyleSheet.create({
   subContainer: {
@@ -44,3 +44,4 @@ const styles = StyleSheet.create({
     color: Color.dark,
   },
 });
+export default SetDelveryLoactionScreen;

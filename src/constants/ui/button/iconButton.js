@@ -7,9 +7,9 @@ const IconButton = ({onPress, source, style}) => {
     <Pressable
       onPress={onPress}
       style={({pressed}) => pressed && styles.pressed}>
-      <View style={styles.buttonContainer}>
-        <View style={styles.iconContainer}>
-          <Image source={source} style={[styles.iconStyle, style]} />
+    <View style={[styles.buttonContainer,]}>
+        <View style={[styles.iconContainer]}>
+          <Image source={source} style={[styles.iconStyle,style]} />
         </View>
       </View>
     </Pressable>

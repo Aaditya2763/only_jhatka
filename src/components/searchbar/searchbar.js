@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, StyleSheet, Image, TextInput} from 'react-native';
 
-const SearchBar = () => {
+const SearchBar = ({style}) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,style]}>
       <Image
         source={require('../../assets/icons/searchicon.png')}
         style={styles.img}
