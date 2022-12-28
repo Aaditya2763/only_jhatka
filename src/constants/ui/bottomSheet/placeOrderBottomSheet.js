@@ -24,7 +24,7 @@ const PlaceOrderBottomSheet = ({refRbButton}) => {
       }}
       height={77}>
       {/* code start here  */}
-      <View style={{marginVertical: 20}}>
+      <View style={styles.marginvertiacl}>
         <View style={styles.buttonContainer}>
           <Text style={styles.ratePriceText}> Rs.570 </Text>
           <SmallPrimaryButton
@@ -56,6 +56,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-ExtraBold',
     fontSize: 24,
     color: Color.dark,
+  },
+  marginvertiacl: {
+    marginVertical: 20,
   },
 });
 

@@ -1,13 +1,7 @@
 //import liraries
-import {
-  TabActions,
-  useIsFocused,
-  useNavigation,
-} from '@react-navigation/native';
 import React from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   FlatList,
   SafeAreaView,
@@ -22,13 +16,11 @@ import Title from '../../constants/ui/title/title';
 
 // create a component
 const Home = () => {
-  const isFocused = useIsFocused();
-  const naviagtion = useNavigation();
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.SafeAreaView}>
       <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
       <View style={styles.container}>
-        <View style={{justifyContent: 'center'}}>
+        <View style={styles.subConatiner}>
           <Title title={'Categories'} />
         </View>
         <View>
@@ -66,15 +58,20 @@ const Home = () => {
 
 // define your styles
 const styles = StyleSheet.create({
+  SafeAreaView: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     backgroundColor: Color.white,
     justifyContent: 'center',
   },
+  subConatiner: {
+    justifyContent: 'center',
+  },
   text: {
     color: 'black',
   },
-  CategoriesStyle: {},
 });
 
 //make this component available to the app
