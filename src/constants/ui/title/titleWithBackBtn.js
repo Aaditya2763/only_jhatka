@@ -22,26 +22,28 @@ const TitleWithBackBtn = ({title,onPress}) => {
 }
 const styles = StyleSheet.create({
     container: {
-        width:400,
+        width:350,
     marginTop:1,
         alignSelf:"center",
       flexDirection:"row",
       justifyContent:"space-around",
-      
+     
     },
     img:{
        width:20, 
+       
        height:15,
-       marginLeft:-10,
+       marginLeft:-20,
      
       alignSelf:"center",
     },
     title:{
-        width:185, 
+        width:205, 
         height:30,
        fontFamily:'Poppins-Medium',
        fontWeight:"600",
        lineHeight:30,
+    
      
     
   alignSelf:"center",

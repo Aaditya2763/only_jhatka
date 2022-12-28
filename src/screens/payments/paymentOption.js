@@ -27,7 +27,7 @@ const PaymentOption=()=>{
 <PaymentCard source={WalletIcon} title={"Add Card Details "} desc={"Lorem Ipsom dolor amet"} style={styles.card}/>
 
 </View>
-
+   
         </View>
     )
 }
