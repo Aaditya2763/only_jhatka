@@ -33,4 +33,4 @@ import PaymentOptionWithJhatkaWalletAndPrimaryBtn from './src/screens/payments/p
 import addVoucher from './src/screens/voucher/addVoucher';
 import addMoney from './src/screens/voucher/addMoney';
 
-AppRegistry.registerComponent(appName, () =>WalletWithJhatkaWallet);
+AppRegistry.registerComponent(appName, () =>addVoucher);
