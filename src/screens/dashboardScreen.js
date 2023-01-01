@@ -31,11 +31,8 @@ const DashboardScreen = () => {
           <SearchBar style={styles.SearchBox} />
           <HeaderTitle title={'Top Picks'} style={styles.Header} />
           <Carousel data={Data} style={styles.carousel} />
-        
         </View>
-        
       </View>
-      
     </SafeAreaView>
   );
 };
@@ -44,25 +41,25 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Color.white,
   },
-  SearchBox:{
-    marginTop:-5,
-width:350,
-height:50,
+  SearchBox: {
+    marginTop: -5,
+    width: 350,
+    height: 50,
   },
   Header: {
     fontFamily: 'Poppins-Medium',
     fontWeight: '700',
     fontSize: 20,
     lineHeight: 30,
-    width:200,
+    width: 200,
     textAlign: 'left',
     paddingLeft: 10,
-    marginTop:0,
+    marginTop: 0,
   },
-  carousel:{
-   marginTop:-30,
-   height:200,
-  }
+  carousel: {
+    marginTop: -30,
+    height: 200,
+  },
 });
 
 export default DashboardScreen;

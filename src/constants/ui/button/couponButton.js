@@ -1,18 +1,24 @@
 import React from 'react';
-import {StyleSheet, View, Text,Image,Pressable, TextInput} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  Pressable,
+  TextInput,
+} from 'react-native';
 
-const CouponButton = ({source, title, placeholder,onPress}) => {
+const CouponButton = ({source, title, placeholder, onPress}) => {
   return (
     <Pressable
-    onPress={onPress}
-    style={({pressed}) => pressed && styles.pressed}>
-    <View style={styles.container}>
+      onPress={onPress}
+      style={({pressed}) => pressed && styles.pressed}>
+      <View style={styles.container}>
         <Text placeholder={placeholder} style={styles.input}>
-        {title}
-      </Text>
-      <Image source={source} style={styles.image} />
-      
-    </View>
+          {title}
+        </Text>
+        <Image source={source} style={styles.image} />
+      </View>
     </Pressable>
   );
 };
@@ -22,7 +28,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignSelf:'center',
+    alignSelf: 'center',
     width: 340,
     height: 48,
     fontSize: 14,
@@ -46,18 +52,18 @@ const styles = StyleSheet.create({
   input: {
     width: 200,
     paddingLeft: 10,
-    alignSelf:'center',
+    alignSelf: 'center',
     fontSize: 16,
-    
+
     fontWeight: '500',
     fontFamily: 'Poppins-Medium',
   },
   image: {
     width: 12,
     height: 5,
-    marginRight:30,
-   alignSelf:'center',
-   aspectRatio:0.6,
+    marginRight: 30,
+    alignSelf: 'center',
+    aspectRatio: 0.6,
     // fontSize: 14,
     // borderRadius: 10,
     // borderWidth: 2,

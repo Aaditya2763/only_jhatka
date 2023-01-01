@@ -67,11 +67,9 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   image: {
-  
     marginTop: 10,
     width: 238,
     height: 310,
-    
   },
   headerStyle: {
     marginTop: 20,
@@ -87,8 +85,8 @@ const styles = StyleSheet.create({
     color: 'black',
     fontFamily: 'Poppins-Medium',
   },
-  otpBox:{
-marginTop:-20,
+  otpBox: {
+    marginTop: -20,
   },
   resendButton: {
     fontSize: 14,

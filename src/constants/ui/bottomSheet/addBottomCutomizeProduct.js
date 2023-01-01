@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {View, Text, Pressable, StyleSheet} from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {Color} from '../../constants/style/style';
+import {Color} from '../../style/style';
 import CheckBox from '@react-native-community/checkbox';
 
 const CutomizeProducts = ({openBottomSheet}) => {

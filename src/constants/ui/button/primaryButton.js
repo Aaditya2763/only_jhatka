@@ -17,7 +17,6 @@ const PrimaryButton = ({buttonTitle, onPress, style}) => {
         <Text style={styles.buttonTitle}>{buttonTitle}</Text>
       </View>
     </Pressable>
-    
   );
 };
 

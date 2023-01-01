@@ -6,14 +6,13 @@ import Chikcen from '../../assets/images/chicken.png';
 import Title from '../../constants/ui/title/title';
 
 // create a component
-const ProductWithNameImageOnly = ({image, title,  style}) => {
+const ProductWithNameImageOnly = ({image, title, style}) => {
   return (
     <View style={[styles.container, style]}>
       <View style={styles.imageContainer}>
         <Image style={styles.imageStyle} source={image} />
       </View>
       <Title title={title} style={styles.titleStyle} />
-   
     </View>
   );
 };
@@ -30,10 +29,9 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   titleStyle: {
-    color: "black",
+    color: 'black',
     fontSize: 16,
     fontWeight: '600',
-   
   },
   imageContainer: {
     margin: 18,

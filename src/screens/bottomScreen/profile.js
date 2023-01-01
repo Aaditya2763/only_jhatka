@@ -6,26 +6,28 @@ import DelvearyLocationBottomSheet from '../../constants/ui/bottomSheet/delveary
 import TimeBottomSheet from '../../constants/ui/bottomSheet/timeBottomSheet';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import PlaceOrderBottomSheet from '../../constants/ui/bottomSheet/placeOrderBottomSheet';
+import EditProfile from '../profile/profile';
 
 // create a component
 const Profile = () => {
   const refRBSheet = useRef();
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Profile</Text>
-      <Button
-        title="OPEN BOTTOM SHEET"
-        onPress={() => refRBSheet.current.open()}
-      />
-      {/* <Button
-        title="OPEN BOTTOM SHEET"
-        onPress={() => this[RBSheet + refRBSheet].open()}
-      /> */}
-      {/* <DelvearyLocationBottomSheet refRbSheet={refRBSheet} /> */}
+    // <View style={styles.container}>
+    //   <Text style={styles.text}>Profile</Text>
+    //   <Button
+    //     title="OPEN BOTTOM SHEET"
+    //     onPress={() => refRBSheet.current.open()}
+    //   />
+    //   {/* <Button
+    //     title="OPEN BOTTOM SHEET"
+    //     onPress={() => this[RBSheet + refRBSheet].open()}
+    //   /> */}
+    //   {/* <DelvearyLocationBottomSheet refRbSheet={refRBSheet} /> */}
 
-      {/* <TimeBottomSheet openBottomSheet={refRBSheet} /> */}
-      <PlaceOrderBottomSheet refRbButton={refRBSheet} />
-    </View>
+    //   {/* <TimeBottomSheet openBottomSheet={refRBSheet} /> */}
+    //   <PlaceOrderBottomSheet refRbButton={refRBSheet} />
+    // </View>
+    <EditProfile />
   );
 };
 

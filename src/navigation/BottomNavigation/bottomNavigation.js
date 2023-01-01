@@ -1,7 +1,7 @@
 //import liraries
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {StyleSheet} from 'react-native';
+import {Button, StyleSheet} from 'react-native';
 // impor ioncs form react native vector as multiple name
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import NotifactionIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -15,6 +15,11 @@ import Profile from '../../screens/bottomScreen/profile';
 import BottomSheet from '@gorhom/bottom-sheet';
 import {Color} from '../../constants/style/style';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import {responsiveScreenHeight} from 'react-native-responsive-dimensions';
+import BackButton from 'react-native-vector-icons/MaterialIcons';
+
+// Profile Stack navigation
+import ProfileStackNavigation from '../StackNavigation/profieStackNavigation';
 
 // import libbery
 
@@ -27,9 +32,10 @@ const BottomNaviagtion = () => {
         screenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
+          tabBarHideOnKeyboard: true,
           tabBarStyle: {
             width: '100%',
-            height: 74,
+            height: responsiveScreenHeight(10),
             backgroundColor: 'white',
           },
           tabBarActiveTintColor: Color.primaryColor,
@@ -64,9 +70,23 @@ const BottomNaviagtion = () => {
           }}
         />
         <Tab.Screen
-          name="Profile"
-          component={Profile}
+          name="ProfileStackNavigation"
+          component={ProfileStackNavigation}
           options={{
+            headerShown: false,
+            headerTitle: 'Profile',
+            headerTitleAlign: 'center',
+            headerShadowVisible: false,
+            tabBarStyle: {display: 'none'},
+            // headerLeft: ({pressOpacity}) => (
+            //   <BackButton name="keyboard-backspace" color={'black'} size={24} />
+            // ),
+            headerTitleStyle: {
+              fontSize: 18,
+              fontWeight: '500',
+              fontFamily: 'Poppins-Medium',
+              // marginHorizontal: 27,
+            },
             tabBarIcon: ({color, size}) => (
               <ProfileIcon name="account-circle" size={size} color={color} />
             ),

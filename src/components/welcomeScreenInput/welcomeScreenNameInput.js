@@ -1,12 +1,18 @@
 import React from 'react';
 import {StyleSheet, View, Image, TextInput} from 'react-native';
+import {Color} from '../../constants/style/style';
 // import {Icon} from 'react-native-vector-icons/FontAwesome';
 
-const WelcomeScreenNameInput = ({source, title, placeholder,style}) => {
+const WelcomeScreenNameInput = ({source, title, placeholder, style}) => {
   return (
-    <View style={[styles.container,style]}>
-      <Image source={source} style={[styles.image,]} />
-      <TextInput placeholder={placeholder} style={styles.input} required>
+    <View style={[styles.container, style]}>
+      <Image source={source} style={[styles.image]} />
+      <TextInput
+        placeholder={placeholder}
+        style={styles.input}
+        placeholderTextColor={'grey'}
+        underlineColorAndroid={'transparent'}
+        textAlign="left">
         {title}
       </TextInput>
     </View>
@@ -17,9 +23,9 @@ const WelcomeScreenNameInput = ({source, title, placeholder,style}) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems:'center',
-    
+    // justifyContent: 'flex-start',
+    alignItems: 'center',
+
     width: 300,
     height: 48,
     fontSize: 14,
@@ -42,10 +48,12 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     fontSize: 16,
     fontWeight: '500',
-    opacity:1,
+    opacity: 1,
+    // alignSelf: 'center',
+    justifyContent: 'center',
+    alignContent:'center',
+    color: Color.dark,
 
-    alignSelf:'center',
-   
     fontFamily: 'Poppins-Medium',
   },
   image: {
@@ -54,7 +62,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     borderRadius: 10,
     borderWidth: 2,
-    resizeMode:"contain",
+    resizeMode: 'contain',
     fontWeight: '400',
     // fontFamily:'Poppins-Medium',
     borderColor: 'white',

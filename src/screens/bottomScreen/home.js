@@ -1,5 +1,5 @@
 //import liraries
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import {
   View,
   StyleSheet,
@@ -14,31 +14,33 @@ import SelectButton from '../../constants/ui/button/selectButton';
 import ProductItem from '../../components/Product/productItem';
 import {ProductList} from '../../constants/models/categores/product';
 import Title from '../../constants/ui/title/title';
+import {
+  responsiveFontSize,
+  responsiveScreenHeight,
+  responsiveScreenWidth,
+} from 'react-native-responsive-dimensions';
+import {useNavigation} from '@react-navigation/native';
 
 // create a component
 const Home = () => {
   return (
-
-    <SafeAreaView style={styles.SafeAreaView}>
+    <SafeAreaView style={styles.SafeAreaViewConianer}>
       <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
       <View style={styles.container}>
         <View style={styles.subConatiner}>
           <Title title={'Categories'} />
         </View>
+      </View>
+      <View>
+        <DashboardScreen />
 
-    <SafeAreaView style={{flex: 1,backgroundColor:"white"}} >
-      <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
-      <View >
-<DashboardScreen/>
-       
-      <Title title={'Categories'}  style={styles.heading}/>
-        
+        <Title title={'Categories'} style={styles.heading} />
 
         <View>
           <FlatList
             data={Categories}
             horizontal={true}
-            style={styles. CategoriesStyle}
+            style={styles.CategoriesStyle}
             renderItem={({item}) => (
               <SelectButton
                 CategorieTitle={item.title}
@@ -72,8 +74,9 @@ const Home = () => {
 
 // define your styles
 const styles = StyleSheet.create({
-  SafeAreaView: {
+  SafeAreaViewConianer: {
     flex: 1,
+    backgroundColor: Color.white,
   },
   container: {
     flex: 1,
@@ -83,37 +86,38 @@ const styles = StyleSheet.create({
 
   subConatiner: {
     justifyContent: 'center',
+    backgroundColor: Color.white,
+  },
 
-  heading:{
+  heading: {
     fontFamily: 'Poppins-Medium',
     fontWeight: '700',
-    fontSize: 20,
+    fontSize: responsiveFontSize(3),
     lineHeight: 30,
-    width:200,
-    height:30,
+    width: 200,
+    // height: 30,
     textAlign: 'left',
-    paddingLeft: 10,
-    marginTop:-15,
-
+    paddingLeft: responsiveScreenWidth(2.66),
+    marginTop: responsiveScreenHeight(-1),
   },
   text: {
     color: 'black',
   },
 
   CategoriesStyle: {
-    marginTop:-20,
-    height:80,
+    marginTop: -100,
+    height: 80,
+    backgroundColor: Color.white,
   },
-  product:{
-    marginTop:-20,
-  marginLeft:8,
-    height:220,
-
+  product: {
+    marginTop: -20,
+    marginLeft: 8,
+    height: 220,
+    backgroundColor: Color.white,
   },
-  productImage:{
-   width:160, 
-  }
-
+  productImage: {
+    width: 160,
+  },
 });
 
 //make this component available to the app
