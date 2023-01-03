@@ -1,0 +1,9 @@
+export const ActionTypes = {
+    // GET_TOKEN: "GET_TOKEN",
+    USER_DATA: "USER_DATA",
+    // IMAGES: "IMAGES",
+    // MODELIMAGE: "MODELIMAGE",
+    // REPORT_DATA_FROM_AI: "REPORT_DATA_FROM_AI",
+    // REPORT_TABLE_DATA: "REPORT_TABLE_DATA",
+  };
+  

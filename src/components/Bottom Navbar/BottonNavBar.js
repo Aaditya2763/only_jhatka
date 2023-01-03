@@ -7,7 +7,7 @@ import SetLocationScreen from '../../screens/setLocationScreen';
 
 const BottomNavBar = () => {
   const Tab = createBottomTabNavigator();
-  return (
+  return ( 
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen
