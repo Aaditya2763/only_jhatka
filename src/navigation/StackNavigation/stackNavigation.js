@@ -32,8 +32,7 @@ const StackNaviagtion = () => {
   return (
    
     <Stack.Navigator>
-       <SplashScreen/>
-       <Home/>
+      
       {ShowSplashScreen ? (
         <Stack.Screen
           name="splashScreen"

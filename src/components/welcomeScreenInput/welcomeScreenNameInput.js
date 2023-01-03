@@ -1,12 +1,26 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {StyleSheet, View, Image, TextInput} from 'react-native';
 // import {Icon} from 'react-native-vector-icons/FontAwesome';
 
 const WelcomeScreenNameInput = ({source, title, placeholder,style}) => {
+  const [textInputName, setTextInputName] = useState('');
+  const checkInput=()=>{
+    if (textInputName.trim()===""){
+      alert('Please Enter valid Name');
+     return;
+    }
+  }
+ 
   return (
     <View style={[styles.container,style]}>
       <Image source={source} style={[styles.image,]} />
-      <TextInput placeholder={placeholder} style={styles.input} required>
+      <TextInput placeholder={placeholder} style={styles.input} 
+      onPress={
+        checkInput()
+      }
+      onChangeText={
+            (value) => setTextInputName(value)
+          }>
         {title}
       </TextInput>
     </View>
@@ -38,7 +52,8 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   input: {
-    width: 200,
+    width: 250,
+    height:100,
     paddingLeft: 10,
     fontSize: 16,
     fontWeight: '500',

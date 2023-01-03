@@ -1,26 +1,15 @@
 import { ActionTypes } from "./dataActionType";
 
-const aivaraStatus = {
-  userdata: [],
-  lab_images: [],
-  modelimge: {},
-  reportDataFrom_AI: {},
-  reportTableData: {},
+const data = {
+  productData: [],
+ 
 };
 
-export const user = (state = aivaraStatus, action) => {
+export const product = (state = data, action) => {
   switch (action.type) {
-    case ActionTypes.USER_DATA:
-      return { ...state, userdata: action.payload.userdata };
+    case ActionTypes.PRODUCT_DATA:
+      return { ...state, productData: action.payload.productData };
 
-    // case ActionTypes.IMAGES:
-    //   return { ...state, lab_images: action.payload };
-    // case ActionTypes.MODELIMAGE:
-    //   return { ...state, modelimge: action.payload };
-    // case ActionTypes.REPORT_DATA_FROM_AI:
-    //   return { ...state, reportDataFrom_AI: action.payload };
-    // case ActionTypes.REPORT_TABLE_DATA:
-    //   return { ...state, reportTableData: action.payload };
     default:
       return state;
   }

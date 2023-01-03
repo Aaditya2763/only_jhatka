@@ -12,8 +12,7 @@ import { createNativeStackNavigator  } from '@react-navigation/native-stack';
 // create a component
 
 // if you want to switch Stack navigation change const isLogin = false;
-const isLogin = 
-true;
+const isLogin = false;
  const Loading = () => {};
 const App = () => {
   return (

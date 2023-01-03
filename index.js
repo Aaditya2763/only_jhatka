@@ -35,4 +35,4 @@ import StackNaviagtion from './src/navigation/StackNavigation/stackNavigation';
 import BottomNavBar from './src/components/Bottom Navbar/BottonNavBar';
 import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
 
-AppRegistry.registerComponent(appName, () =>SetDelveryLoactionScreen);
+AppRegistry.registerComponent(appName, () =>Home);
