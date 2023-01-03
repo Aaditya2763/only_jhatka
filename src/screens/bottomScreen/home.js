@@ -19,12 +19,6 @@ import Title from '../../constants/ui/title/title';
 const Home = () => {
   return (
 
-    <SafeAreaView style={styles.SafeAreaView}>
-      <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
-      <View style={styles.container}>
-        <View style={styles.subConatiner}>
-          <Title title={'Categories'} />
-        </View>
 
     <SafeAreaView style={{flex: 1,backgroundColor:"white"}} >
       <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
@@ -83,7 +77,7 @@ const styles = StyleSheet.create({
 
   subConatiner: {
     justifyContent: 'center',
-
+  },
   heading:{
     fontFamily: 'Poppins-Medium',
     fontWeight: '700',

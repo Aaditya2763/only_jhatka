@@ -17,35 +17,6 @@ const data = [
 ];
 
 
-const Carousel = () => {
-  return (
-    <FlatList
-      horizontal={true}
-      data={data}
-      renderItem={({item}) => (
-        <View style={styles.container}>
-          <Image source={item.uri} style={styles.img} />
-        </View>
-      )}
-    />
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    height: 230,
-  },
-  img: {
-    width: 320,
-    height: 170,
-    padding: 5,
-    resizeMode: 'contain',
-    borderRadius: 10,
-    marginLeft: 10,
-    marginRight: 10,
-  },
-});
-export default Carousel;
 
 
 const Carousel = ({style}) =>{
