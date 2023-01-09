@@ -1,4 +1,4 @@
-import chickenImage from "../images/itemImages/chicken"
+import chickenImage from "../images/itemImages/chickenLegs.png"
 
 const Data={
   "products":  [
@@ -9,16 +9,33 @@ const Data={
     "price": 150,
    "Quantity":500,
     "rating": 4.6,
-    "Image":""
+    "Image":`${chickenImage}`,
 },
 {
-    "id": 2,
+    "id": 3,
     "title": "Fish Cuts", // only title was updated
     "description": "Lorem Ipsum dolor emet ....",
     "price": 150,
    "Quantity":500,
     "rating": 4.6,
-}
+},
+{
+  "id": 4,
+  "title": "Chicken Cuts", // only title was updated
+  "description": "Lorem Ipsum dolor emet ....",
+  "price": 150,
+ "Quantity":500,
+  "rating": 4.6,
+  "Image":`${chickenImage}`,
+},
+{
+  "id": 5,
+  "title": "Fish Cuts", // only title was updated
+  "description": "Lorem Ipsum dolor emet ....",
+  "price": 150,
+ "Quantity":500,
+  "rating": 4.6,
+},
 
 ]
   

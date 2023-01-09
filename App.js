@@ -9,16 +9,22 @@ import SplashScreen from './src/screens/splashScreen';
 import { createNativeStackNavigator  } from '@react-navigation/native-stack';
  import { enableScreens } from 'react-native-screens';
 
+
 // create a component
+// import libbery
+import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
 
 // if you want to switch Stack navigation change const isLogin = false;
-const isLogin = false;
+const isLogin = true;
  const Loading = () => {};
 const App = () => {
-  return (
+  return ( 
+    <Provider store={store}>
     <NavigationContainer>
       {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
     </NavigationContainer>
+    </Provider>
   );
 };
 

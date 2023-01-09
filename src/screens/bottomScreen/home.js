@@ -15,8 +15,16 @@ import ProductItem from '../../components/Product/productItem';
 import {ProductList} from '../../constants/models/categores/product';
 import Title from '../../constants/ui/title/title';
 
+import { ActionTypes, dataActionType } from "../../redux/dataActionType";
+import {PRODUCT_DATA}   from "../../redux/dataActions"
+
+import { useDispatch, useSelector } from "react-redux";
+import data from "../../assets/jsonData/dummyData"
 // create a component
 const Home = () => {
+ const dispatch = useDispatch();
+  dispatch(PRODUCT_DATA(data));
+  console.log(data);
   return (
 
 
