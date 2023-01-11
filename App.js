@@ -9,17 +9,28 @@ import SplashScreen from './src/screens/splashScreen';
 import { createNativeStackNavigator  } from '@react-navigation/native-stack';
  import { enableScreens } from 'react-native-screens';
 
+
 // create a component
+// import libbery
+import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
+import CartItemWithoutCoupon from './src/screens/cart/cartItemWithoutCoupon';
+import CartitemDetails from './src/components/cart/CartItemDetails';
+import Home from './src/screens/bottomScreen/home';
 
 // if you want to switch Stack navigation change const isLogin = false;
-const isLogin = 
-true;
+const isLogin = true;
  const Loading = () => {};
 const App = () => {
-  return (
-    <NavigationContainer>
+  return ( 
+    <Provider store={store}>
+    {/* <NavigationContainer>
       {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
-    </NavigationContainer>
+    </NavigationContainer> */}
+    {/* <CartItemWithoutCoupon/>
+    <CartitemDetails /> */}
+    <Home/>
+    </Provider>
   );
 };
 

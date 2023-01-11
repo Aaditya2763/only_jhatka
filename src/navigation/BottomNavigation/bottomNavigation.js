@@ -16,12 +16,12 @@ import BottomSheet from '@gorhom/bottom-sheet';
 import {Color} from '../../constants/style/style';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 
-// import libbery
 
 // Tab navigators
 const Tab = createBottomTabNavigator();
 const BottomNaviagtion = () => {
   return (
+   
     <BottomSheetModalProvider>
       <Tab.Navigator
         screenOptions={{
@@ -74,6 +74,7 @@ const BottomNaviagtion = () => {
         />
       </Tab.Navigator>
     </BottomSheetModalProvider>
+
   );
 };
 

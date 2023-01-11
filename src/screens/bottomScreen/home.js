@@ -14,17 +14,18 @@ import SelectButton from '../../constants/ui/button/selectButton';
 import ProductItem from '../../components/Product/productItem';
 import {ProductList} from '../../constants/models/categores/product';
 import Title from '../../constants/ui/title/title';
+//redux components
+import { useSelector } from 'react-redux';
+import { allproducts } from '../../redux/products/productsSlice';
+
 
 // create a component
 const Home = () => {
+
+const product=useSelector(allproducts);
+
   return (
 
-    <SafeAreaView style={styles.SafeAreaView}>
-      <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
-      <View style={styles.container}>
-        <View style={styles.subConatiner}>
-          <Title title={'Categories'} />
-        </View>
 
     <SafeAreaView style={{flex: 1,backgroundColor:"white"}} >
       <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
@@ -49,7 +50,7 @@ const Home = () => {
         </View>
         <View>
           <FlatList
-            data={ProductList}
+            data={product}
             // numColumns={2}
             horizontal={true}
             style={styles.product}
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
 
   subConatiner: {
     justifyContent: 'center',
-
+  },
   heading:{
     fontFamily: 'Poppins-Medium',
     fontWeight: '700',
