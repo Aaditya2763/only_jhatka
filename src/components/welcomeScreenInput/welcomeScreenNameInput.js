@@ -1,18 +1,17 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View, Image, TextInput} from 'react-native';
 import {Color} from '../../constants/style/style';
 // import {Icon} from 'react-native-vector-icons/FontAwesome';
 
 const WelcomeScreenNameInput = ({source, title, placeholder, style}) => {
-const WelcomeScreenNameInput = ({source, title, placeholder,style}) => {
   const [textInputName, setTextInputName] = useState('');
-  const checkInput=()=>{
-    if (textInputName.trim()===""){
+  const checkInput = () => {
+    if (textInputName.trim() === '') {
       alert('Please Enter valid Name');
-     return;
+      return;
     }
-  }
- 
+  };
+
   return (
     <View style={[styles.container, style]}>
       <Image source={source} style={[styles.image]} />
@@ -21,18 +20,18 @@ const WelcomeScreenNameInput = ({source, title, placeholder,style}) => {
         style={styles.input}
         placeholderTextColor={'grey'}
         underlineColorAndroid={'transparent'}
-        textAlign="left">
-    <View style={[styles.container,style]}>
-      <Image source={source} style={[styles.image,]} />
-      <TextInput placeholder={placeholder} style={styles.input} 
-      onPress={
-        checkInput()
-      }
-      onChangeText={
-            (value) => setTextInputName(value)
-          }>
-        {title}
-      </TextInput>
+        textAlign="left"
+      />
+      <View style={[styles.container, style]}>
+        <Image source={source} style={[styles.image]} />
+        <TextInput
+          placeholder={placeholder}
+          style={styles.input}
+          onPress={checkInput()}
+          onChangeText={value => setTextInputName(value)}>
+          {title}
+        </TextInput>
+      </View>
     </View>
   );
 };
@@ -63,7 +62,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: 250,
-    height:100,
+    height: 100,
     paddingLeft: 10,
     fontSize: 16,
     fontWeight: '500',
