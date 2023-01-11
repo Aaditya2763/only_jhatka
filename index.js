@@ -32,5 +32,6 @@ import addVoucher from './src/screens/voucher/addVoucher';
 import addMoney from './src/screens/voucher/addMoney';
 import AddAddress from './src/screens/addAddress/addAddress';
 import CouponCard from './src/components/coupon/couponCard';
+import AddaddressMapSceen from './src/screens/mapsScreen/addMapScreens';
 
 AppRegistry.registerComponent(appName, () => App);

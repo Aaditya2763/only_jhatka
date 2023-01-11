@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     color: 'black',
     textAlign: 'center',
     paddingTop: 3,
-    opacity: 0.5,
+    opacity: 0.8,
     fontStyle: 'normal',
     fontSize: 14,
     lineHeight: 15,
@@ -92,7 +92,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignSelf: 'flex-start',
     marginLeft: 12,
-    opacity: 0.5,
+    opacity: 0.4,
+    color: Color.dark,
 
     fontSize: 14,
     lineHeight: 18,

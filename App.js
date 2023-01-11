@@ -21,7 +21,7 @@ const App = () => {
     <SafeAreaProvider>
       <NavigationContainer>
         {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
-         {/* <ProfileStackNavigation /> */}
+        {/* <ProfileStackNavigation /> */}
       </NavigationContainer>
     </SafeAreaProvider>
   );

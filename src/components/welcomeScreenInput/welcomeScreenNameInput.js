@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     opacity: 1,
     // alignSelf: 'center',
     justifyContent: 'center',
-    alignContent:'center',
+    alignContent: 'center',
     color: Color.dark,
 
     fontFamily: 'Poppins-Medium',
