@@ -7,24 +7,22 @@ import { Color } from "../../constants/style/style";
 
 const {width} = Dimensions.get('window');
 const height = (width * 100) / 60;
-const data = [
-  {uri: require('../../assets/images/carouselimg.png')},
-  {uri: require('../../assets/images/carouselimg.png')},
-  {uri: require('../../assets/images/carouselimg.png')},
-  {uri: require('../../assets/images/carouselimg.png')},
-  {uri: require('../../assets/images/carouselimg.png')},
-  {uri: require('../../assets/images/carouselimg.png')},
-];
 
+
+//redux components
+import { useSelector } from 'react-redux';
+import { allCarouselImg } from '../../redux/carousel/carouselSlice';
+import { allproducts } from "../../redux/products/productsSlice";
 
 
 
 const Carousel = ({style}) =>{
-    
+  const images =useSelector(allproducts);
+  // console.log(images)
     return (
         <FlatList
           horizontal={true}
-          data={data}
+          data={images}
           style={style}
           renderItem={({item}) => (
             <View style={[styles.container]}>

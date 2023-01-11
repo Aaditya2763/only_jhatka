@@ -14,6 +14,8 @@ import AddCard from './src/screens/card/AddCard';
 import Home from './src/screens/bottomScreen/home';
 import DashboardScreen from './src/screens/dashboardScreen';
 import CartItemWithoutCoupon from './src/screens/cart/cartItemWithoutCoupon';
+import CartItemWithCoupon from './src/screens/cart/cartItemWithCoupon';
+
 import PaymentOption from './src/screens/payments/paymentOption';
 import Wallet from './src/screens/payments/wallet';
 import NetBanking from './src/screens/payments/netBanking';
@@ -38,5 +40,5 @@ import StackNaviagtion from './src/navigation/StackNavigation/stackNavigation';
 import BottomNavBar from './src/components/Bottom Navbar/BottonNavBar';
 import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
 
-AppRegistry.registerComponent(appName, () =>App);
+AppRegistry.registerComponent(appName, () =>Profile);
 
