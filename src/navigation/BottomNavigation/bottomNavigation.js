@@ -19,7 +19,6 @@ import BackButton from 'react-native-vector-icons/MaterialIcons';
 // Profile Stack navigation
 import ProfileStackNavigation from '../StackNavigation/profieStackNavigation';
 
-// import libbery
 
 // Tab navigators
 const Tab = createBottomTabNavigator();

@@ -14,15 +14,16 @@ import SelectButton from '../../constants/ui/button/selectButton';
 import ProductItem from '../../components/Product/productItem';
 import {ProductList} from '../../constants/models/categores/product';
 import Title from '../../constants/ui/title/title';
-import {
-  responsiveFontSize,
-  responsiveScreenHeight,
-  responsiveScreenWidth,
-} from 'react-native-responsive-dimensions';
-import {useNavigation} from '@react-navigation/native';
+//redux components
+import { useSelector } from 'react-redux';
+import { allproducts } from '../../redux/products/productsSlice';
+
 
 // create a component
 const Home = () => {
+
+const product=useSelector(allproducts);
+
   return (
     <SafeAreaView style={styles.SafeAreaViewConianer}>
       <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
@@ -51,7 +52,7 @@ const Home = () => {
         </View>
         <View>
           <FlatList
-            data={ProductList}
+            data={product}
             // numColumns={2}
             horizontal={true}
             style={styles.product}

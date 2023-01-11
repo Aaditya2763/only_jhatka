@@ -6,24 +6,31 @@ import StackNaviagtion from './src/navigation/StackNavigation/stackNavigation';
 import BottomNaviagtion from './src/navigation/BottomNavigation/bottomNavigation';
 // import Item from './src/screens/itempages/item';
 import SplashScreen from './src/screens/splashScreen';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {enableScreens} from 'react-native-screens';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import ProfileStackNavigation from './src/navigation/StackNavigation/profieStackNavigation';
+import { createNativeStackNavigator  } from '@react-navigation/native-stack';
+ import { enableScreens } from 'react-native-screens';
+
 
 // create a component
+// import libbery
+import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
+import CartItemWithoutCoupon from './src/screens/cart/cartItemWithoutCoupon';
+import CartitemDetails from './src/components/cart/CartItemDetails';
+import Home from './src/screens/bottomScreen/home';
 
 // if you want to switch Stack navigation change const isLogin = false;
 const isLogin = true;
-const Loading = () => {};
+ const Loading = () => {};
 const App = () => {
-  return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
-        {/* <ProfileStackNavigation /> */}
-      </NavigationContainer>
-    </SafeAreaProvider>
+  return ( 
+    <Provider store={store}>
+    {/* <NavigationContainer>
+      {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
+    </NavigationContainer> */}
+    {/* <CartItemWithoutCoupon/>
+    <CartitemDetails /> */}
+    <Home/>
+    </Provider>
   );
 };
 

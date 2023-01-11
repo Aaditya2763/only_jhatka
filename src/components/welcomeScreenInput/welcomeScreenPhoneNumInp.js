@@ -1,8 +1,16 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {StyleSheet, View, Image, TextInput} from 'react-native';
 import {Color} from '../../constants/style/style';
 
 const WelcomeScreenPhoneNumInp = ({source, placeholder, style}) => {
+const WelcomeScreenPhoneNumInp = ({source, placeholder,style}) => {
+  const [textInputphoneNo, setTextInputphoneNo] = useState('');
+  const checkInput=()=>{
+    if (textInputphoneNo.trim()===""){
+      alert('Please Enter valid Name');
+     return;
+    }
+  }
   return (
     <View style={[styles.container, style]}>
       <Image source={source} style={styles.image} />
@@ -12,6 +20,12 @@ const WelcomeScreenPhoneNumInp = ({source, placeholder, style}) => {
         maxLength={10}
         style={styles.input}
         placeholderTextColor={Color.dark}
+        onChangeText={
+          (value) => setTextInputphoneNo(value)
+        }
+        onPress={
+          checkInput()
+        }
       />
     </View>
   );
