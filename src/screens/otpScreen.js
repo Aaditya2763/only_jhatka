@@ -1,5 +1,5 @@
 //import libraries
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, StatusBar} from 'react-native';
 
 import VectorImages from '../components/VectorImages/vectorImages';
@@ -11,10 +11,8 @@ import OtpVerification from '../components/OtpVerification/otpVerification';
 
 // create a component
 const OtpScreen = () => {
-  otp=1234;
+  let otp = 1234;
 
-
-  
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
@@ -34,7 +32,10 @@ const OtpScreen = () => {
           <OtpVerification style={styles.otpBox} otp={otp} />
           <Text style={styles.resendButton}>Resend OTP</Text>
         </View>
-        <PrimaryButton buttonTitle={'Verify OTP'} onPress={onSubmit()} />
+        <PrimaryButton
+          buttonTitle={'Verify OTP'}
+          onPress={() => console.log('hello')}
+        />
       </View>
     </SafeAreaView>
   );

@@ -13,7 +13,7 @@ const AddaddressMapSceen = () => {
           title="OPEN BOTTOM SHEET"
           onPress={() => refRBSheet.current.open()}
         />
-        <AddaddressBottom refRbSheet={refRBSheet}/>
+        <AddaddressBottom refRbSheet={refRBSheet} />
       </View>
     </SafeAreaView>
   );

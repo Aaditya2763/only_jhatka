@@ -1,15 +1,15 @@
 import React from 'react';
-import { View, StatusBar, StyleSheet } from 'react-native';
+import {View, StatusBar, StyleSheet} from 'react-native';
 import DetailsCard from '../../components/cards/detailsCard';
 import UPICard from '../../components/cards/Upicard';
 import WalletCard from '../../components/cards/walletCard';
 import NetBAnkingSearchBar from '../../components/searchbar/netBankingSearchBar';
-import { Color } from '../../constants/style/style';
+import {Color} from '../../constants/style/style';
 import SelectLocation from '../../assets/icons/profileIcon/selectLocation.png';
 
 //importing components
 import TitleWithBackBtn from '../../constants/ui/title/titleWithBackBtn';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 const AddAddress = () => {
   const navigation = useNavigation();
   return (

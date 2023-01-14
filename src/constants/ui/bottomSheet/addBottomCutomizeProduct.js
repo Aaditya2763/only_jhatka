@@ -4,7 +4,7 @@ import {View, Text, Pressable, StyleSheet} from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Color} from '../../style/style';
-import CheckBox from '@react-native-community/checkbox';
+// import CheckBox from '@react-native-community/checkbox';
 
 const CutomizeProducts = ({openBottomSheet}) => {
   const [QuntityShow, setQuntityShow] = useState(false);
@@ -77,12 +77,12 @@ const CutomizeProducts = ({openBottomSheet}) => {
               {QuntityShow ? (
                 <View style={styles.QuntityButton}>
                   {/* component */}
-                  <CheckBox
+                  {/* <CheckBox
                     disabled={false}
                     value={toggleCheckBox}
                     onValueChange={newValue => setToggleCheckBox(newValue)}
                     tintColors={{true: '#F7A399', false: '#2D2D2D'}}
-                  />
+                  /> */}
                   <Text
                     style={
                       toggleCheckBox
@@ -104,12 +104,12 @@ const CutomizeProducts = ({openBottomSheet}) => {
                     <Text style={styles.AddOneText}>Recipe packet 1</Text>
                     <View style={styles.AddOneRow}>
                       <Text style={styles.AddOneText}>Rs.20</Text>
-                      <CheckBox
+                      {/* <CheckBox
                         disabled={false}
                         value={toggleCheckBox}
                         onValueChange={newValue => setToggleCheckBox(newValue)}
                         tintColors={{true: '#F7A399', false: '#2D2D2D'}}
-                      />
+                      /> */}
                     </View>
                   </View>
                   <View style={styles.Column}>
@@ -120,14 +120,14 @@ const CutomizeProducts = ({openBottomSheet}) => {
                       <Text style={styles.AddOneText}>Readymade masala</Text>
                       <View style={styles.AddOneRow}>
                         <Text style={styles.AddOneText}>Rs.20</Text>
-                        <CheckBox
+                        {/* <CheckBox
                           disabled={false}
                           value={toggleCheckBox}
                           onValueChange={newValue =>
                             setToggleCheckBox(newValue)
                           }
                           tintColors={{true: '#F7A399', false: '#2D2D2D'}}
-                        />
+                        /> */}
                       </View>
                     </View>
                     {/* End :  row */}

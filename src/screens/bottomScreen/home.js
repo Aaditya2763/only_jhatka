@@ -15,14 +15,17 @@ import ProductItem from '../../components/Product/productItem';
 import {ProductList} from '../../constants/models/categores/product';
 import Title from '../../constants/ui/title/title';
 //redux components
-import { useSelector } from 'react-redux';
-import { allproducts } from '../../redux/products/productsSlice';
-
+import {useSelector} from 'react-redux';
+import {allproducts} from '../../redux/products/productsSlice';
+import {
+  responsiveScreenHeight,
+  responsiveScreenWidth,
+  responsiveFontSize,
+} from 'react-native-responsive-dimensions';
 
 // create a component
 const Home = () => {
-
-const product=useSelector(allproducts);
+  const product = useSelector(allproducts);
 
   return (
     <SafeAreaView style={styles.SafeAreaViewConianer}>

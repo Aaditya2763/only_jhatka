@@ -34,7 +34,7 @@ const AddaddressBottom = ({refRbSheet}) => {
 
         <View style={styles.listContiner}>
           <Image source={loactionIcon} style={styles.iconStyle} />
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <View style={styles.AlineItems}>
             <Pressable
               onPress={() => console.log('pressed')}
               style={({pressed}) => pressed && styles.pressed}>
@@ -43,7 +43,7 @@ const AddaddressBottom = ({refRbSheet}) => {
             </Pressable>
           </View>
         </View>
-        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <View style={styles.AlineItems}>
           <PrimaryButton buttonTitle={'Confirm'} />
         </View>
       </View>
@@ -113,6 +113,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-ExtraBold',
     fontSize: 24,
     color: Color.dark,
+  },
+  AlineItems: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
