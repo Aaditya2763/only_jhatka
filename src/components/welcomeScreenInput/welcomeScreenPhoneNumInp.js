@@ -1,17 +1,17 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View, Image, TextInput} from 'react-native';
 import {Color} from '../../constants/style/style';
 
-const WelcomeScreenPhoneNumInp = ({source, placeholder,style}) => {
+const WelcomeScreenPhoneNumInp = ({source, placeholder, style}) => {
   const [textInputphoneNo, setTextInputphoneNo] = useState('');
-  const checkInput=()=>{
-    if (textInputphoneNo.trim()===""){
+  const checkInput = () => {
+    if (textInputphoneNo.trim() === '') {
       alert('Please Enter valid Name');
-     return;
+      return;
     }
-  }
+  };
   return (
-    <View style={[styles.container,style]}>
+    <View style={[styles.container, style]}>
       <Image source={source} style={styles.image} />
       <TextInput
         placeholder={placeholder}
@@ -19,12 +19,8 @@ const WelcomeScreenPhoneNumInp = ({source, placeholder,style}) => {
         maxLength={10}
         style={styles.input}
         placeholderTextColor={Color.dark}
-        onChangeText={
-          (value) => setTextInputphoneNo(value)
-        }
-        onPress={
-          checkInput()
-        }
+        onChangeText={value => setTextInputphoneNo(value)}
+        onPress={checkInput()}
       />
     </View>
   );
@@ -49,7 +45,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingVertical: 0,
     paddingHorizontal: 0,
-alignSelf:'center',
+    alignSelf: 'center',
     marginVertical: 10,
     elevation: 10,
   },
@@ -57,13 +53,13 @@ alignSelf:'center',
     width: 200,
     paddingLeft: 10,
     fontSize: 16,
-    color:Color.dark,
-    opacity:0.4,
+    color: Color.dark,
+    opacity: 0.4,
     fontWeight: '500',
-  
-    alignItems:'center',
+
+    alignItems: 'center',
     fontFamily: 'Poppins-Medium',
-    alignSelf:'center',
+    alignSelf: 'center',
   },
   image: {
     width: 20,

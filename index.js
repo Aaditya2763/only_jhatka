@@ -32,6 +32,9 @@ import PaymentOptionWithJhatkaWallet from './src/screens/payments/paymentOptionW
 import PaymentOptionWithJhatkaWalletAndPrimaryBtn from './src/screens/payments/paymentOptionWithjhatkaWallet';
 import addVoucher from './src/screens/voucher/addVoucher';
 import addMoney from './src/screens/voucher/addMoney';
+import AddAddress from './src/screens/addAddress/addAddress';
+import CouponCard from './src/components/coupon/couponCard';
+import AddaddressMapSceen from './src/screens/mapsScreen/addMapScreens';
 
 import WelcomeScreen from './src/screens/welcomeScreen';
 
@@ -40,5 +43,9 @@ import StackNaviagtion from './src/navigation/StackNavigation/stackNavigation';
 import BottomNavBar from './src/components/Bottom Navbar/BottonNavBar';
 import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
 
+
 AppRegistry.registerComponent(appName, () =>App);
+
+
+AppRegistry.registerComponent(appName, () => Profile);
 

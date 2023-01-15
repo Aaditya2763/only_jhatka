@@ -259,7 +259,6 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation project(':react-native-vector-icons')
-    implementation project(':react-native-community-checkbox') // checkbox
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 

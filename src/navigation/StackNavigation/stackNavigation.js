@@ -15,7 +15,7 @@ import IconButton from '../../constants/ui/button/iconButton';
 import BackButton from '../../assets/icons/backButton.png';
 import SearchButton from '../../assets/icons/SearchButton.png';
 import Home from '../../screens/bottomScreen/home';
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 //calling stack navigator
 const Stack = createNativeStackNavigator();
 enableScreens(true);
@@ -30,9 +30,7 @@ const StackNaviagtion = () => {
   }, []);
 
   return (
-   
     <Stack.Navigator>
-      
       {ShowSplashScreen ? (
         <Stack.Screen
           name="splashScreen"
