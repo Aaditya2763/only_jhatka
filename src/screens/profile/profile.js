@@ -18,16 +18,20 @@ import icon from "../../assets/icons/profileIcon/leftIcon.png"
 import DetailsCard from "../../components/cards/detailsCard";
 import NetBankingCard from "../../components/cards/netBankingCard";
 import LogoutCard from "../../components/cards/logoutCard";
+import { user } from "../../redux/user/userSlice";
+import { useSelector } from 'react-redux';
 
 //importing images 
 
 
 const EditProfile=()=>{
+    const User=useSelector(user);
+console.log(User);
     return(
         <View style={styles.container}>
   <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
   <TitleWithBackBtn title={"Profile "} style={styles.title}  />
-<ProfileCard  title={"User Name"} desc={"9466556600"} source={profileIcon}/>
+<ProfileCard  title={User.name} desc={User.phoneNo} source={profileIcon}/>
 <View style={styles.cardBox} >
 <DetailsCard  title={"Notification"} desc={"Lorem ipsom dolor amet"} source={NotificationIcon} icon={icon}/>
 <DetailsCard  title={"AddressBook"} desc={"Lorem ipsom dolor amet"} source={addressBookIcon} icon={icon}/>
