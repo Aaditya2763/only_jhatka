@@ -3,12 +3,16 @@ import {View, StyleSheet, Image, TextInput} from 'react-native';
 
 const SearchBar = ({style}) => {
   return (
-    <View style={[styles.container,style]}>
+    <View style={[styles.container, style]}>
       <Image
         source={require('../../assets/icons/searchicon.png')}
         style={styles.img}
       />
-      <TextInput placeholder="Search the product" style={styles.inputBox} />
+      <TextInput
+        placeholder="Search the product"
+        style={styles.inputBox}
+        placeholderTextColor={'grey'}
+      />
       <Image
         source={require('../../assets/icons/mic.png')}
         style={styles.img}
@@ -43,7 +47,7 @@ const styles = StyleSheet.create({
     padding: 5,
     marginLeft: -20,
     borderLeftColor: 'black',
-    borderLeftWidth: 2,
+    // borderLeftWidth: 2,
   },
 
   img: {

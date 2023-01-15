@@ -1,7 +1,7 @@
 //import liraries
 import React, {useRef} from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
-import CutomizeProducts from '../../components/customizeProduct/addBottomCutomizeProduct';
+import CutomizeProducts from '../../constants/ui/bottomSheet/addBottomCutomizeProduct';
 import RBSheet from 'react-native-raw-bottom-sheet';
 
 // create a component

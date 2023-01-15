@@ -28,8 +28,6 @@ const SetDelveryLoactionScreen = () => {
   );
 };
 
-
-
 const styles = StyleSheet.create({
   subContainer: {
     flex: 1,

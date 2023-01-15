@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text,Image, StyleSheet, Pressable} from 'react-native';
+import {View, Text, Image, StyleSheet, Pressable} from 'react-native';
 import {Color} from '../../style/style';
 
-const customiseItemButton = ({title, onPress, style,source}) => {
+const customiseItemButton = ({title, onPress, style, source}) => {
   return (
     <Pressable
       onPress={onPress}
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     height: 52,
     width: 300,
     marginHorizontal: 25,
-alignSelf:'center',
+    alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -38,13 +38,13 @@ alignSelf:'center',
     opacity: 0.5,
   },
   arrow: {
-    width:20,
-    height:8,
+    width: 20,
+    height: 8,
     textAlign: 'center',
     fontSize: 12,
     fontWeight: '600',
     color: 'black',
-resizeMode:"contain",
+    resizeMode: 'contain',
     marginLeft: 10,
     marginTop: -2,
   },
