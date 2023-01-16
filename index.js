@@ -44,8 +44,7 @@ import BottomNavBar from './src/components/Bottom Navbar/BottonNavBar';
 import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
 
 
-AppRegistry.registerComponent(appName, () =>App);
+AppRegistry.registerComponent(appName, () =>EditProfile);
 
 
-AppRegistry.registerComponent(appName, () => Profile);
 

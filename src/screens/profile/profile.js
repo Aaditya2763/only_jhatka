@@ -16,16 +16,13 @@ import logOutIcon from '../../assets/icons/profileIcon/logOutIcon.png';
 import icon from '../../assets/icons/profileIcon/leftIcon.png';
 import WalletIcon from '../../assets/icons/BankIcons/walletIcon.png';
 
-
-import DetailsCard from "../../components/cards/detailsCard";
 import NetBankingCard from "../../components/cards/netBankingCard";
 import LogoutCard from "../../components/cards/logoutCard";
 import { user } from "../../redux/user/userSlice";
 import { useSelector } from 'react-redux';
 
 import DetailsCard from '../../components/cards/detailsCard';
-import NetBankingCard from '../../components/cards/netBankingCard';
-import LogoutCard from '../../components/cards/logoutCard';
+
 import {useNavigation} from '@react-navigation/native';
 
 

@@ -1,7 +1,8 @@
 // // import Liberry
 // import 'react-native-gesture-handler';
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
+
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import StackNaviagtion from './src/navigation/StackNavigation/stackNavigation';
 import BottomNaviagtion from './src/navigation/BottomNavigation/bottomNavigation';
@@ -20,21 +21,19 @@ import Home from './src/screens/bottomScreen/home';
 import EditProfile from './src/screens/profile/editProfile';
 
 // if you want to switch Stack navigation change const isLogin = false;
-const isLogin = true;
-const Loading = () => {};
+const isLogin = false;
+const Loading = ({}) => {};
 const App = () => {
+  
   return (
     <Provider store={store}>
       <SafeAreaProvider>
         <NavigationContainer>
           {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
         </NavigationContainer>
-      </SafeAreaProvider>
-      {/* <CartItemWithoutCoupon/>
-    <CartitemDetails /> */}
+      </SafeAreaProvider> 
+    
 
-    {/* <Home/> */}
-    <EditProfile/>
 
     </Provider>
   );
