@@ -17,6 +17,7 @@ import { store } from './src/redux/store';
 import CartItemWithoutCoupon from './src/screens/cart/cartItemWithoutCoupon';
 import CartitemDetails from './src/components/cart/CartItemDetails';
 import Home from './src/screens/bottomScreen/home';
+import EditProfile from './src/screens/profile/profile';
 
 // if you want to switch Stack navigation change const isLogin = false;
 const isLogin = true;
@@ -26,10 +27,10 @@ const App = () => {
     <Provider store={store}>
     {/* <NavigationContainer>
       {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
-    </NavigationContainer> */}
-    {/* <CartItemWithoutCoupon/>
-    <CartitemDetails /> */}
-    <Home/>
+    </NavigationContainer> 
+     */}
+     <EditProfile/>
+
     </Provider>
   );
 };

@@ -31,10 +31,10 @@ const OtpScreen = () => {
           </Text>
         </View>
         <View style={styles.inputContainer}>
-          <OtpVerification style={styles.otpBox} otp={otp} />
-          <Text style={styles.resendButton}>Resend OTP</Text>
+          <OtpVerification style={styles.otpBox} otp={otp}   />
+          {/* <Text style={styles.resendButton}>Resend OTP</Text> */}
         </View>
-        <PrimaryButton buttonTitle={'Verify OTP'} onPress={onSubmit()} />
+         {/* <PrimaryButton buttonTitle={'Verify OTP'}  /> */}
       </View>
     </SafeAreaView>
   );
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 170,
     alignItems: 'center',
+    marginTop:35,
   },
   input: {
     width: 319,

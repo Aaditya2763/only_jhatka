@@ -17,12 +17,16 @@ import LogoutCard from "../../components/cards/logoutCard";
 import UPICard from "../../components/cards/Upicard";
 import PrimaryButton from "../../constants/ui/button/primaryButton";
 
-
+import { useSelector } from 'react-redux';
+import { user } from '../../redux/user/userSlice';
 
 //importing images 
 
 
 const EditProfile = ({ onPress }) => {
+  const User=useSelector(user);
+  console.log("hello ndjfjgfbdkj");
+ 
     return (
         <View style={styles.container}>
             <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
