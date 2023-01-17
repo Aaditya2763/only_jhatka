@@ -27,11 +27,11 @@ const App = () => {
   
   return (
     <Provider store={store}>
-    {/* <NavigationContainer>
+    <NavigationContainer>
       {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
     </NavigationContainer> 
-     */}
-     <EditProfile/>
+    
+     {/* <EditProfile/> */}
 
     </Provider>
   );
