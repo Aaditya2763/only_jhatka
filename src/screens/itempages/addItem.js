@@ -1,12 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View, StatusBar} from 'react-native';
 //importing components
-import HeaderTitle from "../../constants/ui/title/headerTitle";
-import IconButton from "../../constants/ui/button/iconButton";
-import Title from "../../constants/ui/title/title";
-import PrimaryButton from "../../constants/ui/button/primaryButton";
-import CustomiseItemButton from "../../constants/ui/button/customiseItemButton";
-import VectorImages from "../../components/VectorImages/vectorImages";
+import HeaderTitle from '../../constants/ui/title/headerTitle';
+import IconButton from '../../constants/ui/button/iconButton';
+import Title from '../../constants/ui/title/title';
+import PrimaryButton from '../../constants/ui/button/primaryButton';
+import CustomiseItemButton from '../../constants/ui/button/customiseItemButton';
+import VectorImages from '../../components/VectorImages/vectorImages';
 import ProductWithNameImageOnly from '../../components/Product/productwWthNameImageOnly';
 //importing images
 import backButton from '../../assets/images/backButton.png';
@@ -14,35 +14,38 @@ import Chikcen from '../../assets/images/chicken.png';
 import ChickenLegs from '../../assets/images/itemImages/chickenLegs.png';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Color} from '../../constants/style/style';
-import { ScrollView } from 'react-native-gesture-handler';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const AddItem = () => {
-    return (
-        <SafeAreaView>
-        <View style={styles.container}>
-            <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
-            <View style={styles.HeaderBox}>
-               <IconButton source={backButton} style={styles.icon}/>
-                <HeaderTitle title={"Chicken"} style={styles.Header}  />
-            </View>
-            <View style={styles.imageContainer}>
-            <VectorImages source={ChickenLegs} style={styles.image}/>
-            <View style={styles.itemDescription}>
-            <HeaderTitle title={"Chicken Legs"} style={styles.itemName}/>
-            
-            <Text style={styles.itemRating}>{"4.6"}⭐</Text>
-            <HeaderTitle title={"Rs. 550"}  style={styles.itemPrice}/>
-            
-            </View>
-            <Text style={styles.Description}>
-                {"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est+more...."}
-            </Text>
-            <PrimaryButton buttonTitle={" -  Add to Cart  +"} style={styles.addtoCartButton}/>
-            </View>
-    
-            <VectorImages source={ChickenLegs} style={styles.itemimage}/>
+  return (
+    <SafeAreaView>
+      <View style={styles.container}>
+        <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
+        <View style={styles.HeaderBox}>
+          <IconButton source={backButton} style={styles.icon} />
+          <HeaderTitle title={'Chicken'} style={styles.Header} />
         </View>
-    
+        <View style={styles.imageContainer}>
+          <VectorImages source={ChickenLegs} style={styles.image} />
+          <View style={styles.itemDescription}>
+            <HeaderTitle title={'Chicken Legs'} style={styles.itemName} />
+
+            <Text style={styles.itemRating}>{'4.6'}⭐</Text>
+            <HeaderTitle title={'Rs. 550'} style={styles.itemPrice} />
+          </View>
+          <Text style={styles.Description}>
+            {
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est+more....'
+            }
+          </Text>
+          <PrimaryButton
+            buttonTitle={' -  Add to Cart  +'}
+            style={styles.addtoCartButton}
+          />
+        </View>
+
+        <VectorImages source={ChickenLegs} style={styles.itemimage} />
+      </View>
     </SafeAreaView>
   );
 };
@@ -88,11 +91,10 @@ const styles = StyleSheet.create({
     aspectRatio: 1.1,
   },
   itemDescription: {
-    width:150,
+    width: 150,
     margin: -50,
-    marginLeft:20,
+    marginLeft: 20,
 
-  
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -126,8 +128,6 @@ const styles = StyleSheet.create({
     width: 120,
     height: 30,
     textAlign: 'right',
-  
-    
   },
   Description: {
     fontFamily: 'Poppins-Medium',
@@ -151,9 +151,6 @@ const styles = StyleSheet.create({
     resizeMode: 'center',
     aspectRatio: 1.1,
   },
-  
 });
-
-
 
 export default AddItem;

@@ -1,3 +1,4 @@
+
 import { configureStore } from "@reduxjs/toolkit";
 import couterSlice from "./counter/couterSlice";
 import carouselSlice from "./carousel/carouselSlice";

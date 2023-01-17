@@ -1,15 +1,14 @@
 import React from 'react';
 import {View, StyleSheet, Image, TextInput} from 'react-native';
 
-const NetBAnkingSearchBar = ({style,placeholder}) => {
+const NetBAnkingSearchBar = ({style, placeholder}) => {
   return (
-    <View style={[styles.container,style]}>
+    <View style={[styles.container, style]}>
       <Image
         source={require('../../assets/icons/searchicon.png')}
         style={styles.img}
       />
       <TextInput placeholder={placeholder} style={styles.inputBox} />
-      
     </View>
   );
 };
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
     fontFamily: 'poppins',
     fontWeight: '400',
     padding: 5,
-    marginRight:70,
+    marginRight: 70,
     borderLeftColor: 'black',
     borderLeftWidth: 2,
   },
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     padding: 10,
-    marginLeft:15,
+    marginLeft: 15,
   },
 });
 

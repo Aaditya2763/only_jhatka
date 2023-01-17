@@ -1,11 +1,18 @@
 //import liraries
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
 import {Color} from '../../constants/style/style';
 import Chikcen from '../../assets/images/chicken.png';
 import Title from '../../constants/ui/title/title';
+import {
+  responsiveScreenFontSize,
+  responsiveScreenHeight,
+  responsiveScreenWidth,
+} from 'react-native-responsive-dimensions';
 
 // create a component
+const {height, width} = Dimensions.get('screen');
+
 const ProductItem = ({image, title, weight, point, price, style}) => {
   return (
     <View style={[styles.container, style]}>
@@ -29,8 +36,11 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     backgroundColor: Color.white,
-    height: 190,
-    width: 150,
+    // height: 190,
+    height: responsiveScreenHeight(25.17),
+    // height: height - 580,
+    // width: 150,
+    width: responsiveScreenWidth(40),
     borderRadius: 20,
     elevation: 5,
     margin: 15,

@@ -1,5 +1,5 @@
 //import libraries
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, StatusBar} from 'react-native';
 
 import VectorImages from '../components/VectorImages/vectorImages';
@@ -11,10 +11,8 @@ import OtpVerification from '../components/OtpVerification/otpVerification';
 
 // create a component
 const OtpScreen = () => {
-  otp=1234;
+  let otp = 1234;
 
-
-  
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
@@ -72,11 +70,9 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   image: {
-  
     marginTop: 10,
     width: 238,
     height: 310,
-    
   },
   headerStyle: {
     marginTop: 20,
@@ -92,8 +88,8 @@ const styles = StyleSheet.create({
     color: 'black',
     fontFamily: 'Poppins-Medium',
   },
-  otpBox:{
-marginTop:-20,
+  otpBox: {
+    marginTop: -20,
   },
   resendButton: {
     fontSize: 14,
