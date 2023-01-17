@@ -14,15 +14,15 @@ const WelcomeScreenNameInput = ({source, title, placeholder, style}) => {
 
   return (
     <View style={[styles.container, style]}>
-      <Image source={source} style={[styles.image]} />
+      {/* <Image source={source} style={[styles.image]} />
       <TextInput
         placeholder={placeholder}
         style={styles.input}
         placeholderTextColor={'grey'}
         underlineColorAndroid={'transparent'}
         textAlign="left"
-      />
-      <View style={[styles.container, style]}>
+      /> */}
+      {/* <View style={[styles.container, style]}> */}
         <Image source={source} style={[styles.image]} />
         <TextInput
           placeholder={placeholder}
@@ -31,7 +31,7 @@ const WelcomeScreenNameInput = ({source, title, placeholder, style}) => {
           onChangeText={value => setTextInputName(value)}>
           {title}
         </TextInput>
-      </View>
+      {/* </View> */}
     </View>
   );
 };
