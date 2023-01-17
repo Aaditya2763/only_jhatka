@@ -34,7 +34,6 @@ import addVoucher from './src/screens/voucher/addVoucher';
 import addMoney from './src/screens/voucher/addMoney';
 import AddAddress from './src/screens/addAddress/addAddress';
 import CouponCard from './src/components/coupon/couponCard';
-import AddaddressMapSceen from './src/screens/mapsScreen/addMapScreens';
 
 import WelcomeScreen from './src/screens/welcomeScreen';
 
@@ -43,6 +42,7 @@ import StackNaviagtion from './src/navigation/StackNavigation/stackNavigation';
 import BottomNavBar from './src/components/Bottom Navbar/BottonNavBar';
 import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
 import OtpScreen from './src/screens/otpScreen';
+import AddaddressMapSceen from './src/screens/mapsScreen/addMapScreens';
 
-AppRegistry.registerComponent(appName, () =>App);
+AppRegistry.registerComponent(appName, () =>App );
 
