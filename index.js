@@ -44,9 +44,5 @@ import BottomNavBar from './src/components/Bottom Navbar/BottonNavBar';
 import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
 import OtpScreen from './src/screens/otpScreen';
 
-<<<<<<< HEAD
 AppRegistry.registerComponent(appName, () =>App);
 
-=======
-AppRegistry.registerComponent(appName, () => App);
->>>>>>> main
