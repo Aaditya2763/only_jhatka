@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Image, TextInput} from 'react-native';
 import {Color} from '../../constants/style/style';
 
-const WelcomeScreenPhoneNumInp = ({source, placeholder, title,style}) => {
-  const [textInputphoneNo, setTextInputphoneNo] = useState('');
+const WelcomeScreenPhoneNumInp = ({source, placeholder, title,style,phoneNo,setPhoneNo}) => {
+  // const [textInputphoneNo, setTextInputphoneNo] = useState('');
   
   const checkInput = () => {
-    if (textInputphoneNo =='' ||textInputphoneNo.length<10) {
+    if (phoneNo =='' || phoneNo.length<10 ) {
       alert('Please Enter valid Number');
       return;
     }
@@ -17,8 +17,10 @@ const WelcomeScreenPhoneNumInp = ({source, placeholder, title,style}) => {
         <TextInput
           placeholder={placeholder}
           style={styles.input}
-          onEndEditing={checkInput}
-          onChangeText={value => setTextInputphoneNo(value)}>
+          keyboardType="numeric"
+          maxLength={10}
+          onChangeText={value => setPhoneNo(value)}
+          onEndEditing={checkInput}>
       
           {title}
         </TextInput>

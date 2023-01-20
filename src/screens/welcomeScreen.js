@@ -1,5 +1,8 @@
 //import libraries
-import React from 'react';
+import React,{useState}from 'react';
+import { useDispatch } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
+import { createUser } from '../redux/user/userSlice';
 import {
   View,
   Text,
@@ -18,11 +21,32 @@ import PrimaryButton from '../constants/ui/button/primaryButton';
 import HeaderTitle from '../constants/ui/title/headerTitle';
 import WelcomeScreenNameInput from '../components/welcomeScreenInput/welcomeScreenNameInput';
 import WelcomeScreenPhoneNumInp from '../components/welcomeScreenInput/welcomeScreenPhoneNumInp';
+
 // import Title from '../constants/ui/title/title';
 
 // create a component
 const WelcomeScreen = ({navigation}) => {
   const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 0;
+  const [textInputName, setTextInputName] = useState('');
+  const [textInputphoneNo, setTextInputphoneNo] = useState('');
+  const dispatch = useDispatch();
+  const onSubmit=()=>{
+    if(textInputName &&textInputphoneNo){
+      dispatch(
+        createUser(textInputName,textInputphoneNo,id=nanoid())
+        
+      )
+      setTextInputName('')
+      setTextInputphoneNo('')
+      // console.log(textInputName,textInputphoneNo,id)
+      
+      
+       navigation.navigate('OtpScreen')
+    }
+    else{
+      alert("please enter valid credentials")
+    }
+  }
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
@@ -42,19 +66,23 @@ const WelcomeScreen = ({navigation}) => {
             </View>
             <View style={styles.inputContainer}>
               <WelcomeScreenNameInput
+              name={textInputName}
+              setName={setTextInputName}
                 source={require('../assets/images/user.png')}
                 placeholder="Enter your name"
               />
               <WelcomeScreenPhoneNumInp
                 source={require('../assets/images/phone.png')}
                 placeholder="Enter your mobile number"
+                phoneNo={textInputphoneNo}
+                setPhoneNo={setTextInputphoneNo}
               />
               {/* <TextInput placeholder='Enter your Mobile Number' keyboardType='numeric' maxLength={10} style={styles.input} /> */}
             </View>
             <PrimaryButton
               buttonTitle={'Continue'}
-        
-                onPress={() => navigation.navigate('OtpScreen')}
+        onPress={onSubmit}
+                // onPress={() => navigation.navigate('OtpScreen')}
             
             />
           </View>

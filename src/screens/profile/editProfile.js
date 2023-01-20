@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, {useState, useLayoutEffect } from 'react';
 import {
   View,
   StatusBar,
@@ -25,18 +25,38 @@ import UPICard from '../../components/cards/Upicard';
 import PrimaryButton from '../../constants/ui/button/primaryButton';
 import { useNavigation } from '@react-navigation/native';
 
-import { useSelector } from 'react-redux';
-import { user } from '../../redux/user/userSlice';
+import { useSelector,useDispatch } from 'react-redux';
+import { updateUserData, user } from '../../redux/user/userSlice';
 
 //importing images 
 
 
 const EditProfile = ({ onPress }) => {
   const userData = useSelector(user);
-  const data = userData[0];
-  //  console.log(data.phoneno)
+  const dispatch=useDispatch();
+   const data = userData[0];
+  //  console.log(data)
+  const [textInputName, setTextInputName] = useState('');
+  const [textInputphoneNo, setTextInputphoneNo] = useState('');
+const onSubmit=(id)=>{
+ const owner=userData.find(users=>data.id===id);
+ if( textInputName,textInputphoneNo){
+  dispatch(
+    updateUserData(
+      owner.userName=textInputName,
+      owner.phoneNo=textInputphoneNo,
+    )
+  
+    
+  )
+ 
+ }
+ else{
+  alert("please enter valid credentials")
+}
 
-
+console.log(userData)
+}
 
   return (
     <View style={styles.container}>
@@ -50,7 +70,15 @@ const EditProfile = ({ onPress }) => {
       {
         userData.map((item) => {
           return (
-            <WelcomeScreenNameInput source={User} placeholder={"Enter your Name *"} title={item.userName} style={{ alignSelf: "center" }} key={item.id} />
+            <WelcomeScreenNameInput 
+            name={textInputName}
+            setName={setTextInputName}
+            source={User} 
+            placeholder={"Enter your Name *"} 
+            title={item.userName} 
+            style={{ alignSelf: "center" }} 
+            key={item.id} />
+           
             // <WelcomeScreenPhoneNumInp source={phone} placeholder={"Enter your Phone Number *"} title={data.phoneno} />
           )
         })
@@ -59,7 +87,13 @@ const EditProfile = ({ onPress }) => {
         userData.map((item) => {
           return (
             // <WelcomeScreenNameInput source={User} placeholder={"Enter your Name *"} title={item.userName} style={{ alignSelf: "center" }}  />
-            <WelcomeScreenPhoneNumInp source={phone} placeholder={"Enter your Phone Number *"} title={item.phoneno} key={item.id} />
+            <WelcomeScreenPhoneNumInp 
+            source={phone} 
+            phoneNo={textInputphoneNo}
+            setPhoneNo={setTextInputphoneNo}
+            placeholder={"Enter your Phone Number *"}
+             title={item.phoneno} 
+            key={item.id} />
           )
         })
       }
@@ -81,7 +115,10 @@ const EditProfile = ({ onPress }) => {
 
 
       </View>
-      <PrimaryButton buttonTitle={"confirm"} style={styles.btn} />
+      <PrimaryButton
+       buttonTitle={"confirm"} 
+      style={styles.btn} 
+      onPress={onSubmit(data.id)}/>
     </View>
   )
 }

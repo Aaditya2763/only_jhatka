@@ -45,5 +45,5 @@ import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
 import OtpScreen from './src/screens/otpScreen';
 import CartitemDetails from './src/components/cart/CartItemDetails';
 
-AppRegistry.registerComponent(appName, () =>OtpScreen);
+AppRegistry.registerComponent(appName, () =>App);
 
