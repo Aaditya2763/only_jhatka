@@ -6,7 +6,7 @@ import {Color} from '../../constants/style/style';
 const WelcomeScreenNameInput = ({source, title, placeholder, style}) => {
   const [textInputName, setTextInputName] = useState('');
   const checkInput = () => {
-    if (textInputName.trim() === '') {
+    if (textInputName == '' ||textInputName.length<3) {
       alert('Please Enter valid Name');
       return;
     }
@@ -14,24 +14,16 @@ const WelcomeScreenNameInput = ({source, title, placeholder, style}) => {
 
   return (
     <View style={[styles.container, style]}>
-      <Image source={source} style={[styles.image]} />
-      <TextInput
-        placeholder={placeholder}
-        style={styles.input}
-        placeholderTextColor={'grey'}
-        underlineColorAndroid={'transparent'}
-        textAlign="left"
-      />
-      <View style={[styles.container, style]}>
+      
         <Image source={source} style={[styles.image]} />
         <TextInput
           placeholder={placeholder}
           style={styles.input}
-          onPress={checkInput()}
+          onEndEditing={checkInput}
           onChangeText={value => setTextInputName(value)}>
           {title}
         </TextInput>
-      </View>
+    
     </View>
   );
 };

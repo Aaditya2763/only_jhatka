@@ -23,7 +23,7 @@ const DashboardScreen = () => {
   //    console.log(JSON.stringify(data));
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor:Color.white}}>
       <View style={styles.container}>
         <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
         <View>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   carousel: {
     marginTop: -30,
-    height: 200,
+    height: 180,
   },
 });
 

@@ -11,6 +11,7 @@ import {
 //importing redux components
 import {useSelector, useDispatch} from 'react-redux';
 import {increment, decrement} from '../../redux/counter/couterSlice';
+
 //importing components
 import HeaderTitle from '../../constants/ui/title/headerTitle';
 import IconButton from '../../constants/ui/button/iconButton';
@@ -29,56 +30,74 @@ const CartitemDetails = ({onPress}) => {
   const Count = useSelector(state => state.counter.count);
   const dispatch = useDispatch();
 
-  const CartitemDetails = () => {
     return (
       <View>
-        <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
-        <View style={styles.HeaderBox}>
-          <IconButton source={backButton} style={styles.icon} />
-          <HeaderTitle title={' Your Cart'} style={styles.Header} />
+          <View >
+            <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
+            <View style={styles.HeaderBox}>
+                <IconButton source={backButton} style={styles.icon} />
+                <HeaderTitle title={" Your Cart"} style={styles.Header} />
+            </View>
+            <HeaderTitle title={"Cart"} style={styles.CartHeading} />
+            <View style={styles.Itemcontainer}>
+                <View style={styles.itemImg}>
+                    <Image source={require('../../assets/images/itemImages/chickenLegs.png')} style={styles.img} />
+                </View>
+                <View style={styles.itemDesc}>
+                    <View style={styles.itemTitle}>
+                        <Text style={styles.title}>chicken Legs</Text>  
+                         <Pressable
+                            onPress={onPress}
+                            style={({ pressed }) => pressed && styles.pressed}>
+                            <View style={styles.ImageBox}>
+                                <Image source={require('../../assets/icons/lightdelBtn.png')} style={styles.delBtn} />
+                            </View>
+                        </Pressable>
+                    </View>
+                    <View style={styles.serve}>
+                        <Text>4 Pieces | </Text>
+                        <Text>500 gms | </Text>
+                        <Text>Serves 2</Text>
+                    </View >
+                    
+                    <View style={styles.btnSection}>
+                    <View style={styles.btnBox} >
+                     
+                            {/* <PrimaryButton buttonTitle={"+    "} style={styles.button} /> */}
+                            <Pressable
+                                onPress={onPress}
+                                style={({ pressed }) => pressed && styles.pressed}>
+                                <Text style={styles.itemQuantity} onPress={() => dispatch(increment())}>+ </Text>
+                            </Pressable>
+                            <Pressable
+                                onPress={onPress}
+                                style={({ pressed }) => pressed && styles.pressed}>
+                                <Text style={styles.itemQuantity}>{Count}</Text>
+                            </Pressable>
+                            <Pressable
+                                onPress={onPress}
+                                style={({ pressed }) => pressed && styles.pressed}>
+                                <Text style={styles.itemQuantity} onPress={() => dispatch(decrement())}> -</Text>
+                            </Pressable>
+                         
+                        </View>
+                        <Title title={"Rs." + `${Count * 550}`} style={styles.price} />
+                        </View>
+                    </View>
+                </View>
+            </View>
         </View>
-        <HeaderTitle title={'Cart'} style={styles.CartHeading} />
-        <View style={styles.Itemcontainer}>
-          <View style={styles.itemImg}>
-            <Image
-              source={require('../../assets/images/itemImages/chickenLegs.png')}
-              style={styles.img}
-            />
-          </View>
-          <View style={styles.itemDesc}>
-            <View style={styles.itemTitle}>
-              <Text style={styles.title}>chicken Legs</Text>
-              <View style={styles.ImageBox}>
-                <Image
-                  source={require('../../assets/icons/lightdelBtn.png')}
-                  style={styles.delBtn}
-                />
-              </View>
-            </View>
-            <View style={styles.serve}>
-              <Text>4 Pieces | </Text>
-              <Text>500 gms | </Text>
-              <Text>Serves 2</Text>
-            </View>
-
-            <View style={styles.btnSection}>
-              <PrimaryButton buttonTitle={'+  1  -'} style={styles.button} />
-              <Title title={'Rs. 550'} style={styles.price} />
-            </View>
-          </View>
-        </View>
-      </View>
     );
   };
 
   const styles = StyleSheet.create({
     container: {
-      height: '100%',
+      height: "100%",
       backgroundColor: Color.white,
       elevation: 1,
       borderRadius: 10,
-    },
-    Itemcontainer: {
+  },
+  Itemcontainer: {
       width: 340,
       height: 120,
       alignSelf: 'center',
@@ -89,13 +108,13 @@ const CartitemDetails = ({onPress}) => {
       elevation: 2,
       marginTop: 20,
       borderRadius: 10,
-    },
-    HeaderBox: {
+  },
+  HeaderBox: {
       width: '100%',
       height: 30,
       flexDirection: 'row',
-    },
-    ImageBox: {
+  },
+  ImageBox: {
       width: 35,
       height: 25,
       borderRadius: 2,
@@ -104,108 +123,143 @@ const CartitemDetails = ({onPress}) => {
       alignItems: 'center',
       marginLeft: 20,
       marginTop: -10,
-    },
-    icon: {
+  },
+  icon: {
       width: 22,
       height: 16,
       fontSize: 12,
       marginTop: -30,
-    },
-    Header: {
+
+
+
+  },
+  Header: {
       fontFamily: 'Poppins-Medium',
       fontWeight: '500',
       fontSize: 18,
       lineHeight: 30,
       marginLeft: 10,
-    },
+  },
 
-    CartHeading: {
+  CartHeading: {
       fontFamily: 'Poppins-Medium',
-      width: '100%',
+      width: "100%",
       height: 70,
-      //   height: 20,
+      height: 20,
 
-      backgroundColor: 'white',
+      backgroundColor: "white",
       fontWeight: '500',
       lineHeight: 27,
       fontSize: 18,
       textAlign: 'left',
       marginLeft: 15,
       marginTop: 5,
-    },
-    itemImg: {
+  },
+  itemImg: {
       width: 90,
       height: 88,
-    },
-    itemDesc: {
+
+
+  },
+  itemDesc: {
       width: 210,
       height: 86,
       flexDirection: 'column',
-    },
-    itemTitle: {
+
+  },
+  itemTitle: {
       width: 100,
       height: 100,
       flexDirection: 'row',
       justifyContent: 'space-between',
-    },
-    title: {
+  },
+  title: {
       width: 150,
       fontSize: 18,
       fontFamily: 'Poppins',
-      color: 'black',
+      color: "black",
       height: 25,
 
-      fontWeight: '500',
+      fontWeight: "500",
       lineHeight: 27,
-      //   fontSize: 18,
-    },
-    delBtn: {
+      fontSize: 18,
+  },
+  delBtn: {
       alignSelf: 'center',
       marginTop: 5,
-    },
-    img: {
+
+  },
+  img: {
       width: 90,
       height: 90,
       resizeMode: 'stretch',
       borderRadius: 15,
       marginLeft: 5,
-    },
-    serve: {
+
+  },
+  itemQuantity: {
+      width: 40,
+      color: "white",
+      fontFamily: 'Poppins-Medium',
+      fontWeight: '500',
+      fontSize: 18,
+      textAlign: 'center',
+      lineHeight: 30,
+
+  },
+  serve: {
       width: 200,
       height: 25,
       flexDirection: 'row',
       fontFamily: 'Poppins',
-      fontStyle: 'normal',
-      fontWeight: '500',
+      fontStyle: "normal",
+      fontWeight: "500",
       fontSize: 12,
       marginTop: -75,
-    },
-    button: {
-      width: 70,
+  },
+  button: {
+      width: 30,
       height: 25,
       fontSize: 10,
-      marginLeft: 10,
-      marginTop: 2,
-    },
-    price: {
+
+      justifyContent: 'center',
+
+  },
+  btnBox: {
+      width: 80,
+      borderWidth: 1,
+      height: 28,
+      justifyContent: 'center',
+      borderWidth: 1,
+      borderRadius: 10,
+      marginLeft: -10,
+      borderColor: Color.primaryColor,
+      backgroundColor: Color.primaryColor,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-around',
+  },
+  price: {
       width: 100,
       heigth: 35,
-      fontWeight: '700',
+      fontWeight: "700",
       fontSize: 18,
       marginTop: 2,
-      //   fontSize: 22,
-      fontFamily: 'Poppins',
+      fontSize: 22,
+      fontFamily: "Poppins",
       color: 'black',
       lineHeight: 27,
-    },
-    btnSection: {
-      width: 200,
+  },
+  btnSection: {
+      width: 220,
       height: 150,
       marginTop: 10,
       flexDirection: 'row',
       justifyContent: 'space-around',
-    },
-  });
-};
+  }, pressed: {
+      opacity: 0.75,
+  },
+});
+
 
 export default CartitemDetails;

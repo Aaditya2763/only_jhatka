@@ -44,10 +44,12 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     elevation: 5,
     margin: 15,
+    marginTop:-30,
   },
   titleStyle: {
     color: Color.dark,
     fontSize: 14,
+ 
     fontWeight: '600',
     marginRight: 14,
   },

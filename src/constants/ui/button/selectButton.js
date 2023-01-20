@@ -47,12 +47,14 @@ const styles = StyleSheet.create({
     elevation: 5,
     shadowOffset: {height: 2, width: 3},
     shadowColor: Color.dark,
-    margin: 23,
+    margin: 10,
+    // borderWidth:1,
   },
   internalView: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    // justifyContent: 'space-evenly',
     alignItems: 'center',
+    justifyContent:'center',
     // borderWidth: 0.1,
 
     borderRadius: 10,
@@ -71,6 +73,7 @@ const styles = StyleSheet.create({
     marginRight: horizontalScale(20.14),
     fontSize: moderateScale(13),
     fontWeight: '700',
+  
   },
   pressed: {
     opacity: 0.9,
