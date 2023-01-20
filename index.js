@@ -44,5 +44,5 @@ import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
 import OtpScreen from './src/screens/otpScreen';
 import AddaddressMapSceen from './src/screens/mapsScreen/addMapScreens';
 
-AppRegistry.registerComponent(appName, () =>App );
+AppRegistry.registerComponent(appName, () =>CartItemWithCoupon );
 
