@@ -11,8 +11,13 @@ import {ScrollView} from 'react-native-gesture-handler';
 import NotificationCard from '../../components/cards/notificationCard';
 import HeaderTitle from '../../constants/ui/title/headerTitle';
 import {useNavigation} from '@react-navigation/native';
+import { allNotifications } from "../../redux/notification/notificationSlice";
+import notificationSlice from '../../redux/notification/notificationSlice';
+import { useSelector } from 'react-redux';
 
+  
 const WalletWithJhatkaWallet = () => {
+  const Notifications = useSelector(allNotifications);
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -21,8 +26,8 @@ const WalletWithJhatkaWallet = () => {
         backgroundColor={'white'}
         style={styles.bar}
       />
-      {/* <TitleWithBackBtn title={'Jhatka Wallets'} /> */}
 
+ <ScrollView>
       <VoucherCard
         source={VoucherImage}
         title={'Total Wallet balance'}
@@ -40,10 +45,14 @@ const WalletWithJhatkaWallet = () => {
         onPress={() => navigation.navigate('addVoucher')}
       />
       <HeaderTitle title={'Transection History'} style={styles.title} />
-      <ScrollView>
-        <NotificationCard />
-        <NotificationCard />
-        <NotificationCard />
+     
+      {
+          Notifications.map((notification) => {
+            return (
+              <NotificationCard title={notification.title} key={notification.id} />
+            )
+          })
+        }
       </ScrollView>
     </View>
   );

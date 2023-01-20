@@ -53,7 +53,9 @@ const WelcomeScreen = ({navigation}) => {
             </View>
             <PrimaryButton
               buttonTitle={'Continue'}
-              onPress={() => navigation.navigate('OtpScreen')}
+        
+                onPress={() => navigation.navigate('OtpScreen')}
+            
             />
           </View>
         </ScrollView>

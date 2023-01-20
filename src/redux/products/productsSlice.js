@@ -14,7 +14,7 @@ const initialState = [
   {
     title: 'Mutton',
     image: Chiken,
-    price: 150,
+    price: 160,
     weight: 500,
     point: 4.6,
     uri: require('../../assets/images/carouselimg.png'),

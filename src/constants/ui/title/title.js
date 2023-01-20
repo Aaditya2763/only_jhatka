@@ -5,6 +5,7 @@ import {
   horizontalScale,
   verticalScale,
 } from '../../../../testComponent/metrices';
+import { Color } from '../../style/style';
 
 // create a component
 const Title = ({title, style}) => {
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: verticalScale(20),
     textAlign: 'center',
-    color: 'black',
+    color:"black",
     opacity: 0.5,
     fontFamily: 'Poppins-Medium',
   },

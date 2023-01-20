@@ -15,7 +15,7 @@ import BillSlip from '../../components/BillSlip';
 import CouponCard from '../../components/coupon/couponCard';
 import BottomProceedBtnWithPrice from '../../constants/ui/button/BottomProceedBtnWIthPrice';
 
-const CartItemWithoutCoupon = () => {
+const CartItemWithCoupon = () => {
   return (
     <SafeAreaView style={styles.container}>
       <CartitemDetails />
@@ -79,4 +79,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CartItemWithoutCoupon;
+export default CartItemWithCoupon;

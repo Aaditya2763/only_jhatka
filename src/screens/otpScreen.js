@@ -1,9 +1,9 @@
 //import libraries
-import React, {useState} from 'react';
-import {View, Text, StyleSheet, SafeAreaView, StatusBar} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, SafeAreaView, StatusBar } from 'react-native';
 
 import VectorImages from '../components/VectorImages/vectorImages';
-import {Color} from '../constants/style/style';
+import { Color } from '../constants/style/style';
 import PrimaryButton from '../constants/ui/button/primaryButton';
 import HeaderTitle from '../constants/ui/title/headerTitle';
 
@@ -29,10 +29,10 @@ const OtpScreen = () => {
           </Text>
         </View>
         <View style={styles.inputContainer}>
-          <OtpVerification style={styles.otpBox} otp={otp}   />
+          <OtpVerification style={styles.otpBox} otp={otp} />
           {/* <Text style={styles.resendButton}>Resend OTP</Text> */}
         </View>
-         {/* <PrimaryButton buttonTitle={'Verify OTP'}  /> */}
+        {/* <PrimaryButton buttonTitle={'Verify OTP'}  /> */}
       </View>
     </SafeAreaView>
   );
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 170,
     alignItems: 'center',
-    marginTop:35,
+    marginTop: 35,
   },
   input: {
     width: 319,
