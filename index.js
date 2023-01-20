@@ -43,6 +43,7 @@ import StackNaviagtion from './src/navigation/StackNavigation/stackNavigation';
 import BottomNavBar from './src/components/Bottom Navbar/BottonNavBar';
 import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
 import OtpScreen from './src/screens/otpScreen';
+import CartitemDetails from './src/components/cart/CartItemDetails';
 
 AppRegistry.registerComponent(appName, () =>OtpScreen);
 
