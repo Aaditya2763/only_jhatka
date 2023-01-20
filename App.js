@@ -19,6 +19,7 @@ import CartItemWithoutCoupon from './src/screens/cart/cartItemWithoutCoupon';
 import CartitemDetails from './src/components/cart/CartItemDetails';
 import Home from './src/screens/bottomScreen/home';
 import EditProfile from './src/screens/profile/profile';
+import CartItemWithCoupon from './src/screens/cart/cartItemWithCoupon';
 
 // if you want to switch Stack navigation change const isLogin = false;
 const isLogin = false;
@@ -27,10 +28,11 @@ const App = () => {
   
   return (
     <Provider store={store}>
-    <NavigationContainer>
+    {/* <NavigationContainer>
       {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
-    </NavigationContainer> 
+    </NavigationContainer>  */}
     
+  <CartItemWithoutCoupon/>
      {/* <EditProfile/> */}
 
     </Provider>
