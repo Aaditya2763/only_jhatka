@@ -16,11 +16,8 @@ import CouponCard from '../../components/coupon/couponCard';
 import BottomProceedBtnWithPrice from '../../constants/ui/button/BottomProceedBtnWIthPrice';
 
 const CartItemWithCoupon = () => {
-<<<<<<< HEAD
-=======
   const Count = useSelector(state => state.counter.count);
  
->>>>>>> main
   return (
     <SafeAreaView style={styles.container}>
       <CartitemDetails />

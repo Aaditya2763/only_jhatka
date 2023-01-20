@@ -3,10 +3,10 @@ import {StyleSheet, View, Image, TextInput} from 'react-native';
 import {Color} from '../../constants/style/style';
 // import {Icon} from 'react-native-vector-icons/FontAwesome';
 
-const WelcomeScreenNameInput = ({source, title, placeholder, style}) => {
-  const [textInputName, setTextInputName] = useState('');
+const WelcomeScreenNameInput = ({source, title, placeholder, style,name,setName}) => {
+  // const [textInputName, setTextInputName] = useState('');
   const checkInput = () => {
-    if (textInputName == '' ||textInputName.length<3) {
+    if (name ==''|| name.length<3) {
       alert('Please Enter valid Name');
       return;
     }
@@ -20,7 +20,7 @@ const WelcomeScreenNameInput = ({source, title, placeholder, style}) => {
           placeholder={placeholder}
           style={styles.input}
           onEndEditing={checkInput}
-          onChangeText={value => setTextInputName(value)}>
+          onChangeText={value => setName(value)}>
           {title}
         </TextInput>
     

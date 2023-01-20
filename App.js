@@ -32,7 +32,7 @@ const App = () => {
       <NavigationContainer>
         {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
       </NavigationContainer>
-<CartItemWithCoupon/>
+
 
 
     </Provider>
