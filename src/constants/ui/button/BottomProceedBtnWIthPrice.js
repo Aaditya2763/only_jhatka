@@ -5,9 +5,9 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import HeaderTitle from '../title/headerTitle';
 import PrimaryButton from './primaryButton';
 
-const BottomProceedBtnWithPrice = ({title, buttontitle}) => {
+const BottomProceedBtnWithPrice = ({title, buttontitle,style}) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,style]}>
       <HeaderTitle title={title} style={styles.HeaderTitle} />
       <PrimaryButton buttonTitle={buttontitle} style={styles.Btn} />
     </View>

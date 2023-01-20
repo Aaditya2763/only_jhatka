@@ -29,9 +29,9 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      {/* <NavigationContainer>
+      <NavigationContainer>
         {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
-      </NavigationContainer> */}
+      </NavigationContainer>
 <CartItemWithCoupon/>
 
 
