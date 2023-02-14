@@ -27,6 +27,30 @@ const initialState = [
     point: 4.6,
     uri: require('../../assets/images/carouselimg.png'),
   },
+  {
+    title: 'Chiken',
+    image: Chiken,
+    price: 150,
+    weight: 500,
+    point: 4.6,
+    uri: require('../../assets/images/carouselimg.png'),
+  },
+  {
+    title: 'Chiken',
+    image: Chiken,
+    price: 150,
+    weight: 500,
+    point: 4.6,
+    uri: require('../../assets/images/carouselimg.png'),
+  },
+  {
+    title: 'Chiken',
+    image: Chiken,
+    price: 150,
+    weight: 500,
+    point: 4.6,
+    uri: require('../../assets/images/carouselimg.png'),
+  },
 ];
 
 export const productsSlice = createSlice({

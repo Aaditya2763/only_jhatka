@@ -6,6 +6,7 @@ import {
   FlatList,
   SafeAreaView,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import DashboardScreen from '../dashboardScreen';
 import {Color} from '../../constants/style/style';
@@ -14,6 +15,7 @@ import SelectButton from '../../constants/ui/button/selectButton';
 import ProductItem from '../../components/Product/productItem';
 import {ProductList} from '../../constants/models/categores/product';
 import Title from '../../constants/ui/title/title';
+import ChooseDeliveryScreen from '../deliveryScreen/chooseDeliveryScreen';
 //redux components
 import {useSelector} from 'react-redux';
 import {allproducts} from '../../redux/products/productsSlice';
@@ -32,7 +34,7 @@ const Home = () => {
       <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
       <View style={styles.container}>
         <View style={styles.subConatiner}>
-          <Title title={'Categories'} />
+          {/* <Title title={'Categories'} /> */}
         </View>
       </View>
       <View>
@@ -56,8 +58,8 @@ const Home = () => {
         <View>
           <FlatList
             data={product}
-            // numColumns={2}
-            horizontal={true}
+            numColumns={2}
+            horizontal={false}
             style={styles.product}
             renderItem={({item}) => (
               <ProductItem

@@ -1,7 +1,10 @@
 // // import Liberry
 // import 'react-native-gesture-handler';
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  NavigationContainer,
+  useNavigationContainerRef,
+} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import StackNaviagtion from './src/navigation/StackNavigation/stackNavigation';
 import BottomNaviagtion from './src/navigation/BottomNavigation/bottomNavigation';
@@ -10,7 +13,6 @@ import SplashScreen from './src/screens/splashScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {enableScreens} from 'react-native-screens';
 
-// create a component
 // import libbery
 import {Provider} from 'react-redux';
 import {store} from './src/redux/store';
@@ -21,12 +23,22 @@ import Home from './src/screens/bottomScreen/home';
 // if you want to switch Stack navigation change const isLogin = false;
 const isLogin = true;
 const Loading = () => {};
+
+const Stack = createNativeStackNavigator();
+const BootmStack = () => {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="bottomStack" component={BottomNaviagtion} />
+    </Stack.Navigator>
+  );
+};
 const App = () => {
   return (
     <Provider store={store}>
       <SafeAreaProvider>
         <NavigationContainer>
-          {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
+          {/* {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />} */}
+          {isLogin ? <BootmStack /> : <StackNaviagtion />}
         </NavigationContainer>
       </SafeAreaProvider>
       {/* <CartItemWithoutCoupon/>

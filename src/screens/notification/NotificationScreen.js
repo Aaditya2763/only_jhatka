@@ -6,6 +6,7 @@ import {
   StatusBar,
   Image,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 //importing components
 import TitleWithBackBtn from '../../constants/ui/title/titleWithBackBtn';
@@ -18,6 +19,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {Color} from '../../constants/style/style';
 import NotificationCard from '../../components/cards/notificationCard';
 import NotificationTitle from '../../constants/ui/title/NotificationTitle';
+import {useNavigation} from '@react-navigation/native';
 
 const NotificationScreen = () => {
   return (
@@ -37,6 +39,7 @@ const NotificationScreen = () => {
     </SafeAreaView>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     height: '100%',
