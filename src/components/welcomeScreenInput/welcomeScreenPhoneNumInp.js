@@ -2,26 +2,28 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Image, TextInput} from 'react-native';
 import {Color} from '../../constants/style/style';
 
-const WelcomeScreenPhoneNumInp = ({source, placeholder, style}) => {
-  const [textInputphoneNo, setTextInputphoneNo] = useState('');
+const WelcomeScreenPhoneNumInp = ({source, placeholder, title,style,phoneNo,setPhoneNo}) => {
+  // const [textInputphoneNo, setTextInputphoneNo] = useState('');
+  
   const checkInput = () => {
-    if (textInputphoneNo.trim() === '') {
-      alert('Please Enter valid Name');
+    if (phoneNo =='' || phoneNo.length<10 ) {
+      alert('Please Enter valid Number');
       return;
     }
   };
   return (
     <View style={[styles.container, style]}>
-      <Image source={source} style={styles.image} />
-      <TextInput
-        placeholder={placeholder}
-        keyboardType="numeric"
-        maxLength={10}
-        style={styles.input}
-        placeholderTextColor={Color.dark}
-        onChangeText={value => setTextInputphoneNo(value)}
-        onPress={checkInput()}
-      />
+       <Image source={source} style={[styles.image]} />
+        <TextInput
+          placeholder={placeholder}
+          style={styles.input}
+          keyboardType="numeric"
+          maxLength={10}
+          onChangeText={value => setPhoneNo(value)}
+          onEndEditing={checkInput}>
+      
+          {title}
+        </TextInput>
     </View>
   );
 };
@@ -30,7 +32,9 @@ const WelcomeScreenPhoneNumInp = ({source, placeholder, style}) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+   justifyContent: 'flex-start',
+    alignSelf: 'center',
+
     width: 300,
     height: 48,
     fontSize: 14,
@@ -41,30 +45,34 @@ const styles = StyleSheet.create({
     borderColor: 'white',
     shadowColor: 'rgba(0, 0, 0, 0.6)',
     backgroundColor: 'white',
-    // borderRadius: 10,
-    paddingLeft: 10,
+     paddingLeft: 5,
     paddingVertical: 0,
     paddingHorizontal: 0,
-    alignSelf: 'center',
+
     marginVertical: 10,
     elevation: 10,
   },
   input: {
-    width: 200,
+    width: 250,
+    height: 100,
     paddingLeft: 10,
     fontSize: 16,
-    color: Color.dark,
-    opacity: 0.4,
+   
     fontWeight: '500',
-
-    alignItems: 'center',
-    fontFamily: 'Poppins-Medium',
+    opacity: 1,
     alignSelf: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    color: Color.dark,
+    textAlign:'left',
+
+    
+    fontFamily: 'Poppins-Medium',
   },
   image: {
     width: 20,
     height: 25,
-    fontSize: 14,
+   
     borderRadius: 10,
     borderWidth: 2,
     fontWeight: '400',
@@ -72,11 +80,11 @@ const styles = StyleSheet.create({
     borderColor: 'white',
     shadowColor: 'rgba(0, 0, 0, 0.6)',
     backgroundColor: 'white',
-    paddingLeft: 5,
+    paddingLeft:0,
     paddingVertical: 0,
     paddingHorizontal: 0,
 
-    marginVertical: 10,
+   marginVertical: 10,
     elevation: 10,
     aspectRatio: 1,
   },

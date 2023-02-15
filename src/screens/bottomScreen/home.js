@@ -14,8 +14,7 @@ import {Categories} from '../../constants/models/categores/categories';
 import SelectButton from '../../constants/ui/button/selectButton';
 import ProductItem from '../../components/Product/productItem';
 import {ProductList} from '../../constants/models/categores/product';
-import Title from '../../constants/ui/title/title';
-import ChooseDeliveryScreen from '../deliveryScreen/chooseDeliveryScreen';
+import HeaderTitle from '../../constants/ui/title/headerTitle';
 //redux components
 import {useSelector} from 'react-redux';
 import {allproducts} from '../../redux/products/productsSlice';
@@ -39,10 +38,8 @@ const Home = () => {
       </View>
       <View>
         <DashboardScreen />
-
-        <Title title={'Categories'} style={styles.heading} />
-
-        <View>
+        <HeaderTitle title={'Categories'} style={styles.heading} />
+        <View style={styles.horizontalBtn}>
           <FlatList
             data={Categories}
             horizontal={true}
@@ -97,14 +94,15 @@ const styles = StyleSheet.create({
 
   heading: {
     fontFamily: 'Poppins-Medium',
-    fontWeight: '700',
-    fontSize: responsiveFontSize(3),
+    fontWeight: '500',
+    fontSize: responsiveFontSize(2.5),
     lineHeight: 30,
     width: 200,
-    // height: 30,
+    height: 40,
+    color:"black",
     textAlign: 'left',
     paddingLeft: responsiveScreenWidth(2.66),
-    marginTop: responsiveScreenHeight(-1),
+    marginTop: responsiveScreenHeight(-0.5),
   },
   text: {
     color: 'black',
@@ -116,7 +114,7 @@ const styles = StyleSheet.create({
     backgroundColor: Color.white,
   },
   product: {
-    marginTop: -20,
+   marginTop: -20,
     marginLeft: 8,
     height: 220,
     backgroundColor: Color.white,
@@ -124,6 +122,10 @@ const styles = StyleSheet.create({
   productImage: {
     width: 160,
   },
+  horizontalBtn:{
+    marginTop: 85,
+   
+  }
 });
 
 //make this component available to the app

@@ -5,15 +5,16 @@ import CustomiseItemButton from '../../constants/ui/button/customiseItemButton';
 import Title from '../../constants/ui/title/title';
 import ArrowRight from '../../assets/icons/ArrowRight.png';
 //importing images
-
+import { useSelector } from 'react-redux';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Color} from '../../constants/style/style';
-
+import BottomProceedBtnWithPrice from '../../constants/ui/button/BottomProceedBtnWIthPrice';
 import CartitemDetails from '../../components/cart/CartItemDetails';
 import CouponButton from '../../constants/ui/button/couponButton';
 import BillSlip from '../../components/BillSlip';
 
 const CartItemWithoutCoupon = () => {
+  const Count = useSelector(state => state.counter.count);
   return (
     <SafeAreaView style={styles.container}>
       <CartitemDetails />
@@ -27,6 +28,11 @@ const CartItemWithoutCoupon = () => {
       {/* <Title title={"Billings"} style={styles.BillingTitle} /> */}
       <Text style={styles.BillingTitle}> Billings</Text>
       <BillSlip />
+      <BottomProceedBtnWithPrice
+        title={'Rs. '+`${Count*550+100}`}
+        buttontitle={'Proceed to pay'}
+        style={styles.paymentBox}
+      />
     </SafeAreaView>
   );
 };
@@ -64,6 +70,12 @@ const styles = StyleSheet.create({
     marginTop: 5,
     alignItems: 'center',
   },
+  paymentBox:{
+    backgroundColor: Color.white,
+    elevation: 2,
+
+    marginTop:130,
+  }
 });
 
 export default CartItemWithoutCoupon;

@@ -8,14 +8,16 @@ import Arrowdown from '../../assets/icons/Arrowdown.png';
 
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Color} from '../../constants/style/style';
-
+import { useSelector } from 'react-redux';
 import CartitemDetails from '../../components/cart/CartItemDetails';
 import CouponButton from '../../constants/ui/button/couponButton';
 import BillSlip from '../../components/BillSlip';
 import CouponCard from '../../components/coupon/couponCard';
 import BottomProceedBtnWithPrice from '../../constants/ui/button/BottomProceedBtnWIthPrice';
 
-const CartItemWithoutCoupon = () => {
+const CartItemWithCoupon = () => {
+  const Count = useSelector(state => state.counter.count);
+ 
   return (
     <SafeAreaView style={styles.container}>
       <CartitemDetails />
@@ -29,7 +31,7 @@ const CartItemWithoutCoupon = () => {
         style={styles.Custombtn}
       />
       <BottomProceedBtnWithPrice
-        title={'Rs. 550'}
+        title={'Rs. '+`${Count*550+100}`}
         buttontitle={'Proceed to pay'}
       />
     </SafeAreaView>
@@ -79,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CartItemWithoutCoupon;
+export default CartItemWithCoupon;

@@ -1,28 +1,32 @@
 import React from 'react';
-import {View, StyleSheet, Pressable, Text} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
-import {Color} from '../../constants/style/style';
+import { View, StyleSheet, Pressable, Text } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { Color } from '../../constants/style/style';
 import PrimaryButton from '../../constants/ui/button/primaryButton';
 import Title from '../../constants/ui/title/title';
+import { clearParticularNotification } from '../../redux/notification/notificationSlice';
 
-const NotificationCard = ({onPress}) => {
+
+const NotificationCard = ({ onPress, title ,id}) => {
+  // onPress={clearParticularNotification(id)}
   return (
     <View style={styles.coupon}>
       <View style={styles.Buttons}>
         <Pressable
           onPress={onPress}
-          style={({pressed}) => pressed && styles.pressed}>
+          style={({ pressed }) => pressed && styles.pressed}>
           <Text style={styles.codeBtn}>Notification</Text>
         </Pressable>
         <Pressable
           onPress={onPress}
-          style={({pressed}) => pressed && styles.pressed}>
-          <Text style={styles.removeBtn}>Clear</Text>
+          style={({ pressed }) => pressed && styles.pressed}>
+          <Text style={styles.removeBtn} >Clear</Text>
         </Pressable>
       </View>
 
       <Text style={styles.desc}>
-        Lorem ipsom dolor emet Lorem ipsom dolor emet Lorem ipsom dolor emet...
+        {/* Lorem ipsom dolor emet Lorem ipsom dolor emet Lorem ipsom dolor emet... */}
+        {title}
       </Text>
     </View>
   );

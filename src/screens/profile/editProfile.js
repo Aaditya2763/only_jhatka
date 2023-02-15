@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useState, useLayoutEffect } from 'react';
 import {
   View,
   StatusBar,
@@ -14,7 +14,7 @@ import TitleWithBackBtn from '../../constants/ui/title/titleWithBackBtn';
 import profile from '../../assets/icons/profileIcon/profileWithcamIcon.png';
 import WelcomeScreenNameInput from '../../components/welcomeScreenInput/welcomeScreenNameInput';
 import WelcomeScreenPhoneNumInp from '../../components/welcomeScreenInput/welcomeScreenPhoneNumInp';
-
+import ProfileImg from "../../assets/images/profileImg.png";
 //images
 import User from '../../assets/images/user.png';
 import phone from '../../assets/images/phone.png';
@@ -23,35 +23,85 @@ import Location from '../../assets/icons/profileIcon/location.png';
 import LogoutCard from '../../components/cards/logoutCard';
 import UPICard from '../../components/cards/Upicard';
 import PrimaryButton from '../../constants/ui/button/primaryButton';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
-//importing images
+import { useSelector,useDispatch } from 'react-redux';
+import { updateUserData, user } from '../../redux/user/userSlice';
 
-const EditProfile = ({onPress}) => {
-  const naviagtion = useNavigation();
+//importing images 
+
+
+const EditProfile = ({ onPress }) => {
+  const userData = useSelector(user);
+  const dispatch=useDispatch();
+   const data = userData[0];
+  //  console.log(data)
+  const [textInputName, setTextInputName] = useState('');
+  const [textInputphoneNo, setTextInputphoneNo] = useState('');
+const onSubmit=(id)=>{
+ const owner=userData.find(users=>data.id===id);
+ if( textInputName,textInputphoneNo){
+  dispatch(
+    updateUserData(
+      owner.userName=textInputName,
+      owner.phoneNo=textInputphoneNo,
+    )
+  
+    
+  )
+ 
+ }
+ else{
+  alert("please enter valid credentials")
+}
+
+console.log(userData)
+}
 
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
-      {/* <TitleWithBackBtn title={'Edit Profile '} style={styles.title} /> */}
+      {/* <TitleWithBackBtn title={"Edit Profile "} style={styles.title} /> */}
       <View style={styles.imgBox}>
         <Image source={profile} style={styles.img} />
       </View>
-      {/* <HeaderTitle title={'Change Profile'} style={styles.title} /> */}
-      <WelcomeScreenNameInput
-        source={User}
-        placeholder={'Enter your Name *'}
-        style={{alignSelf: 'center'}}
-      />
-      <WelcomeScreenPhoneNumInp
-        source={phone}
-        placeholder={'Enter your Phone Number *'}
-      />
-      <HeaderTitle title={'Change Delivery Location'} style={styles.title2} />
+      <HeaderTitle title={"Change Profile"} style={styles.title} />
+
+      {
+        userData.map((item) => {
+          return (
+            <WelcomeScreenNameInput 
+            name={textInputName}
+            setName={setTextInputName}
+            source={User} 
+            placeholder={"Enter your Name *"} 
+            title={item.userName} 
+            style={{ alignSelf: "center" }} 
+            key={item.id} />
+           
+            // <WelcomeScreenPhoneNumInp source={phone} placeholder={"Enter your Phone Number *"} title={data.phoneno} />
+          )
+        })
+      }
+      {
+        userData.map((item) => {
+          return (
+            // <WelcomeScreenNameInput source={User} placeholder={"Enter your Name *"} title={item.userName} style={{ alignSelf: "center" }}  />
+            <WelcomeScreenPhoneNumInp 
+            source={phone} 
+            phoneNo={textInputphoneNo}
+            setPhoneNo={setTextInputphoneNo}
+            placeholder={"Enter your Phone Number *"}
+             title={item.phoneno} 
+            key={item.id} />
+          )
+        })
+      }
+      <HeaderTitle title={"Change Delivery Location"} style={styles.title2} />
       <View style={styles.LocationBox}>
         <Pressable
           onPress={onPress}
-          style={({pressed}) => pressed && styles.pressed}>
+          style={({ pressed }) => pressed && styles.pressed}>
           <View style={styles.locationCard}>
             <Image source={Location} style={styles.LocImg} />
             <Text style={styles.title3}>Use Current Location</Text>
@@ -59,19 +109,19 @@ const EditProfile = ({onPress}) => {
         </Pressable>
         <Pressable
           onPress={onPress}
-          style={({pressed}) => pressed && styles.pressed}>
-          <UPICard
-            style={styles.card}
-            title={'Add Address'}
-            desc={'Enter your Address'}
-            onPress={() => naviagtion.navigate('AddAddress')}
-          />
+          style={({ pressed }) => pressed && styles.pressed}>
+          <UPICard style={styles.card} title={"Add Address"} desc={"Enter your Address"} />
         </Pressable>
+
+
       </View>
-      <PrimaryButton buttonTitle={'confirm'} style={styles.btn} />
+      <PrimaryButton
+       buttonTitle={"confirm"} 
+      style={styles.btn} 
+      onPress={onSubmit(data.id)}/>
     </View>
-  );
-};
+  )
+}
 const styles = StyleSheet.create({
   container: {
     height: '100%',

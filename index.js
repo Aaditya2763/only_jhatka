@@ -2,9 +2,14 @@
  * @format
  */
 
-import {AppRegistry} from 'react-native';
+import { AppRegistry } from 'react-native';
 import App from './App';
+<<<<<<< HEAD
 import {name as appName} from './app.json';
+=======
+
+import { name as appName } from './app.json';
+>>>>>>> 2e6de2d344c7851b36a9e97abbefc431d8d99015
 import Item from './src/screens/itempages/item';
 import ChooseDeliveryScreen from './src/screens/deliveryScreen/chooseDeliveryScreen';
 import AddUpiScreen from './src/screens/Upi/addUpiScreen';
@@ -38,5 +43,8 @@ import SetLocationScreen from './src/screens/setLocationScreen';
 import StackNaviagtion from './src/navigation/StackNavigation/stackNavigation';
 import BottomNavBar from './src/components/Bottom Navbar/BottonNavBar';
 import SetDelveryLoactionScreen from './src/screens/setDeliveryLocationScreen';
+import OtpScreen from './src/screens/otpScreen';
+import CartitemDetails from './src/components/cart/CartItemDetails';
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () =>App);
+

@@ -4,7 +4,7 @@ import {View, StatusBar, StyleSheet, Text, Image} from 'react-native';
 import HeaderTitle from '../../constants/ui/title/headerTitle';
 
 import TitleWithBackBtn from '../../constants/ui/title/titleWithBackBtn';
-import {Color} from '../../constants/style/style';
+import { Color } from '../../constants/style/style';
 import UPICard from '../../components/cards/Upicard';
 import ProfileCard from '../../components/cards/profileCard';
 import profileIcon from '../../assets/icons/profileIcon/profileicon.png';
@@ -15,24 +15,36 @@ import ContactIcon from '../../assets/icons/profileIcon/contactIcon.png';
 import logOutIcon from '../../assets/icons/profileIcon/logOutIcon.png';
 import icon from '../../assets/icons/profileIcon/leftIcon.png';
 import WalletIcon from '../../assets/icons/BankIcons/walletIcon.png';
-import DetailsCard from '../../components/cards/detailsCard';
+
 import NetBankingCard from '../../components/cards/netBankingCard';
 import LogoutCard from '../../components/cards/logoutCard';
+
+import DetailsCard from '../../components/cards/detailsCard';
+
 import {useNavigation} from '@react-navigation/native';
+import {useSelector} from 'react-redux';
+import {user} from '../../redux/user/userSlice';
 
 //importing images
 const Profile = () => {
   const navigation = useNavigation();
+  const userData = useSelector(user);
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
       {/* <TitleWithBackBtn title={'Profile '} style={styles.title} /> */}
-      <ProfileCard
-        title={'User Name'}
-        desc={'9466556600'}
-        source={profileIcon}
-        onPress={() => navigation.navigate('EditProfile')}
-      />
+      {userData.map(item => {
+        return (
+          <ProfileCard
+            key={item.id}
+            title={item.userName}
+            desc={item.phoneno}
+            source={profileIcon}
+            onPress={() => navigation.navigate('EditProfile')}
+          />
+        );
+      })}
       <View style={styles.cardBox}>
         <DetailsCard
           title={'Notification'}
@@ -67,11 +79,40 @@ const Profile = () => {
           icon={icon}
         />
       </View>
-
-      <LogoutCard title={'Logout'} source={logOutIcon} style={styles.logout} />
     </View>
   );
 };
+
+{
+  /* <<<<<<< HEAD
+const EditProfile=()=>{
+    const User=useSelector(user);
+console.log(User);
+    return(
+        <View style={styles.container}>
+  <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
+  <TitleWithBackBtn title={"Profile "} style={styles.title}  />
+<ProfileCard  title={User.name} desc={User.phoneNo} source={profileIcon}/>
+<View style={styles.cardBox} >
+<DetailsCard  title={"Notification"} desc={"Lorem ipsom dolor amet"} source={NotificationIcon} icon={icon}/>
+<DetailsCard  title={"AddressBook"} desc={"Lorem ipsom dolor amet"} source={addressBookIcon} icon={icon}/>
+<DetailsCard  title={"Privacy Policy"} desc={"Lorem ipsom dolor amet"} source={privacyIcon} icon={icon}/>
+<DetailsCard  title={"Contact Us"} desc={"Lorem ipsom dolor amet"} source={ContactIcon} icon={icon}/>
+
+
+</View>
+
+<LogoutCard title={"Contact Us"} source={logOutIcon} style={styles.logout} />
+        </View>
+    )
+}
+=======
+      <LogoutCard title={'Logout'} source={logOutIcon} style={styles.logout} />
+    </View>
+  );
+}; */
+}
+
 const styles = StyleSheet.create({
   container: {
     height: '100%',
