@@ -16,7 +16,7 @@ const AddCard = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
-      {/* <TitleWithBackBtn title={'Add new card'} /> */}
+      <TitleWithBackBtn title={'Add new card'} />
       <Text style={styles.Desc}>
         We accept Credit and Debit cards from Visa,Masterard, American Express,
         Sodexo, Rupay,Maestro & Diners

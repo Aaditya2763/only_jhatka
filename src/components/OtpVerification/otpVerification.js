@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 import PrimaryButton from '../../constants/ui/button/primaryButton';
-const OtpVerification = ({ onSubmit, style, otp }) => {
+const OtpVerification = ({ onSubmit, style, otp, navigation }) => {
   const [pin1, setPin1] = useState('');
   const [pin2, setPin2] = useState('');
   const [pin3, setPin3] = useState('');
@@ -24,11 +24,14 @@ const OtpVerification = ({ onSubmit, style, otp }) => {
     if (input == otp) {
 
       alert("verified");
-      setIsLogin(true)
+      setIsLogin(true);
+      
     }
     else {
       alert("Please enter valid input failed");
     }
+    
+    
   }
 
   return (
