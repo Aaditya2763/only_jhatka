@@ -19,8 +19,9 @@ const WelcomeScreenNameInput = ({source, title, placeholder, style,name,setName}
         <TextInput
           placeholder={placeholder}
           style={styles.input}
-          onEndEditing={checkInput}
-          onChangeText={value => setName(value)}>
+        onEndEditing={checkInput}
+          //  onChangeText={value => setName(value)}
+          >
           {title}
         </TextInput>
     
