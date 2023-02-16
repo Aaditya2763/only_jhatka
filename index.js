@@ -4,12 +4,8 @@
 
 import { AppRegistry } from 'react-native';
 import App from './App';
-<<<<<<< HEAD
-import {name as appName} from './app.json';
-=======
 
 import { name as appName } from './app.json';
->>>>>>> 2e6de2d344c7851b36a9e97abbefc431d8d99015
 import Item from './src/screens/itempages/item';
 import ChooseDeliveryScreen from './src/screens/deliveryScreen/chooseDeliveryScreen';
 import AddUpiScreen from './src/screens/Upi/addUpiScreen';

@@ -42,7 +42,7 @@ import AddVoucher from './src/screens/voucher/addVoucher';
 
 
 // if you want to switch Stack navigation change const isLogin = false;
-const isLogin =true;
+const isLogin =false;
 const Loading = ({ }) => { };
 const App = () => {
   return (

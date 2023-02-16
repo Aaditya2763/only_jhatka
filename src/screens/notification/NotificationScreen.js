@@ -30,7 +30,7 @@ const NotificationScreen = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
 
-      <NotificationTitle title={'Notification'} />
+      {/* <NotificationTitle title={'Notification'} /> */}
       <ScrollView style={styles.scrollContainer}>
         {Notifications.map(notification => {
           return (
