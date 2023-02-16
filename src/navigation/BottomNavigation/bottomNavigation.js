@@ -1,7 +1,7 @@
 //import liraries
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Button, StyleSheet} from 'react-native';
+import {TouchableOpacity, StyleSheet, Text} from 'react-native';
 // impor ioncs form react native vector as multiple name
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import NotifactionIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -18,10 +18,12 @@ import BackButton from 'react-native-vector-icons/MaterialIcons';
 
 // Profile Stack navigation
 import ProfileStackNavigation from '../StackNavigation/profieStackNavigation';
+import {useNavigation} from '@react-navigation/native';
 
 // Tab navigators
 const Tab = createBottomTabNavigator();
 const BottomNaviagtion = () => {
+  const navigation = useNavigation();
   return (
     <Tab.Navigator
       screenOptions={{
@@ -62,6 +64,31 @@ const BottomNaviagtion = () => {
           tabBarIcon: ({color, size}) => (
             <NotifactionIcon name="bell" size={size} color={color} />
           ),
+          headerShown: true,
+          headerTitleAlign: 'center',
+          headerTitle: 'Notifications',
+          headerShadowVisible: false,
+          headerRight: () => (
+            <TouchableOpacity>
+              <Text style={styles.buttonStyle}>Clear all</Text>
+            </TouchableOpacity>
+          ),
+          headerLeft: () => (
+            <Icon
+              name="keyboard-backspace"
+              size={24}
+              color={'black'}
+              onPress={() => navigation.goBack()}
+            />
+          ),
+          headerTitleStyle: {
+            fontFamily: 'Poppins-Medium',
+            fontWeight: '600',
+            lineHeight: 30,
+            textAlign: 'center',
+            fontSize: 18,
+            color: 'black',
+          },
         }}
       />
       <Tab.Screen
@@ -96,6 +123,11 @@ const styles = StyleSheet.create({
     borderTopColor: Color.primaryColor,
     borderTopWidth: 2,
     marginLeft: 19,
+  },
+  buttonStyle: {
+    color: Color.primaryColor,
+    fontWeight: '700',
+    fontFamily: 'Poppins-Meddium',
   },
 });
 //make this component available to the app

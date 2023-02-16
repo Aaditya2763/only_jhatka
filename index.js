@@ -4,8 +4,12 @@
 
 import { AppRegistry } from 'react-native';
 import App from './App';
+<<<<<<< HEAD
+import {name as appName} from './app.json';
+=======
 
 import { name as appName } from './app.json';
+>>>>>>> 2e6de2d344c7851b36a9e97abbefc431d8d99015
 import Item from './src/screens/itempages/item';
 import ChooseDeliveryScreen from './src/screens/deliveryScreen/chooseDeliveryScreen';
 import AddUpiScreen from './src/screens/Upi/addUpiScreen';
@@ -15,7 +19,6 @@ import Home from './src/screens/bottomScreen/home';
 import DashboardScreen from './src/screens/dashboardScreen';
 import CartItemWithoutCoupon from './src/screens/cart/cartItemWithoutCoupon';
 import CartItemWithCoupon from './src/screens/cart/cartItemWithCoupon';
-
 import PaymentOption from './src/screens/payments/paymentOption';
 import Wallet from './src/screens/payments/wallet';
 import NetBanking from './src/screens/payments/netBanking';
@@ -35,9 +38,7 @@ import addMoney from './src/screens/voucher/addMoney';
 import AddAddress from './src/screens/addAddress/addAddress';
 import CouponCard from './src/components/coupon/couponCard';
 import AddaddressMapSceen from './src/screens/mapsScreen/addMapScreens';
-
 import WelcomeScreen from './src/screens/welcomeScreen';
-
 import SetLocationScreen from './src/screens/setLocationScreen';
 import StackNaviagtion from './src/navigation/StackNavigation/stackNavigation';
 import BottomNavBar from './src/components/Bottom Navbar/BottonNavBar';

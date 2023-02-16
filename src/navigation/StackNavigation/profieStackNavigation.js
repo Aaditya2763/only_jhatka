@@ -19,6 +19,7 @@ import AddCard from '../../screens/card/AddCard';
 import {Color} from '../../constants/style/style';
 import BackButton from '../../assets/icons/backButton.png';
 import IconButton from '../../constants/ui/button/iconButton';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 // create a component
 const ProfileStackNavigation = () => {
@@ -35,7 +36,12 @@ const ProfileStackNavigation = () => {
           component={Profile}
           options={{
             headerLeft: () => (
-              <Button title="back" onPress={() => navigation.goBack()} />
+              <Icon
+                name="keyboard-backspace"
+                size={24}
+                color={'black'}
+                onPress={() => navigation.goBack()}
+              />
             ),
             headerTitle: 'Profile',
           }}
@@ -74,14 +80,7 @@ const ProfileStackNavigation = () => {
             headerTitle: 'Notification',
             headerRight: () => (
               <TouchableOpacity>
-                <Text
-                  style={{
-                    color: Color.primaryColor,
-                    fontWeight: '700',
-                    fontFamily: 'Poppins-Meddium',
-                  }}>
-                  Clear all
-                </Text>
+                <Text style={styles.buttonStyle}>Clear all</Text>
               </TouchableOpacity>
             ),
           }}
@@ -129,6 +128,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#2c3e50',
+  },
+  buttonStyle: {
+    color: Color.primaryColor,
+    fontWeight: '700',
+    fontFamily: 'Poppins-Meddium',
   },
 });
 
