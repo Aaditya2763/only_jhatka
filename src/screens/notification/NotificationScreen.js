@@ -6,6 +6,7 @@ import {
   StatusBar,
   Image,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 //importing components
 import TitleWithBackBtn from '../../constants/ui/title/titleWithBackBtn';
@@ -14,13 +15,13 @@ import Title from '../../constants/ui/title/title';
 import CouponCard from '../../components/coupon/couponCard';
 //importing images
 import Check from '../../assets/icons/check.png';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Color } from '../../constants/style/style';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Color} from '../../constants/style/style';
 import NotificationCard from '../../components/cards/notificationCard';
 import NotificationTitle from '../../constants/ui/title/NotificationTitle';
-import { allNotifications } from "../../redux/notification/notificationSlice";
+import {allNotifications} from '../../redux/notification/notificationSlice';
 import notificationSlice from '../../redux/notification/notificationSlice';
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 
 const NotificationScreen = () => {
   const Notifications = useSelector(allNotifications);
@@ -29,21 +30,22 @@ const NotificationScreen = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
 
- 
+      <NotificationTitle title={'Notification'} />
       <ScrollView style={styles.scrollContainer}>
-        {
-          Notifications.map((notification) => {
-            return (
-              <NotificationCard title={notification.title} key={notification.id}  id={notification.id} />
-            )
-          })
-        }
-
-
+        {Notifications.map(notification => {
+          return (
+            <NotificationCard
+              title={notification.title}
+              key={notification.id}
+              id={notification.id}
+            />
+          );
+        })}
       </ScrollView>
     </SafeAreaView>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     height: '100%',

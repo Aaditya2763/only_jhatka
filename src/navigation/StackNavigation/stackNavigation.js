@@ -16,6 +16,7 @@ import BackButton from '../../assets/icons/backButton.png';
 import SearchButton from '../../assets/icons/SearchButton.png';
 import Home from '../../screens/bottomScreen/home';
 import {NavigationContainer} from '@react-navigation/native';
+import AddAddress from '../../screens/addAddress/addAddress';
 //calling stack navigator
 const Stack = createNativeStackNavigator();
 enableScreens(true);
@@ -63,7 +64,7 @@ const StackNaviagtion = () => {
               style={styles.iconSize}
             />
           ),
-          headerLeft: () => (
+          headerLeft: () => (  
             <IconButton
               onPress={() => navigation.goBack()}
               source={BackButton}
@@ -79,6 +80,11 @@ const StackNaviagtion = () => {
       <Stack.Screen
         name="OtpScreen"
         component={OtpScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AddAddress"
+        component={AddAddress}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

@@ -5,8 +5,11 @@ import {Color} from '../../constants/style/style';
 // icons
 import loactionIcon from '../../assets/icons/loactionIcon.png';
 import AddressIcon from '../../assets/icons/addressIcon.png';
+import {useNavigation} from '@react-navigation/native';
+import AddAddress from '../../screens/addAddress/addAddress';
 
 const BottomSheetLoaction = ({refRbButton}) => {
+  const navigation = useNavigation();
   return (
     <RBSheet
       ref={refRbButton}
@@ -44,7 +47,14 @@ const BottomSheetLoaction = ({refRbButton}) => {
         <View style={styles.listContiner}>
           <Image source={AddressIcon} style={styles.iconStyle} />
           <Pressable
-            onPress={() => console.log('pressed')}
+            onPress={() =>
+              navigation.navigate('bottomStack', {
+                screen: 'ProfileStackNavigation',
+                params: {
+                  screen: 'AddAddress',
+                },
+              })
+            }
             style={({pressed}) => pressed && styles.pressed}>
             <Text style={styles.listText2}>Add Address</Text>
             <Text style={styles.smallText}>Enter your address</Text>

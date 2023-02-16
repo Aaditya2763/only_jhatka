@@ -10,8 +10,8 @@ import SelectLocation from '../../assets/icons/profileIcon/selectLocation.png';
 //importing components
 import TitleWithBackBtn from '../../constants/ui/title/titleWithBackBtn';
 import {useNavigation} from '@react-navigation/native';
-const AddAddress = () => {
-  const navigation = useNavigation();
+const AddAddress = ({navigation}) => {
+  // const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />

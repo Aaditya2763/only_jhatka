@@ -41,7 +41,7 @@ const WelcomeScreen = ({navigation}) => {
       // console.log(textInputName,textInputphoneNo,id)
       
       
-       navigation.navigate('OtpScreen')
+       navigation.navigate('OtpScreen');
     }
     else{
       alert("please enter valid credentials")

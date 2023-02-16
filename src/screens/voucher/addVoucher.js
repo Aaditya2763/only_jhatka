@@ -14,7 +14,7 @@ const AddVoucher = () => {
         backgroundColor={'white'}
         style={styles.bar}
       />
-      {/* <TitleWithBackBtn title={'Add Voucher'} /> */}
+      <TitleWithBackBtn title={'Add Voucher'} />
 
       <VoucherCard
         source={VoucherImage}

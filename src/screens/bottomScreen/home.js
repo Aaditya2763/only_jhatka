@@ -6,6 +6,7 @@ import {
   FlatList,
   SafeAreaView,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import DashboardScreen from '../dashboardScreen';
 import {Color} from '../../constants/style/style';
@@ -30,11 +31,11 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.SafeAreaViewConianer}>
       <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
-      {/* <View style={styles.container}>
+      <View style={styles.container}>
         <View style={styles.subConatiner}>
-          <Title title={'Categories'} />
+          {/* <Title title={'Categories'} /> */}
         </View>
-      </View> */}
+      </View>
       <View>
         <DashboardScreen />
         <HeaderTitle title={'Categories'} style={styles.heading} />
@@ -54,8 +55,8 @@ const Home = () => {
         <View>
           <FlatList
             data={product}
-            // numColumns={2}
-            horizontal={true}
+            numColumns={2}
+            horizontal={false}
             style={styles.product}
             renderItem={({item}) => (
               <ProductItem
