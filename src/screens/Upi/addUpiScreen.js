@@ -15,7 +15,7 @@ const AddUpiScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
-      <TitleWithBackBtn title={'Apply UPI ID'} />
+      {/*   <TitleWithBackBtn title={'Apply UPI ID'} /> */}
       <Text style={styles.Desc}>
         Enter your verified UPI ID to pay and proceed to order your items
       </Text>

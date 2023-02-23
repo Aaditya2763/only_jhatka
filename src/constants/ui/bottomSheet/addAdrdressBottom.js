@@ -5,8 +5,9 @@ import {Color} from '../../style/style';
 import loactionIcon from '../../../assets/icons/loactionIcon.png';
 // import SmallPrimaryButton from '../button/smallPrimaryButton';
 import PrimaryButton from '../button/primaryButton';
-
+import {useNavigation} from '@react-navigation/native';
 const AddaddressBottom = ({refRbSheet}) => {
+  const navigation = useNavigation();
   return (
     <RBSheet
       ref={refRbSheet}

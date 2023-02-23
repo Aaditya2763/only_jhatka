@@ -16,12 +16,15 @@ import CouponCard from '../../components/coupon/couponCard';
 import Check from '../../assets/icons/check.png';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Color} from '../../constants/style/style';
-
+import {useNavigation} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const CouponScreen = () => {
+  const navigation = useNavigation();
+  const Stack = createNativeStackNavigator();
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
-      <TitleWithBackBtn title={'Apply coupon'} />
+      {/* <TitleWithBackBtn title={'Apply coupon'} /> */}
       <WelcomeScreenNameInput
         placeholder={'Enter Coupon Code'}
         source={Check}
@@ -29,13 +32,13 @@ const CouponScreen = () => {
       />
       <Title title={'Offers'} style={styles.title} />
       <ScrollView style={styles.scrollContainer}>
-        <CouponCard />
-        <CouponCard />
-        <CouponCard />
-        <CouponCard />
-        <CouponCard />
-        <CouponCard />
-        <CouponCard />
+        <CouponCard onPress={() => navigation.navigate('CartItemWithCoupon')} />
+        <CouponCard onPress={() => navigation.navigate('CartItemWithCoupon')} />
+        <CouponCard onPress={() => navigation.navigate('CartItemWithCoupon')} />
+        <CouponCard onPress={() => navigation.navigate('CartItemWithCoupon')} />
+        <CouponCard onPress={() => navigation.navigate('CartItemWithCoupon')} />
+        <CouponCard onPress={() => navigation.navigate('CartItemWithCoupon')} />
+        <CouponCard onPress={() => navigation.navigate('CartItemWithCoupon')} />
       </ScrollView>
     </SafeAreaView>
   );

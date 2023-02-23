@@ -14,18 +14,20 @@ import {
   moderateScale,
   verticalScale,
 } from '../../../../testComponent/metrices';
+import { useNavigation } from '@react-navigation/native';
 
 // create a component
 
 const {height, width} = Dimensions.get('window');
 
 const SelectButton = ({onPress, CategoriesImage, CategorieTitle, style}) => {
+  const navigation=useNavigation();
   // relame width 360, height 754.66
   // google pixal emulator width 432 height 816
   return (
     <Pressable
       style={({pressed}) => pressed && styles.pressed}
-      onPress={() => console.log(width, height)}>
+      onPress={() => navigation.navigate('AddItems')}>
       <View style={[styles.container, style]}>
         <View style={styles.internalView}>
           <Image source={CategoriesImage} style={styles.ImageStyle} />

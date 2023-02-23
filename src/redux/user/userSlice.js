@@ -8,6 +8,7 @@ const initialState=[
         Address:"Noida sector-15",
         id:1,
         image:userimage,
+        isLogin:false,
     }
 
 ]

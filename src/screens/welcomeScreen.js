@@ -36,16 +36,16 @@ const WelcomeScreen = ({navigation}) => {
         createUser(textInputName,textInputphoneNo,id=nanoid())
         
       )
+      navigation.navigate('OtpScreen');
       setTextInputName('')
       setTextInputphoneNo('')
       // console.log(textInputName,textInputphoneNo,id)
-      
-      
-       navigation.navigate('OtpScreen');
+      //navigation.navigate('OtpScreen')
     }
     else{
       alert("please enter valid credentials")
     }
+    
   }
   return (
     <SafeAreaView style={styles.container}>
@@ -70,6 +70,7 @@ const WelcomeScreen = ({navigation}) => {
               setName={setTextInputName}
                 source={require('../assets/images/user.png')}
                 placeholder="Enter your name"
+                
               />
               <WelcomeScreenPhoneNumInp
                 source={require('../assets/images/phone.png')}
@@ -82,7 +83,7 @@ const WelcomeScreen = ({navigation}) => {
             <PrimaryButton
               buttonTitle={'Continue'}
         onPress={onSubmit}
-                // onPress={() => navigation.navigate('OtpScreen')}
+                //  onPress={() => navigation.navigate('OtpScreen')}
             
             />
           </View>

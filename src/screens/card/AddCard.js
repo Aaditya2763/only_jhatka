@@ -12,29 +12,31 @@ import WelcomeScreenPhoneNumInp from '../../components/welcomeScreenInput/welcom
 import Check from '../../assets/icons/check.png';
 import IconButton from '../../constants/ui/button/iconButton';
 import PrimaryButton from '../../constants/ui/button/primaryButton';
+import CardInput from '../../components/cards/cardInput';
+import CardName from '../../components/cards/cardInput';
 const AddCard = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
-      <TitleWithBackBtn title={'Add new card'} />
+      {/* <TitleWithBackBtn title={'Add new card'} /> */}
       <Text style={styles.Desc}>
         We accept Credit and Debit cards from Visa,Masterard, American Express,
         Sodexo, Rupay,Maestro & Diners
       </Text>
-      <WelcomeScreenPhoneNumInp
+      <CardInput
         placeholder={'Enter Card Number'}
         style={styles.inputBox}
       />
-      <WelcomeScreenNameInput
+      <CardName
         placeholder={'Enter Name on Card'}
         style={styles.inputBox}
       />
       <View style={styles.Box}>
-        <WelcomeScreenPhoneNumInp
+        <CardInput
           placeholder={'Valid(MM/YY)'}
           style={styles.dateInp}
         />
-        <WelcomeScreenPhoneNumInp placeholder={'CVV'} style={styles.CVVInput} />
+        <CardInput placeholder={'CVV'} style={styles.CVVInput} />
       </View>
       <Text style={styles.Desc}>
         We will save this card for your convenience. If required, you can remove

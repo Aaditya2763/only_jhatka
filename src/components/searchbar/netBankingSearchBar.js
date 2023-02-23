@@ -8,7 +8,11 @@ const NetBAnkingSearchBar = ({style, placeholder}) => {
         source={require('../../assets/icons/searchicon.png')}
         style={styles.img}
       />
-      <TextInput placeholder={placeholder} style={styles.inputBox} />
+      <TextInput 
+      placeholder={placeholder}
+      placeholderTextColor="grey"
+       style={styles.inputBox}
+       />
     </View>
   );
 };
@@ -37,6 +41,7 @@ const styles = StyleSheet.create({
     fontFamily: 'poppins',
     fontWeight: '400',
     padding: 5,
+    color:"black",
     marginRight: 70,
     borderLeftColor: 'black',
     borderLeftWidth: 2,

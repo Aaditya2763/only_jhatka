@@ -12,7 +12,10 @@ import VoucherImage from '../../assets/images/voucherImage.png';
 import PaymentCard from '../../components/cards/paymentsCards';
 import WalletCard from '../../components/cards/walletCard';
 import VoucherCard from '../../components/cards/voucherCard';
+import {useNavigation} from '@react-navigation/native';
 const Wallet = () => {
+
+const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar
@@ -20,22 +23,25 @@ const Wallet = () => {
         backgroundColor={'white'}
         style={styles.bar}
       />
-      <TitleWithBackBtn title={'Use other Wallets'} />
+      {/* <TitleWithBackBtn title={'Use other Wallets'} /> */}
       <View style={styles.cardContainer}>
         <WalletCard
           title={'lorem Ipsom'}
           desc={'lorem Ipsom dolor amet'}
           source={WalletIcon}
+          onPress={() => navigation.navigate('AddMoneyVoucher')}
         />
         <WalletCard
           title={'lorem Ipsom'}
           desc={'lorem Ipsom dolor amet'}
           source={WalletIcon}
+          onPress={() => navigation.navigate('AddVoucher')}
         />
         <WalletCard
           title={'lorem Ipsom'}
           desc={'lorem Ipsom dolor amet'}
           source={WalletIcon}
+          onPress={() => navigation.navigate('AddVoucher')}
         />
         {/* <VoucherCard source={VoucherImage}
 title={"Total Wallet balance"}

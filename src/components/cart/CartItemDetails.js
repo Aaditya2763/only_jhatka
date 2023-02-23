@@ -19,26 +19,31 @@ import Title from '../../constants/ui/title/title';
 import VectorImages from '../../components/VectorImages/vectorImages';
 //importing images
 import backButton from '../../assets/images/backButton.png';
-
+import {useNavigation} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Color} from '../../constants/style/style';
 import PrimaryButton from '../../constants/ui/button/primaryButton';
 import ChickenLegs from '../../assets/images/itemImages/chickenLegs.png';
 import {color} from 'react-native-reanimated';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
 
 const CartitemDetails = ({onPress}) => {
+    const navigation = useNavigation();
+  const Stack = createNativeStackNavigator();
+
   const Count = useSelector(state => state.counter.count);
   const dispatch = useDispatch();
 
     return (
-      <View>
-          <View >
+      <View backgroundColor={'white'} onPress={() => navigation.navigate('CartItemWithoutCoupon')} >
+          <View>
             <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
             <View style={styles.HeaderBox}>
-                <IconButton source={backButton} style={styles.icon} />
-                <HeaderTitle title={" Your Cart"} style={styles.Header} />
+                {/* <IconButton source={backButton} style={styles.icon} /> */}
+                {/* <HeaderTitle title={" Your Cart"} style={styles.Header} /> */}
             </View>
-            <HeaderTitle title={"Cart"} style={styles.CartHeading} />
+            {/* <HeaderTitle title={"Cart"} style={styles.CartHeading} /> */}
             <View style={styles.Itemcontainer}>
                 <View style={styles.itemImg}>
                     <Image source={require('../../assets/images/itemImages/chickenLegs.png')} style={styles.img} />
@@ -55,9 +60,9 @@ const CartitemDetails = ({onPress}) => {
                         </Pressable>
                     </View>
                     <View style={styles.serve}>
-                        <Text>4 Pieces | </Text>
-                        <Text>500 gms | </Text>
-                        <Text>Serves 2</Text>
+                        <Text style={{ color:"grey"}}>4 Pieces | </Text>
+                        <Text style={{ color:"grey"}}>500 gms | </Text>
+                        <Text style={{ color:"grey"}}>Serves 2</Text>
                     </View >
                     
                     <View style={styles.btnSection}>
@@ -210,6 +215,7 @@ const CartitemDetails = ({onPress}) => {
   serve: {
       width: 200,
       height: 25,
+      color:"black",
       flexDirection: 'row',
       fontFamily: 'Poppins',
       fontStyle: "normal",

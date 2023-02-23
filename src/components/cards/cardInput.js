@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Image, TextInput} from 'react-native';
 import {Color} from '../../constants/style/style';
 
-const WelcomeScreenPhoneNumInp = ({source, placeholder, title,style,phoneNo,setPhoneNo}) => {
-  // const [textInputphoneNo, setTextInputphoneNo] = useState('');
+const CardInput = ({source, placeholder, title,style,phoneNo,setPhoneNo}) => {
+  const [cardInput, setcardInput] = useState('');
   
   const checkInput = () => {
-    if (phoneNo =='' || phoneNo.length<10 ) {
+    if (cardInput =='' || cardInput.length<10 ) {
       alert('Please Enter valid Number');
       return;
     }
@@ -20,7 +20,7 @@ const WelcomeScreenPhoneNumInp = ({source, placeholder, title,style,phoneNo,setP
           style={styles.input}
           keyboardType="numeric"
           maxLength={10}
-          onChangeText={value => setPhoneNo(value)}
+          onChangeText={value => setcardInput(value)}
           onEndEditing={checkInput}>
       
           {title}
@@ -92,4 +92,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default WelcomeScreenPhoneNumInp;
+export default CardInput;

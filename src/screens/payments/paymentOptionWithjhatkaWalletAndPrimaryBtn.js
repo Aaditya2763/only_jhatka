@@ -11,9 +11,14 @@ import WalletIcon from '../../assets/icons/UpiIcons/walletIcon.png';
 
 import PaymentCard from '../../components/cards/paymentsCards';
 import JhatkaWallet from '../../components/cards/jhatkaWallet';
+import JhatkaWalletWithBtn from '../../constants/ui/button/jhatkaWalletWithPrimaryBtn';
+
 import {ScrollView} from 'react-native-gesture-handler';
-import PaymentOptionWithJhatkaWalletAndPrimaryBtn from './paymentOptionWithjhatkaWallet';
+import PaymentOptionWithJhatkaWalletAndPrimaryBtn from './paymentOptionWithJhatkaWallet';
+import {useNavigation} from '@react-navigation/native';
+
 const PaymentOptionWithJhatkaWallet = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar
@@ -21,33 +26,38 @@ const PaymentOptionWithJhatkaWallet = () => {
         backgroundColor={'white'}
         style={styles.bar}
       />
-      <TitleWithBackBtn title={'Payment Options'} />
+      {/* <TitleWithBackBtn title={'Payment Options'} /> */}
       <ScrollView>
         <DeliveryFromTo />
-        <PaymentOptionWithJhatkaWalletAndPrimaryBtn />
+        <JhatkaWalletWithBtn price={'1000'} />
         <HeaderTitle title={'UPI'} style={styles.title} />
-        <UPICard title={'UPI'} desc={'Lorem Ipsom dolor amet'} />
+        <UPICard title={'UPI'} desc={'Lorem Ipsom dolor amet'}
+          onPress={() => navigation.navigate('AddUpiScreen')} />
         <HeaderTitle title={'Credit & Debit cards'} style={styles.title} />
-        <UPICard title={'Add Card Details '} desc={'Lorem Ipsom dolor amet'} />
+        <UPICard title={'Add Card Details '} desc={'Lorem Ipsom dolor amet'}
+         onPress={() => navigation.navigate('AddCard')} />
         <HeaderTitle title={'Other Payments Options'} style={styles.title} />
         <View style={styles.cardContainer}>
           <PaymentCard
             source={CashOnDeliveryIcon}
-            title={'Add Card Details '}
+            title={'other wallet link'}
             desc={'Lorem Ipsom dolor amet'}
             style={styles.card}
+            onPress={() => navigation.navigate('wallet')}
           />
           <PaymentCard
             source={NetBankingIcon}
-            title={'Add Card Details '}
+            title={'Net Banking '}
             desc={'Lorem Ipsom dolor amet'}
             style={styles.card}
+            onPress={() => navigation.navigate('NetBanking')}
           />
           <PaymentCard
             source={WalletIcon}
-            title={'Add Card Details '}
+            title={'Jhatka Wallet '}
             desc={'Lorem Ipsom dolor amet'}
             style={styles.card}
+            onPress={() => navigation.navigate('jhatkaWallet')}
           />
         </View>
       </ScrollView>

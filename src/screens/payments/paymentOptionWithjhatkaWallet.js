@@ -13,7 +13,10 @@ import PaymentCard from '../../components/cards/paymentsCards';
 import JhatkaWallet from '../../components/cards/jhatkaWallet';
 import {ScrollView} from 'react-native-gesture-handler';
 import JhatkaWalletWithBtn from '../../constants/ui/button/jhatkaWalletWithPrimaryBtn';
+
+import {useNavigation} from '@react-navigation/native';
 const PaymentOptionWithJhatkaWalletAndPrimaryBtn = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar
@@ -26,9 +29,11 @@ const PaymentOptionWithJhatkaWalletAndPrimaryBtn = () => {
         <DeliveryFromTo />
         <JhatkaWalletWithBtn price={'1000'} />
         <HeaderTitle title={'UPI'} style={styles.title} />
-        <UPICard title={'UPI'} desc={'Lorem Ipsom dolor amet'} />
+        <UPICard title={'UPI'} desc={'Lorem Ipsom dolor amet'}
+          onPress={() => navigation.navigate('AddUpiScreen')} />
         <HeaderTitle title={'Credit & Debit cards'} style={styles.title} />
-        <UPICard title={'Add Card Details '} desc={'Lorem Ipsom dolor amet'} />
+        <UPICard title={'Add Card Details '} desc={'Lorem Ipsom dolor amet'}
+         onPress={() => navigation.navigate('AddCard')} />
         <HeaderTitle title={'Other Payments Options'} style={styles.title} />
         <View style={styles.cardContainer}>
           <PaymentCard
@@ -36,18 +41,21 @@ const PaymentOptionWithJhatkaWalletAndPrimaryBtn = () => {
             title={'Add Card Details '}
             desc={'Lorem Ipsom dolor amet'}
             style={styles.card}
+            onPress={() => navigation.navigate('wallet')}
           />
           <PaymentCard
             source={NetBankingIcon}
             title={'Add Card Details '}
             desc={'Lorem Ipsom dolor amet'}
             style={styles.card}
+            onPress={() => navigation.navigate('NetBanking')}
           />
           <PaymentCard
             source={WalletIcon}
             title={'Add Card Details '}
             desc={'Lorem Ipsom dolor amet'}
             style={styles.card}
+            onPress={() => navigation.navigate('jhatkaWallet')}
           />
         </View>
       </ScrollView>

@@ -15,16 +15,19 @@ import ChickenLegs from '../../assets/images/itemImages/chickenLegs.png';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Color} from '../../constants/style/style';
 import {ScrollView} from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 const AddItem = () => {
+  const navigation=useNavigation();
   return (
     <SafeAreaView>
       <View style={styles.container}>
         <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
-        <View style={styles.HeaderBox}>
+        {/* <View style={styles.HeaderBox}>
           <IconButton source={backButton} style={styles.icon} />
           <HeaderTitle title={'Chicken'} style={styles.Header} />
-        </View>
+        </View> */}
+        <ScrollView>
         <View style={styles.imageContainer}>
           <VectorImages source={ChickenLegs} style={styles.image} />
           <View style={styles.itemDescription}>
@@ -39,12 +42,15 @@ const AddItem = () => {
             }
           </Text>
           <PrimaryButton
+          onPress={() => navigation.navigate('Items')}
             buttonTitle={' -  Add to Cart  +'}
             style={styles.addtoCartButton}
+            
           />
         </View>
 
         <VectorImages source={ChickenLegs} style={styles.itemimage} />
+        </ScrollView>
       </View>
     </SafeAreaView>
   );

@@ -24,7 +24,7 @@ const NetBankingWithJhatkaWallet = () => {
         backgroundColor={'white'}
         style={styles.bar}
       />
-      <TitleWithBackBtn title={'Net Banking'} />
+      {/* <TitleWithBackBtn title={'Net Banking'} /> */}
       <JhatkaWallet price={'1000'} />
       <HeaderTitle
         title={'Select Your Bank For Payment'}

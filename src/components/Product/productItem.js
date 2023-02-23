@@ -1,6 +1,6 @@
 //import liraries
 import React from 'react';
-import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Image, Dimensions, Pressable} from 'react-native';
 import {Color} from '../../constants/style/style';
 import Chikcen from '../../assets/images/chicken.png';
 import Title from '../../constants/ui/title/title';
@@ -9,15 +9,21 @@ import {
   responsiveScreenHeight,
   responsiveScreenWidth,
 } from 'react-native-responsive-dimensions';
+import { useNavigation } from '@react-navigation/native';
 
 // create a component
 const {height, width} = Dimensions.get('screen');
 
 const ProductItem = ({image, title, weight, point, price, style}) => {
+  const navigation=useNavigation();
   return (
-    <View style={[styles.container, style]}>
+    <Pressable
+    style={({pressed}) => pressed && styles.pressed}
+    onPress={() => navigation.navigate('AddItems')}>
+    <View style={[styles.container, style]} 
+    onPress={() => navigation.navigate('Items')}>
       <View style={styles.imageContainer}>
-        <Image style={styles.imageStyle} source={image} />
+        <Image style={styles.imageStyle} source={image}   onPress={() => navigation.navigate('Items')} />
       </View>
       <Title title={title} style={styles.titleStyle} />
       <View style={styles.weightDescriptionContainer}>
@@ -27,7 +33,7 @@ const ProductItem = ({image, title, weight, point, price, style}) => {
       <View style={styles.priceContainer}>
         <Text style={styles.price}>Rs.{price}</Text>
       </View>
-    </View>
+    </View></Pressable>
   );
 };
 
@@ -45,6 +51,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     margin: 15,
     marginTop:-30,
+    marginBottom:40,
   },
   titleStyle: {
     color: Color.dark,
@@ -54,7 +61,7 @@ const styles = StyleSheet.create({
     marginRight: 14,
   },
   imageContainer: {
-    margin: 18,
+    margin: 28,
   },
   imageStyle: {
     height: 70,

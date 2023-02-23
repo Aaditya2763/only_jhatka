@@ -18,8 +18,12 @@ import BottomProceedBtnWithPrice from '../../constants/ui/button/BottomProceedBt
 import RBSheet from 'react-native-raw-bottom-sheet';
 import TimeBottomSheet from '../../constants/ui/bottomSheet/timeBottomSheet';
 import DelvearyLocationBottomSheet from '../../constants/ui/bottomSheet/delvearyLocationBottomsheet';
+import {useNavigation} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const ChooseDeliveryScreen = () => {
+  const navigation = useNavigation();
+  const Stack = createNativeStackNavigator();
   const bottomSheetref = useRef();
   return (
     <SafeAreaView style={styles.container}>
@@ -38,9 +42,11 @@ const ChooseDeliveryScreen = () => {
       <BottomProceedBtnWithPrice
         title={'Rs. 550'}
         buttontitle={'Proceed to pay'}
+        onPress={() => navigation.navigate('AddAddress')}
       />
       {/* <TimeBottomSheet openBottomSheet={bottomSheetref} /> */}
-      <DelvearyLocationBottomSheet refRbSheet={bottomSheetref} />
+      <DelvearyLocationBottomSheet refRbSheet={bottomSheetref}
+       />
     </SafeAreaView>
   );
 };

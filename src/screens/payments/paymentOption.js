@@ -10,7 +10,11 @@ import NetBankingIcon from '../../assets/icons/UpiIcons/netBankingIcon.png';
 import WalletIcon from '../../assets/icons/UpiIcons/walletIcon.png';
 
 import PaymentCard from '../../components/cards/paymentsCards';
+import { ScrollView } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+
 const PaymentOption = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar
@@ -18,33 +22,40 @@ const PaymentOption = () => {
         backgroundColor={'white'}
         style={styles.bar}
       />
-      <TitleWithBackBtn title={'Payment Options'} />
+      {/* <TitleWithBackBtn title={'Payment Options'} /> */}
+      <ScrollView>
       <DeliveryFromTo />
       <HeaderTitle title={'UPI'} style={styles.title} />
-      <UPICard title={'UPI'} desc={'Lorem Ipsom dolor amet'} />
+      <UPICard title={'UPI'} desc={'Lorem Ipsom dolor amet'} 
+     />
       <HeaderTitle title={'Credit & Debit cards'} style={styles.title} />
-      <UPICard title={'Add Card Details '} desc={'Lorem Ipsom dolor amet'} />
+      <UPICard title={'Add Card Details '} desc={'Lorem Ipsom dolor amet'} 
+      />
       <HeaderTitle title={'Other Payments Options'} style={styles.title} />
       <View style={styles.cardContainer}>
         <PaymentCard
           source={CashOnDeliveryIcon}
-          title={'Add Card Details '}
+          title={'Cash On Delivery '}
           desc={'Lorem Ipsom dolor amet'}
           style={styles.card}
+         
         />
         <PaymentCard
           source={NetBankingIcon}
-          title={'Add Card Details '}
+          title={'Net Banking '}
           desc={'Lorem Ipsom dolor amet'}
           style={styles.card}
+         
         />
         <PaymentCard
           source={WalletIcon}
-          title={'Add Card Details '}
+          title={'Use Another wallet'}
           desc={'Lorem Ipsom dolor amet'}
           style={styles.card}
+         
         />
       </View>
+      </ScrollView>
     </View>
   );
 };

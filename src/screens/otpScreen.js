@@ -10,8 +10,8 @@ import HeaderTitle from '../constants/ui/title/headerTitle';
 import OtpVerification from '../components/OtpVerification/otpVerification';
 
 // create a component
-const OtpScreen = () => {
-  let otp = 1234;
+const OtpScreen = ({setLogin}) => {
+  const  otp = 1234;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -29,7 +29,7 @@ const OtpScreen = () => {
           </Text>
         </View>
         <View style={styles.inputContainer}>
-          <OtpVerification style={styles.otpBox} otp={otp} />
+          <OtpVerification style={styles.otpBox} otp={otp} setLogin={setLogin} />
           {/* <Text style={styles.resendButton}>Resend OTP</Text> */}
         </View>
         {/* <PrimaryButton buttonTitle={'Verify OTP'}  /> */}

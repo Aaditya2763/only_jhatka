@@ -40,7 +40,7 @@ const BottomSheetLoaction = ({refRbButton}) => {
           <Pressable
             onPress={() => console.log('pressed')}
             style={({pressed}) => pressed && styles.pressed}>
-            <Text style={styles.listText}>Use Current Location</Text>
+            <Text style={styles.listText} onPress={() => navigation.navigate('WelcomeScreen')}>Use Current Location</Text>
           </Pressable>
         </View>
         <View style={styles.horizontalLine} />
@@ -56,8 +56,8 @@ const BottomSheetLoaction = ({refRbButton}) => {
               })
             }
             style={({pressed}) => pressed && styles.pressed}>
-            <Text style={styles.listText2}>Add Address</Text>
-            <Text style={styles.smallText}>Enter your address</Text>
+            <Text style={styles.listText2}  onPress={() => navigation.navigate('AddAddress')}>Add Address</Text>
+            <Text style={styles.smallText}  onPress={() => navigation.navigate('AddAddress')}>Enter your address</Text>
           </Pressable>
         </View>
       </View>

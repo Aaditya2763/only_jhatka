@@ -17,6 +17,7 @@ import SearchButton from '../../assets/icons/SearchButton.png';
 import Home from '../../screens/bottomScreen/home';
 import {NavigationContainer} from '@react-navigation/native';
 import AddAddress from '../../screens/addAddress/addAddress';
+import HomeStackNavigation from './homeStackNavigation';
 //calling stack navigator
 const Stack = createNativeStackNavigator();
 enableScreens(true);
@@ -55,6 +56,8 @@ const StackNaviagtion = () => {
             fontFamily: 'Poppins-Medium',
             fontWeight: '600',
             fontSize: 20,
+            
+            width:0,
             color: Color.dark,
           },
           headerRight: () => (
@@ -82,11 +85,23 @@ const StackNaviagtion = () => {
         component={OtpScreen}
         options={{headerShown: false}}
       />
-      <Stack.Screen
+       <Stack.Screen
         name="AddAddress"
         component={AddAddress}
         options={{headerShown: false}}
       />
+       <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{headerShown: false}}
+      />
+       {/* <Stack.Screen
+        name="HomeStackNavigation"
+        component={HomeStackNavigation}
+        options={{headerShown: false}}
+      />
+      */}
+     
     </Stack.Navigator>
   );
 };

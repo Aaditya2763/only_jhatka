@@ -20,17 +20,19 @@ import {ScrollView} from 'react-native-gesture-handler';
 
 import RBSheet from 'react-native-raw-bottom-sheet';
 import CutomizeProducts from '../../constants/ui/bottomSheet/addBottomCutomizeProduct';
+import { useNavigation } from '@react-navigation/native';
 
 const Item = () => {
   const bottomSheetref = useRef();
+  const navigation=useNavigation();
   return (
     <SafeAreaView>
       <View style={styles.container}>
         <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
-        <View style={styles.HeaderBox}>
+        {/* <View style={styles.HeaderBox}>
           <IconButton source={backButton} style={styles.icon} />
           <HeaderTitle title={'Chicken'} style={styles.Header} />
-        </View>
+        </View> */}
         <View style={styles.imageContainer}>
           <VectorImages source={ChickenLegs} style={styles.image} />
           <View style={styles.itemDescription}>
@@ -53,6 +55,7 @@ const Item = () => {
           <PrimaryButton
             buttonTitle={'Add to Cart'}
             style={styles.addtoCartButton}
+            onPress={() => navigation.navigate('CartItemDetails')}
           />
         </View>
         <HeaderTitle title={'Recommended'} style={styles.recomendedHeading} />

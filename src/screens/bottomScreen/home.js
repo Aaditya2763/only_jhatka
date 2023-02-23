@@ -23,15 +23,18 @@ import {
   responsiveScreenWidth,
   responsiveFontSize,
 } from 'react-native-responsive-dimensions';
+import { useNavigation } from '@react-navigation/native';
 
 // create a component
 const Home = () => {
+  const navigation=useNavigation();
   const product = useSelector(allproducts);
 
   return (
     <SafeAreaView style={styles.SafeAreaViewConianer}>
       <StatusBar barStyle={'dark-content'} backgroundColor={Color.white} />
-      <View style={styles.container}>
+      
+      <View style={styles.container}  >
         <View style={styles.subConatiner}>
           {/* <Title title={'Categories'} /> */}
         </View>
@@ -48,6 +51,7 @@ const Home = () => {
               <SelectButton
                 CategorieTitle={item.title}
                 CategoriesImage={item.image}
+                onPress={() => navigation.navigate('Items')}
               />
             )}
           />
@@ -60,12 +64,14 @@ const Home = () => {
             style={styles.product}
             renderItem={({item}) => (
               <ProductItem
+            
                 image={item.image}
                 price={item.price}
                 point={item.point}
                 title={item.title}
                 weight={item.weight}
                 style={styles.productImage}
+                
               />
             )}
           />

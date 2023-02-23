@@ -6,7 +6,7 @@ import {Color} from '../../constants/style/style';
 const WelcomeScreenNameInput = ({source, title, placeholder, style,name,setName}) => {
   // const [textInputName, setTextInputName] = useState('');
   const checkInput = () => {
-    if (name ==''|| name.length<3) {
+    if (name ==''|| name.length< 3) {
       alert('Please Enter valid Name');
       return;
     }
@@ -18,9 +18,11 @@ const WelcomeScreenNameInput = ({source, title, placeholder, style,name,setName}
         <Image source={source} style={[styles.image]} />
         <TextInput
           placeholder={placeholder}
+          placeholderTextColor="grey"
           style={styles.input}
+          onChangeText={value => setName(value)}
           onEndEditing={checkInput}
-          onChangeText={value => setName(value)}>
+          >
           {title}
         </TextInput>
     

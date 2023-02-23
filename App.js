@@ -32,7 +32,7 @@ import AddCard from './src/screens/card/AddCard';
 import Wallet from './src/screens/payments/wallet';
 import NetBAnkingSearchBar from './src/components/searchbar/netBankingSearchBar';
 import NetBanking from './src/screens/payments/netBanking';
-import PaymentOptionWithJhatkaWalletAndPrimaryBtn from './src/screens/payments/paymentOptionWithjhatkaWallet';
+import PaymentOptionWithJhatkaWalletAndPrimaryBtn from './src/screens/payments/paymentOptionWithjhatkaWalletAndPrimaryBtn';
 import SmallPrimaryButton from './src/constants/ui/button/smallPrimaryButton';
 import WalletWithJhatkaWallet from './src/screens/payments/walletWithJhatkaWallet';
 import JhatkaWallet from './src/components/cards/jhatkaWallet';
@@ -42,13 +42,13 @@ import AddVoucher from './src/screens/voucher/addVoucher';
 
 
 // if you want to switch Stack navigation change const isLogin = false;
-const isLogin =false;
+const isLogin =true;
 const Loading = ({ }) => { };
 const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}
+        {isLogin ? <BottomNaviagtion /> : <StackNaviagtion />}  
 
       </NavigationContainer>
     </Provider>

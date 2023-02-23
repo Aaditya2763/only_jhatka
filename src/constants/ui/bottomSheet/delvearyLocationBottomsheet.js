@@ -4,8 +4,11 @@ import RBSheet from 'react-native-raw-bottom-sheet';
 import {Color} from '../../style/style';
 import loactionIcon from '../../../assets/icons/loactionIcon.png';
 import SmallPrimaryButton from '../button/smallPrimaryButton';
-
+import {useNavigation} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const DelvearyLocationBottomSheet = ({refRbSheet}) => {
+  const navigation = useNavigation();
+  const Stack = createNativeStackNavigator();
   return (
     <RBSheet
       ref={refRbSheet}
@@ -44,7 +47,8 @@ const DelvearyLocationBottomSheet = ({refRbSheet}) => {
         <View style={{marginVertical: 20}}>
           <View style={styles.buttonContainer}>
             <Text style={styles.ratePriceText}> Rs.570 </Text>
-            <SmallPrimaryButton buttonTitle={'Proceed to pay'} />
+            <SmallPrimaryButton buttonTitle={'Proceed to pay'} 
+            onPress={() => navigation.navigate('AddAddress')} />
           </View>
         </View>
       </View>

@@ -14,8 +14,12 @@ import CouponButton from '../../constants/ui/button/couponButton';
 import BillSlip from '../../components/BillSlip';
 import CouponCard from '../../components/coupon/couponCard';
 import BottomProceedBtnWithPrice from '../../constants/ui/button/BottomProceedBtnWIthPrice';
+import {useNavigation} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const CartItemWithCoupon = () => {
+  const navigation = useNavigation(); 
+  const Stack = createNativeStackNavigator();
   const Count = useSelector(state => state.counter.count);
  
   return (
@@ -29,6 +33,7 @@ const CartItemWithCoupon = () => {
         source={Arrowdown}
         title={'Pick your slot'}
         style={styles.Custombtn}
+        onPress={() => navigation.navigate('ChooseDeliveryScreen')} 
       />
       <BottomProceedBtnWithPrice
         title={'Rs. '+`${Count*550+100}`}

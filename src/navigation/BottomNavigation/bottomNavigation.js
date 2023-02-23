@@ -19,6 +19,11 @@ import BackButton from 'react-native-vector-icons/MaterialIcons';
 // Profile Stack navigation
 import ProfileStackNavigation from '../StackNavigation/profieStackNavigation';
 import {useNavigation} from '@react-navigation/native';
+import cartStackNavigation from '../StackNavigation/cartStackNavigation';
+import CartStackNavigation from '../StackNavigation/cartStackNavigation';
+import HomeStackNavigation from '../StackNavigation/homeStackNavigation';
+import StackNaviagtion from '../StackNavigation/stackNavigation';
+import { notInitialized } from 'react-redux/es/utils/useSyncExternalStore';
 
 // Tab navigators
 const Tab = createBottomTabNavigator();
@@ -30,27 +35,45 @@ const BottomNaviagtion = () => {
         headerShown: false,
         tabBarShowLabel: false,
         tabBarHideOnKeyboard: true,
+        
+       
         tabBarStyle: {
+          
           width: '100%',
-          height: responsiveScreenHeight(10),
+          height: responsiveScreenHeight(7),
           backgroundColor: 'white',
         },
         tabBarActiveTintColor: Color.primaryColor,
         tabBarInactiveTintColor: 'rgba(45, 45, 45, 0.5)',
       }}>
+         <Tab.Screen
+        name="splashScreen"
+        component={StackNaviagtion}
+       options={{
+        tabBarStyle:{
+          display:'none',
+        
+        },
+        tabBarIcon: ({focused, color, size}) => (
+          <Icon name={'search'} size={size} color={color} />
+      
+        ) 
+        
+       }}
+      />
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="HomeStackNavigation"
+        component={HomeStackNavigation}
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <Icon name={'home'} size={size} color={color} />
           ),
-          tabBarItemStyle: styles.tabBarStyle,
+        
         }}
       />
       <Tab.Screen
-        name="ShoppingCart"
-        component={ShoppingCart}
+        name="CartStackNavigation"
+        component={CartStackNavigation}
         options={{
           tabBarIcon: ({color, size}) => (
             <Icon name="shopping-cart" color={color} size={size} />
@@ -70,7 +93,7 @@ const BottomNaviagtion = () => {
           headerShadowVisible: false,
           headerRight: () => (
             <TouchableOpacity>
-              <Text style={styles.buttonStyle}>Clear all</Text>
+              <Text style={styles.buttonStyle} onPress={() => navigation.goBack()}>Clear all</Text>
             </TouchableOpacity>
           ),
           headerLeft: () => (
@@ -99,7 +122,7 @@ const BottomNaviagtion = () => {
           headerTitle: 'Profile',
           headerTitleAlign: 'center',
           headerShadowVisible: false,
-          tabBarStyle: {display: 'none'},
+          
           // headerLeft: ({pressOpacity}) => (
           //   <BackButton name="keyboard-backspace" color={'black'} size={24} />
           // ),

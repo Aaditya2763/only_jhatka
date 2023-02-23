@@ -1,15 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import PrimaryButton from '../../constants/ui/button/primaryButton';
-const OtpVerification = ({ onSubmit, style, otp, navigation }) => {
+const OtpVerification = ({ onSubmit, style, otp, }) => {
+  const navigation = useNavigation();
   const [pin1, setPin1] = useState('');
   const [pin2, setPin2] = useState('');
   const [pin3, setPin3] = useState('');
   const [pin4, setPin4] = useState('');
-  const [isLogin, setIsLogin] = useState('false')
+ 
   const pin1ref = useRef();
   const pin2ref = useRef();
-  const pin3ref = useRef();
+  const pin3ref = useRef();  
   const pin4ref = useRef();
   // const submitBtn=useRef()
 
@@ -23,8 +25,9 @@ const OtpVerification = ({ onSubmit, style, otp, navigation }) => {
   const checkOTP = () => {
     if (input == otp) {
 
-      alert("verified");
-      setIsLogin(true);
+      // alert("verified");
+      
+      navigation.navigate('AddAddress');
       
     }
     else {
@@ -137,7 +140,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#2D2D2D',
     fontSize: 25,
     fontWeight: '600',
-    textAlign: 'center', //
+    textAlign: 'center', 
     color: '#2D2D2D',
   },
   submitButton: {

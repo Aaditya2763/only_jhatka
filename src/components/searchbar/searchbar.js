@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 25,
     fontSize: 16,
+    color:"black",
     fontFamily: 'poppins',
     fontWeight: '400',
     padding: 5,

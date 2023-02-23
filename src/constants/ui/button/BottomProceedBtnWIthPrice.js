@@ -1,4 +1,5 @@
 //import liraries
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
@@ -6,10 +7,11 @@ import HeaderTitle from '../title/headerTitle';
 import PrimaryButton from './primaryButton';
 
 const BottomProceedBtnWithPrice = ({title, buttontitle,style}) => {
+  const navigation=useNavigation();
   return (
     <View style={[styles.container,style]}>
       <HeaderTitle title={title} style={styles.HeaderTitle} />
-      <PrimaryButton buttonTitle={buttontitle} style={styles.Btn} />
+      <PrimaryButton buttonTitle={buttontitle} style={styles.Btn} onPress={() => navigation.navigate('cartItemWithCoupon')} />
     </View>
   );
 };
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
     // alignSelf:'center',
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: 50,
+   
   },
   HeaderTitle: {
     width: 100,

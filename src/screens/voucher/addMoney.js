@@ -9,6 +9,7 @@ import PrimaryButton from '../../constants/ui/button/primaryButton';
 import UPICard from '../../components/cards/Upicard';
 import HeaderTitle from '../../constants/ui/title/headerTitle';
 import {useNavigation} from '@react-navigation/native';
+import CardInput from '../../components/cards/cardInput';
 const AddMoney = () => {
   const navigation = useNavigation();
   return (
@@ -26,7 +27,7 @@ const AddMoney = () => {
         desc={'Lorem ipsum dolor amet, consectetur...'}
         price={'Rs. 1000'}
       />
-      <WelcomeScreenNameInput
+      <CardInput
         placeholder={'Enter Money'}
         style={styles.nameInput}
       />

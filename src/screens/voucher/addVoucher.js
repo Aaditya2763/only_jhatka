@@ -6,6 +6,8 @@ import VoucherCard from '../../components/cards/voucherCard';
 import WelcomeScreenNameInput from '../../components/welcomeScreenInput/welcomeScreenNameInput';
 import WelcomeScreenPhoneNumInp from '../../components/welcomeScreenInput/welcomeScreenPhoneNumInp';
 import PrimaryButton from '../../constants/ui/button/primaryButton';
+import CardInput from '../../components/cards/cardInput';
+import CardName from '../../components/cards/cardName';
 const AddVoucher = () => {
   return (
     <View style={styles.container}>
@@ -14,7 +16,7 @@ const AddVoucher = () => {
         backgroundColor={'white'}
         style={styles.bar}
       />
-      <TitleWithBackBtn title={'Add Voucher'} />
+      {/* <TitleWithBackBtn title={'Add Voucher'} /> */}
 
       <VoucherCard
         source={VoucherImage}
@@ -22,11 +24,11 @@ const AddVoucher = () => {
         desc={'Lorem ipsum dolor amet, consectetur...'}
         price={'Rs. 1000'}
       />
-      <WelcomeScreenNameInput
+      <CardName
         placeholder={'Enter voucher code'}
         style={styles.nameInput}
       />
-      <WelcomeScreenPhoneNumInp placeholder={'Enter your pin'} />
+      <CardInput placeholder={'Enter your pin'} />
       <PrimaryButton buttonTitle={'Redeem Voucher'} style={styles.btn} />
     </View>
   );

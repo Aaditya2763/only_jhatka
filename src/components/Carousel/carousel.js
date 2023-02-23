@@ -7,7 +7,10 @@ import {
   Image,
   Dimensions,
   FlatList,
+ 
+  Pressable,
 } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import {Color} from '../../constants/style/style';
 ('native-base');
 
@@ -22,17 +25,29 @@ import {allproducts} from '../../redux/products/productsSlice';
 const Carousel = ({style}) => {
   const images = useSelector(allproducts);
   // console.log(images)
+ 
   return (
+  <>
     <FlatList
+    
       horizontal={true}
       data={images}
       style={style}
+      
       renderItem={({item}) => (
+    
         <View style={[styles.container]}>
+          
           <Image source={item.uri} style={styles.img} />
+         
         </View>
+  
+       
+        
       )}
     />
+   
+    </>
   );
 };
 

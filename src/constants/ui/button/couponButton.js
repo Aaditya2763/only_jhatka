@@ -14,7 +14,7 @@ const CouponButton = ({source, title, placeholder, onPress}) => {
       onPress={onPress}
       style={({pressed}) => pressed && styles.pressed}>
       <View style={styles.container}>
-        <Text placeholder={placeholder} style={styles.input}>
+        <Text placeholder={placeholder} style={styles.input} >
           {title}
         </Text>
         <Image source={source} style={styles.image} />
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     alignSelf: 'center',
     fontSize: 16,
-
+color:"black",
     fontWeight: '500',
     fontFamily: 'Poppins-Medium',
   },

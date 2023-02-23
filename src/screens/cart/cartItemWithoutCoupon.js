@@ -1,6 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View, StatusBar, Image} from 'react-native';
 //importing components
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
 import CustomiseItemButton from '../../constants/ui/button/customiseItemButton';
 import Title from '../../constants/ui/title/title';
 import ArrowRight from '../../assets/icons/ArrowRight.png';
@@ -14,6 +16,9 @@ import CouponButton from '../../constants/ui/button/couponButton';
 import BillSlip from '../../components/BillSlip';
 
 const CartItemWithoutCoupon = () => {
+  const navigation = useNavigation();
+  const Stack = createNativeStackNavigator();
+
   const Count = useSelector(state => state.counter.count);
   return (
     <SafeAreaView style={styles.container}>
@@ -23,15 +28,18 @@ const CartItemWithoutCoupon = () => {
       <CouponButton
         source={ArrowRight}
         title={'Apply Coupon'}
+        
         style={styles.cpnBtn}
+        onPress={() => navigation.navigate('CouponScreen')} 
       />
       {/* <Title title={"Billings"} style={styles.BillingTitle} /> */}
       <Text style={styles.BillingTitle}> Billings</Text>
       <BillSlip />
-      <BottomProceedBtnWithPrice
+      <BottomProceedBtnWithPrice onPress={() => navigation.navigate('cartItemWithCoupon')}
         title={'Rs. '+`${Count*550+100}`}
         buttontitle={'Proceed to pay'}
         style={styles.paymentBox}
+         
       />
     </SafeAreaView>
   );
@@ -74,7 +82,7 @@ const styles = StyleSheet.create({
     backgroundColor: Color.white,
     elevation: 2,
 
-    marginTop:130,
+    marginTop:100,
   }
 });
 

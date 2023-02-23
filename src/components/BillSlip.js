@@ -14,7 +14,7 @@ const BillSlip = () => {
         <Text style={styles.charges}>Rs. 100</Text>
       </View>
       <Text style={styles.dash}>
-        - - - - - - - - - - - - - - - - - - - - - - - - - - -{' '}
+        - - - - - - - - - - - - - - - -     {'         '}
       </Text>
       <View style={styles.subTotal}>
         <Text style={styles.total}>Total</Text>

@@ -12,7 +12,8 @@ const DeliveryFromTo = () => {
           style={styles.img}
         />
         <Text style={{color: 'black', fontSize: 16}}> From | </Text>
-        <TextInput placeholder={'Delivery in 35 min'} style={styles.input} />
+        <TextInput placeholder={'Delivery in 35 min'} style={styles.input} 
+        placeholderTextColor="grey"/>
       </View>
       <Image
         source={require('../../assets/icons/deliveryIcons/Line.png')}
@@ -26,6 +27,7 @@ const DeliveryFromTo = () => {
         <Text style={{color: 'black', fontSize: 16}}>{' To |'}</Text>
         <TextInput
           placeholder={'Lorem Ipsom dolor amet....'}
+          placeholderTextColor="grey"
           style={styles.input}
         />
       </View>
@@ -89,6 +91,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontWeight: '500',
     fontSize: 14,
+    color:"black"
   },
 });
 

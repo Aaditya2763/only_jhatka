@@ -10,27 +10,33 @@ import SelectLocation from '../../assets/icons/profileIcon/selectLocation.png';
 //importing components
 import TitleWithBackBtn from '../../constants/ui/title/titleWithBackBtn';
 import {useNavigation} from '@react-navigation/native';
-const AddAddress = ({navigation}) => {
-  // const navigation = useNavigation();
+import PrimaryButton from '../../constants/ui/button/primaryButton';
+const AddAddress = ({setLogin}) => {
+console.log(setLogin)
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
       {/* <TitleWithBackBtn title={'Add Address'} /> */}
       <NetBAnkingSearchBar
         placeholder={' Search for area,street...'}
+
         style={styles.SearchBar}
       />
       <DetailsCard
         title={'Delivery Address'}
         desc={'Lorem Ipsom Dolor Amet....'}
         source={SelectLocation}
-        onPress={() => navigation.navigate('AddaddressMap')}
+        onPress={() => navigation.navigate('setDeleveryLoactionScreen')}
       />
       <DetailsCard
         title={'Delivery Address'}
         desc={'Lorem Ipsom Dolor Amet....'}
         source={SelectLocation}
-      />
+        onPress={() => navigation.navigate('PaymentOption')}/>
+   
+      <PrimaryButton buttonTitle={"Proceed"} style={{marginTop:200}}
+       onPress={() => navigation.navigate('HomeStackNavigation')}/>
     </View>
   );
 };
